@@ -100,25 +100,25 @@ export const esContent: LocaleContent = {
       seo: {
         title: "Sobre el Lab",
         description:
-          "Origen, misión y visión del LAST Lab for Critical AI como red multinodal de investigación crítica en IA."
+          "Infraestructura académica multinodal para el estudio crítico y la formulación estratégica de la inteligencia artificial y las tecnologías digitales."
       },
       intro:
-        "El LAST Lab fue concebido en 2024 a partir de la iniciativa académica del Dr. Horacio Correa Lucero y del apoyo intelectual e institucional fundacional de la Dra. Cheryl Martens (IEAD-USFQ), cuyo respaldo temprano fue decisivo para la consolidación del proyecto.",
+        "El LAST Lab for Critical AI & Digital Technologies (Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies) es una infraestructura académica multinodal dedicada al estudio crítico y la formulación estratégica de la inteligencia artificial y las tecnologías digitales como configuraciones sociotécnicas que reestructuran instituciones, economías y formas de vida. Creado en 2024 por iniciativa académica del Dr. Horacio Correa Lucero, el laboratorio cuenta con aval institucional de la Universidad Nacional Arturo Jauretche (UNAJ), donde funciona en el ámbito del Instituto de Ciencias Sociales y Administración (ICSyA). Su desarrollo se articula de manera binacional con el IEAD-USFQ (Ecuador) y se proyecta como plataforma regional con inserción internacional. El LAST Lab se propone incidir en agendas académicas internacionales mediante producción teórica de alto nivel, cooperación científica y participación activa en redes, congresos y publicaciones. En paralelo, orienta su crecimiento institucional al desarrollo de proyectos con financiamiento competitivo, consolidando capacidades para presentar y ejecutar propuestas en convocatorias internacionales y esquemas de cooperación interinstitucional. Desde un enfoque crítico, el laboratorio entiende la tecnología no como herramienta neutral sino como entramado de mediaciones que organiza valor, poder y subjetividad. En este marco, desarrolla una línea analítica sociobiotécnica para describir impactos materiales, institucionales y bio-sociales de la digitalización, sin reducirlos a \"efectos\" secundarios.",
       sections: [
         {
           title: "Origen",
           body:
-            "Su colaboración dio forma a una red multinodal, binacional y autónoma con nodos fundacionales en IEAD-USFQ (Ecuador) y UNAJ (Argentina), e integración de Diversa (Quito), articulando universidad y sociedad civil desde su origen."
+            "El laboratorio se constituye como red académica autónoma y multinodal, con nodos fundacionales en UNAJ (Argentina) e IEAD-USFQ (Ecuador), y articulación con actores de la sociedad civil en Quito. Integra investigadoras e investigadores vinculados a espacios académicos asociados al proyecto, promoviendo cooperación regional, intercambio internacional y crecimiento institucional progresivo."
         },
         {
           title: "Misión",
           body:
-            "Constituir un espacio crítico, interdisciplinario y multinodal arraigado en la realidad latinoamericana y del Sur Global para el estudio, experimentación y transformación de la inteligencia artificial y las tecnologías digitales como configuraciones socio-técnicas de mediación que reestructuran entornos sociales, económicos e institucionales."
+            "Consolidar un espacio crítico interdisciplinario para la investigación teórica avanzada y la formación especializada en inteligencia artificial y tecnologías digitales, desarrollando marcos analíticos propios y proyectos orientados a fortalecer capacidades institucionales, cooperación internacional y financiamiento competitivo."
         },
         {
           title: "Visión",
           body:
-            "Consolidarse como referente regional y proyección global en investigación crítica sobre inteligencia artificial, formación especializada y elaboración de propuestas estratégicas capaces de incidir en el diseño, regulación y aplicación de tecnologías digitales en América Latina y el Sur Global."
+            "Constituirse como referente latinoamericano con proyección global en teoría crítica de la tecnología, inteligencia artificial y análisis sociotécnico/sociobiotécnico, capaz de incidir en debates académicos internacionales, nutrir agendas públicas y contribuir a la formulación estratégica de la transformación digital en América Latina y el Sur Global."
         }
       ]
     },
