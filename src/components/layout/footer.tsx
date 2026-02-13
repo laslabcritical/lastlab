@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { LocaleContent } from "@/content/schema";
+import { withBasePath } from "@/lib/base-path";
 import { getLocalizedPath, type Locale } from "@/lib/i18n";
 
 interface FooterProps {
@@ -14,10 +16,20 @@ export function Footer({ locale, content }: FooterProps) {
 
   return (
     <footer className="mt-16 border-t border-brand-100 bg-white/90">
-      <div className="container-shell flex flex-col gap-4 py-8 md:flex-row md:items-center md:justify-between">
-        <p className="text-sm text-muted">
-          <span className="font-semibold text-ink">&copy; LAST Lab for Critical AI</span> - {content.ui.footerRights}
-        </p>
+      <div className="container-shell flex flex-col gap-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-3">
+          <Image
+            src={withBasePath("/brand/3.svg")}
+            alt="LAST Lab"
+            width={600}
+            height={203}
+            className="h-8 w-auto max-w-[230px]"
+          />
+          <p className="text-sm text-muted">
+            <span className="font-semibold text-ink">&copy; LAST Lab for Critical AI</span> - {content.ui.footerRights}
+          </p>
+        </div>
+
         <nav aria-label="Footer links" className="flex flex-wrap items-center gap-4">
           {content.footerLinks.map((pageKey) => (
             <Link

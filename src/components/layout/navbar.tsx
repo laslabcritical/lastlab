@@ -38,14 +38,15 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
     <header className="sticky top-0 z-40 border-b border-brand-100/70 bg-[#f4f7fb]/95 backdrop-blur">
       <div className="container-shell py-4">
         <div className="flex items-center gap-4">
-          <Link href={getLocalizedPath(locale, "home")} className="flex min-w-0 items-center gap-3">
-            <Image src={withBasePath("/brand/logo.svg")} alt="LAST Lab" width={42} height={42} className="rounded-full bg-white p-1" priority />
-            <div className="min-w-0">
-              <p className="truncate font-heading text-lg font-bold text-ink">LAST Lab</p>
-              <p className="truncate text-xs font-medium uppercase tracking-[0.15em] text-brand-600">
-                Critical AI
-              </p>
-            </div>
+          <Link href={getLocalizedPath(locale, "home")} className="flex min-w-0 items-center">
+            <Image
+              src={withBasePath("/brand/2.svg")}
+              alt="LAST Lab"
+              width={1120}
+              height={520}
+              className="h-11 w-auto max-w-[240px] sm:h-12 sm:max-w-[270px]"
+              priority
+            />
           </Link>
 
           <nav aria-label="Main navigation" className="ml-auto hidden xl:flex xl:items-center xl:gap-1">

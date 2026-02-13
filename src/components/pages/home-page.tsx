@@ -1,10 +1,8 @@
-import Image from "next/image";
 import type { HomePageContent } from "@/content/schema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { getLocalizedPath, type Locale } from "@/lib/i18n";
-import { withBasePath } from "@/lib/base-path";
 
 interface HomePageProps {
   locale: Locale;
@@ -14,18 +12,10 @@ interface HomePageProps {
 export function HomePage({ locale, page }: HomePageProps) {
   return (
     <div className="grid gap-7">
-      <section className="reveal overflow-hidden rounded-[1.75rem] border border-brand-300 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 p-8 text-white shadow-soft md:p-12">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-end">
+      <section className="reveal overflow-hidden rounded-[1.75rem] border border-brand-300 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 px-8 pb-8 pt-6 text-white shadow-soft md:px-12 md:pb-12 md:pt-8">
+        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-start">
           <div>
-            <Image
-              src={withBasePath("/brand/logo.svg")}
-              alt="LAST Lab logo"
-              width={76}
-              height={76}
-              className="h-16 w-16 rounded-full bg-white/95 p-2"
-              priority
-            />
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">{page.hero.subtitle}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">{page.hero.subtitle}</p>
             <h1 className="mt-3 max-w-3xl font-heading text-4xl font-black leading-tight md:text-5xl">
               {page.hero.title}
             </h1>
@@ -42,10 +32,22 @@ export function HomePage({ locale, page }: HomePageProps) {
               ))}
             </div>
           </div>
+
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">{page.whatWeDo.eyebrow}</p>
             <h2 className="mt-2 font-heading text-2xl font-bold">{page.whatWeDo.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-brand-100">{page.whatWeDo.body}</p>
+
+            <div className="mt-6 grid gap-2">
+              {page.pillars.items.map((pillar) => (
+                <div
+                  key={pillar.title}
+                  className="rounded-lg border border-white/25 bg-brand-950/20 px-3 py-2 text-sm font-semibold text-white"
+                >
+                  {pillar.title}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
