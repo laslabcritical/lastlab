@@ -43,7 +43,7 @@ export const esContent: LocaleContent = {
       },
       strategic: {
         eyebrow: "Problema estrategico",
-        title: "Por que una mirada latinoamericana sobre la IA?",
+        title: "¿Por que una mirada latinoamericana sobre la IA?",
         body:
           "La expansion de la inteligencia artificial esta reconfigurando instituciones, economias y formas de vida en la region. Sin embargo, los marcos conceptuales, regulatorios y tecnologicos que estructuran esta transformacion se producen mayoritariamente fuera de America Latina. El LAST Lab surge para producir conocimiento situado, desarrollar alternativas tecnologicas y contribuir estrategicamente al debate publico regional."
       },
