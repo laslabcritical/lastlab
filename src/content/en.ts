@@ -100,28 +100,29 @@ export const enContent: LocaleContent = {
       seo: {
         title: "About the Lab",
         description:
-          "Origin, mission, and vision of LAST Lab for Critical AI as a multinodal network for critical AI research."
+          "Multinodal academic infrastructure devoted to the critical study and strategic formulation of artificial intelligence and digital technologies."
       },
       intro:
-        "LAST Lab was conceived in 2024 through the academic initiative of Dr. Horacio Correa Lucero and the founding intellectual and institutional support of Dr. Cheryl Martens (IEAD-USFQ), whose early endorsement was decisive for consolidating the project.",
+        "The LAST Lab for Critical AI & Digital Technologies (Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies) is a multinodal academic infrastructure devoted to the critical study and strategic formulation of artificial intelligence and digital technologies as socio-technical configurations that restructure institutions, economies, and forms of life. Established in 2024 through the academic initiative of Dr. Horacio Correa Lucero, the laboratory holds institutional endorsement from the Universidad Nacional Arturo Jauretche (UNAJ), where it operates within the Institute of Social Sciences and Administration (ICSyA). Its development is articulated binationally with IEAD-USFQ (Ecuador) and is projected as a regional platform with international engagement. The LAST Lab seeks to engage with international academic agendas through high-level theoretical production, scientific cooperation, and active participation in research networks, conferences, and scholarly publications. In parallel, it orients its institutional growth toward the development of projects supported by competitive funding, consolidating the capacity to design and implement proposals within international calls and inter-institutional cooperation frameworks. From a critical perspective, the laboratory approaches technology not as a neutral tool but as a network of mediations that organizes value, power, and subjectivity. Within this framework, it develops a socio-bio-technical analytical line to describe the material, institutional, and bio-social dimensions of digital transformation, without reducing them to secondary \"effects.\"",
       sections: [
         {
           title: "Origin",
           body:
-            "Their collaboration shaped a multinodal, binational, and autonomous network with founding nodes at IEAD-USFQ (Ecuador) and UNAJ (Argentina), with Diversa (Quito) integrated from the outset, connecting university and civil society."
+            "The laboratory is constituted as an autonomous and multinodal academic network, with founding nodes at UNAJ (Argentina) and IEAD-USFQ (Ecuador), and articulation with civil society actors in Quito. It integrates researchers associated with academic spaces connected to the project, fostering regional cooperation, international exchange, and progressive institutional growth."
         },
         {
           title: "Mission",
           body:
-            "To build a critical, interdisciplinary, and multinodal space rooted in Latin American and Global South realities for the study, experimentation, and transformation of artificial intelligence and digital technologies as socio-technical mediations reshaping social, economic, and institutional environments."
+            "To consolidate an interdisciplinary critical space for advanced theoretical research and specialized training in artificial intelligence and digital technologies, developing original analytical frameworks and projects aimed at strengthening institutional capacities, international cooperation, and competitive research funding."
         },
         {
           title: "Vision",
           body:
-            "To consolidate as a regional reference with global projection in critical AI research, specialized training, and strategic proposals that can influence the design, regulation, and deployment of digital technologies in Latin America and the Global South."
+            "To become a Latin American reference point with global projection in critical theory of technology, artificial intelligence, and socio-technical/socio-bio-technical analysis, capable of engaging international academic debates, informing public agendas, and contributing to the strategic formulation of digital transformation in Latin America and the Global South."
         }
       ]
     },
+
     network: {
       seo: {
         title: "Network",
