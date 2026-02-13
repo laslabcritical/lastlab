@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | LAST Lab"
   },
   description:
-    "LAST Lab for Critical AI: red latinoamericana multinodal de investigacion, innovacion e incidencia sobre inteligencia artificial y tecnologias digitales.",
+    "LAST Lab for Critical AI: red latinoamericana multinodal de investigación, innovación e incidencia sobre inteligencia artificial y tecnologías digitales.",
   openGraph: {
     type: "website",
     siteName: "LAST Lab for Critical AI",
