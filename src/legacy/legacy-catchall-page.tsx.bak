@@ -1,0 +1,119 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getLocaleContent } from "@/content";
+import { SiteLayout } from "@/components/layout/site-layout";
+import { PageContent } from "@/components/pages/page-content";
+import {
+  LOCALES,
+  PAGE_KEYS,
+  ROUTES,
+  getLocaleCode,
+  getLocalizedPath,
+  isLocale,
+  resolvePageKey,
+  type Locale
+} from "@/lib/i18n";
+
+type Params = {
+  lang: string;
+  slug?: string[];
+};
+
+interface LocalizedPageProps {
+  params: Promise<Params>;
+}
+
+export function generateStaticParams() {
+  const params: Array<{ lang: Locale; slug?: string[] }> = [];
+
+  for (const locale of LOCALES) {
+    params.push({ lang: locale });
+
+    for (const pageKey of PAGE_KEYS) {
+      if (pageKey === "home") {
+        continue;
+      }
+
+      params.push({ lang: locale, slug: [ROUTES[locale][pageKey]] });
+    }
+  }
+
+  return params;
+}
+
+export async function generateMetadata({
+  params
+}: LocalizedPageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+
+  if (!isLocale(resolvedParams.lang)) {
+    return {};
+  }
+
+  const pageKey = resolvePageKey(resolvedParams.lang, resolvedParams.slug);
+
+  if (!pageKey) {
+    return {};
+  }
+
+  const locale = resolvedParams.lang;
+  const content = getLocaleContent(locale);
+  const page = content.pages[pageKey];
+  const canonical = getLocalizedPath(locale, pageKey);
+
+  return {
+    title: page.seo.title,
+    description: page.seo.description,
+    alternates: {
+      canonical,
+      languages: {
+        es: getLocalizedPath("es", pageKey),
+        en: getLocalizedPath("en", pageKey)
+      }
+    },
+    openGraph: {
+      title: page.seo.title,
+      description: page.seo.description,
+      locale: getLocaleCode(locale),
+      type: "website",
+      url: canonical,
+      images: [
+        {
+          url: "/brand/og-image.svg",
+          width: 1200,
+          height: 630,
+          alt: content.siteName
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.seo.title,
+      description: page.seo.description,
+      images: ["/brand/og-image.svg"]
+    }
+  };
+}
+
+export default async function LocalizedPage({ params }: LocalizedPageProps) {
+  const resolvedParams = await params;
+
+  if (!isLocale(resolvedParams.lang)) {
+    notFound();
+  }
+
+  const locale = resolvedParams.lang;
+  const pageKey = resolvePageKey(locale, resolvedParams.slug);
+
+  if (!pageKey) {
+    notFound();
+  }
+
+  const content = getLocaleContent(locale);
+
+  return (
+    <SiteLayout locale={locale} pageKey={pageKey} content={content}>
+      <PageContent locale={locale} pageKey={pageKey} content={content} />
+    </SiteLayout>
+  );
+}
