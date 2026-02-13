@@ -12,8 +12,8 @@ interface HomePageProps {
 export function HomePage({ locale, page }: HomePageProps) {
   return (
     <div className="grid gap-7">
-      <section className="reveal overflow-hidden rounded-[1.75rem] border border-brand-300 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 px-8 pb-8 pt-6 text-white shadow-soft md:px-12 md:pb-12 md:pt-8">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+      <section className="reveal overflow-hidden rounded-[1.75rem] border border-brand-300 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 px-8 pb-10 pt-8 text-white shadow-soft md:px-12 md:pb-12 md:pt-10">
+        <div className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:items-end lg:gap-10">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">{page.hero.subtitle}</p>
             <h1 className="mt-3 max-w-3xl font-heading text-4xl font-black leading-tight md:text-5xl">
@@ -33,21 +33,10 @@ export function HomePage({ locale, page }: HomePageProps) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur">
+          <div className="rounded-3xl border border-white/20 bg-white/10 p-7 backdrop-blur md:p-8 lg:ml-auto lg:max-w-[34rem]">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-200">{page.whatWeDo.eyebrow}</p>
-            <h2 className="mt-2 font-heading text-2xl font-bold">{page.whatWeDo.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-brand-100">{page.whatWeDo.body}</p>
-
-            <div className="mt-6 grid gap-2">
-              {page.pillars.items.map((pillar) => (
-                <div
-                  key={pillar.title}
-                  className="rounded-lg border border-white/25 bg-brand-950/20 px-3 py-2 text-sm font-semibold text-white"
-                >
-                  {pillar.title}
-                </div>
-              ))}
-            </div>
+            <h2 className="mt-3 max-w-[16ch] font-heading text-[1.95rem] font-semibold leading-[1.12] tracking-[-0.012em] text-white md:text-[2.25rem] lg:text-[2.4rem]">{page.whatWeDo.title}</h2>
+            <p className="mt-5 max-w-[36ch] text-[0.98rem] leading-[1.65] text-brand-100 md:text-[1.03rem]">{page.whatWeDo.body}</p>
           </div>
         </div>
       </section>

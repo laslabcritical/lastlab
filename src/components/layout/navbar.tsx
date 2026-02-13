@@ -44,7 +44,7 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
               alt="LAST Lab"
               width={1120}
               height={520}
-              className="h-11 w-auto max-w-[240px] sm:h-12 sm:max-w-[270px]"
+              className="h-14 w-auto max-w-[320px] sm:h-16 sm:max-w-[380px] lg:h-[4.5rem] lg:max-w-[460px]"
               priority
             />
           </Link>
