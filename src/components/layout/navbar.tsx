@@ -10,6 +10,7 @@ import {
   type Locale,
   type PageKey
 } from "@/lib/i18n";
+import { withBasePath } from "@/lib/base-path";
 
 interface NavbarProps {
   locale: Locale;
@@ -38,7 +39,7 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
       <div className="container-shell py-4">
         <div className="flex items-center gap-4">
           <Link href={getLocalizedPath(locale, "home")} className="flex min-w-0 items-center gap-3">
-            <Image src="/brand/logo.svg" alt="LAST Lab" width={42} height={42} className="rounded-full bg-white p-1" priority />
+            <Image src={withBasePath("/brand/logo.svg")} alt="LAST Lab" width={42} height={42} className="rounded-full bg-white p-1" priority />
             <div className="min-w-0">
               <p className="truncate font-heading text-lg font-bold text-ink">LAST Lab</p>
               <p className="truncate text-xs font-medium uppercase tracking-[0.15em] text-brand-600">

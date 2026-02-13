@@ -10,6 +10,7 @@ import {
   isLocale,
   type Locale
 } from "@/lib/i18n";
+import { withBasePath } from "@/lib/base-path";
 
 export const dynamicParams = false;
 
@@ -37,7 +38,7 @@ export async function generateMetadata({
   const locale = resolvedParams.lang;
   const content = getLocaleContent(locale);
   const page = content.pages.home;
-  const canonical = getLocalizedPath(locale, "home");
+  const canonical = withBasePath(getLocalizedPath(locale, "home"));
 
   return {
     title: page.seo.title,
@@ -45,8 +46,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        es: getLocalizedPath("es", "home"),
-        en: getLocalizedPath("en", "home")
+        es: withBasePath(getLocalizedPath("es", "home")),
+        en: withBasePath(getLocalizedPath("en", "home"))
       }
     },
     openGraph: {
@@ -57,7 +58,7 @@ export async function generateMetadata({
       url: canonical,
       images: [
         {
-          url: "/brand/og-image.svg",
+          url: withBasePath("/brand/og-image.svg"),
           width: 1200,
           height: 630,
           alt: content.siteName
@@ -68,7 +69,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: page.seo.title,
       description: page.seo.description,
-      images: ["/brand/og-image.svg"]
+      images: [withBasePath("/brand/og-image.svg")]
     }
   };
 }

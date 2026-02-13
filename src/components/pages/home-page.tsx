@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { getLocalizedPath, type Locale } from "@/lib/i18n";
+import { withBasePath } from "@/lib/base-path";
 
 interface HomePageProps {
   locale: Locale;
@@ -17,7 +18,7 @@ export function HomePage({ locale, page }: HomePageProps) {
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-end">
           <div>
             <Image
-              src="/brand/logo.svg"
+              src={withBasePath("/brand/logo.svg")}
               alt="LAST Lab logo"
               width={76}
               height={76}

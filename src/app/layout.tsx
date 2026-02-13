@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Merriweather, Source_Sans_3 } from "next/font/google";
 import "@/app/globals.css";
 import { getSiteUrl } from "@/lib/seo";
+import { withBasePath } from "@/lib/base-path";
 
 const heading = Merriweather({
   subsets: ["latin"],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/brand/og-image.svg",
+        url: withBasePath("/brand/og-image.svg"),
         width: 1200,
         height: 630,
         alt: "LAST Lab for Critical AI"
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/brand/og-image.svg"]
+    images: [withBasePath("/brand/og-image.svg")]
   }
 };
 

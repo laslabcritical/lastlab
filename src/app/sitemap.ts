@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllLocalizedPaths } from "@/lib/i18n";
+import { withBasePath } from "@/lib/base-path";
 import { getSiteUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
@@ -9,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const localized = getAllLocalizedPaths().map((path) => ({
-    url: new URL(path, siteUrl).toString(),
+    url: new URL(withBasePath(path), siteUrl).toString(),
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: path.endsWith("/es") || path.endsWith("/en") ? 1 : 0.8
@@ -17,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: new URL("/", siteUrl).toString(),
+      url: new URL(withBasePath("/"), siteUrl).toString(),
       lastModified: now,
       changeFrequency: "monthly",
       priority: 1
