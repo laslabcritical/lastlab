@@ -1,10 +1,12 @@
 import type { LocaleContent } from "@/content/schema";
+import { khipuxQuito2026 } from "@/content/khipux-quito-2026";
 
 export const esContent: LocaleContent = {
   siteName: "LAST Lab for Critical AI",
   siteSubtitle: "Latin American SocioTechnical Laboratory for Critical AI & Digital Technologies",
   navLabels: {
     home: "Inicio",
+    khipuxQuito: "KHIPUx Quito 2026",
     about: "Sobre el Lab",
     network: "Red",
     research: "Investigación y Acción",
@@ -24,6 +26,7 @@ export const esContent: LocaleContent = {
   },
   footerLinks: ["contact", "governance", "cooperation"],
   pages: {
+    khipuxQuito: khipuxQuito2026,
     home: {
       seo: {
         title: "Inicio",

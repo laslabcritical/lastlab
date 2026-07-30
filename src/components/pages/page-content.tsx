@@ -5,6 +5,7 @@ import { ContactPage } from "@/components/pages/contact-page";
 import { CooperationPage } from "@/components/pages/cooperation-page";
 import { GovernancePage } from "@/components/pages/governance-page";
 import { HomePage } from "@/components/pages/home-page";
+import { KhipuxQuitoPage } from "@/components/pages/khipux-quito-page";
 import { NetworkPage } from "@/components/pages/network-page";
 import { PublicationsPage } from "@/components/pages/publications-page";
 import { ResearchPage } from "@/components/pages/research-page";
@@ -20,6 +21,8 @@ export function PageContent({ locale, pageKey, content }: PageContentProps) {
   switch (pageKey) {
     case "home":
       return <HomePage locale={locale} page={content.pages.home} />;
+    case "khipuxQuito":
+      return <KhipuxQuitoPage locale={locale} page={content.pages.khipuxQuito} />;
     case "about":
       return <AboutPage page={content.pages.about} />;
     case "network":

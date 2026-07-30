@@ -176,6 +176,185 @@ export interface ContactPageContent {
   }>;
 }
 
+export interface EventContactFields {
+  email: string | null;
+  formUrl: string | null;
+  instagramUrl: string | null;
+  linkedinUrl: string | null;
+}
+
+export type CallForProposalsStatus = "draft" | "open" | "closed" | "results";
+
+export interface EventDateField {
+  label: string;
+  date: string;
+  display: string;
+}
+
+export interface OpenCallStatusContent {
+  label: string;
+  body: string;
+  actionLabel: string;
+}
+
+export interface OpenCallModality {
+  title: string;
+  description: string;
+  detailsTitle: string;
+  details: string[];
+  note?: string;
+}
+
+export interface KhipuxQuitoPageContent {
+  seo: SeoFields;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  dates: {
+    start: string;
+    end: string;
+    display: string;
+  };
+  location: {
+    city: string;
+    country: string;
+    firstVenue: string;
+    secondVenue: string | null;
+  };
+  format: string;
+  duration: string;
+  status: {
+    program: "in_progress";
+    registration: "coming_soon";
+  };
+  links: {
+    registrationUrl: string | null;
+    fullProgramUrl: string | null;
+  };
+  eventContact: EventContactFields;
+  anchors: Array<{
+    id: string;
+    label: string;
+  }>;
+  hero: {
+    eyebrow: string;
+    primaryAction: string;
+    secondaryAction: string;
+  };
+  overview: {
+    title: string;
+    paragraphs: string[];
+  };
+  objectives: {
+    title: string;
+    items: string[];
+  };
+  topics: ContentCard[];
+  eventFormat: {
+    title: string;
+    body: string;
+    items: string[];
+  };
+  program: {
+    title: string;
+    body: string;
+    items: ContentCard[];
+    closing: string;
+    actionLabel: string;
+  };
+  speakers: {
+    title: string;
+    people: Array<{
+      name: string;
+      institution: string;
+      biography: string;
+      externalUrl: string | null;
+    }>;
+    pendingTitle: string;
+    pendingBody: string;
+  };
+  openCall: {
+    status: CallForProposalsStatus;
+    openingDate: EventDateField;
+    deadline: EventDateField;
+    notificationDate: EventDateField;
+    confirmationDeadline: EventDateField;
+    submissionUrl: string | null;
+    guidelinesUrl: string | null;
+    contactEmail: string | null;
+    statusContent: Record<CallForProposalsStatus, OpenCallStatusContent>;
+    title: string;
+    paragraphs: string[];
+    datesTitle: string;
+    draftDatesLabel: string;
+    modalitiesTitle: string;
+    modalities: OpenCallModality[];
+    topicsTitle: string;
+    topics: string[];
+    topicsNote: string;
+    participantsTitle: string;
+    participants: string[];
+    participantsNote: string;
+    languagesTitle: string;
+    languages: string[];
+    languagesNote: string;
+    participationModeTitle: string;
+    participationModeBody: string;
+    participationModeNote: string;
+    selectionCriteriaTitle: string;
+    selectionCriteria: string[];
+    selectionCriteriaNote: string;
+    googleFormTitle: string;
+    googleFormBody: string;
+    googleFormFields: Array<{
+      title: string;
+      items: string[];
+    }>;
+  };
+  registration: {
+    title: string;
+    body: string;
+    modalitiesTitle: string;
+    modalities: string[];
+    statusLabel: string;
+    futureFields: string[];
+  };
+  organization: {
+    title: string;
+    organizers: Array<{
+      name: string;
+      logoSrc: string | null;
+      placeholder: string;
+    }>;
+    supportTitle: string;
+    supportText: string;
+  };
+  lastLab: {
+    title: string;
+    paragraphs: string[];
+    actionLabel: string;
+    actionPage: PageKey;
+  };
+  community: {
+    title: string;
+    paragraphs: string[];
+    actionLabel: string;
+  };
+  contact: {
+    title: string;
+    body: string;
+  };
+  eventFooter: {
+    title: string;
+    subtitle: string;
+    location: string;
+    dates: string;
+    organizationText: string;
+    supportText: string;
+  };
+}
+
 export interface LocaleContent {
   siteName: string;
   siteSubtitle: string;
@@ -188,6 +367,7 @@ export interface LocaleContent {
   footerLinks: PageKey[];
   pages: {
     home: HomePageContent;
+    khipuxQuito: KhipuxQuitoPageContent;
     about: AboutPageContent;
     network: NetworkPageContent;
     research: ResearchPageContent;

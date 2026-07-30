@@ -69,9 +69,11 @@ export async function generateMetadata({
   const content = getLocaleContent(locale);
   const page = content.pages[pageKey];
   const canonical = withBasePath(getLocalizedPath(locale, pageKey));
+  const title =
+    pageKey === "khipuxQuito" ? { absolute: page.seo.title } : page.seo.title;
 
   return {
-    title: page.seo.title,
+    title,
     description: page.seo.description,
     alternates: {
       canonical,

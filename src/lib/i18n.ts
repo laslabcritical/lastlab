@@ -4,6 +4,7 @@ export type Locale = (typeof LOCALES)[number];
 
 export const PAGE_KEYS = [
   "home",
+  "khipuxQuito",
   "about",
   "network",
   "research",
@@ -19,6 +20,7 @@ export type PageKey = (typeof PAGE_KEYS)[number];
 export const ROUTES: Record<Locale, Record<PageKey, string>> = {
   es: {
     home: "",
+    khipuxQuito: "khipux-quito",
     about: "sobre",
     network: "red",
     research: "investigacion",
@@ -30,6 +32,7 @@ export const ROUTES: Record<Locale, Record<PageKey, string>> = {
   },
   en: {
     home: "",
+    khipuxQuito: "khipux-quito",
     about: "about",
     network: "network",
     research: "research",
@@ -43,6 +46,7 @@ export const ROUTES: Record<Locale, Record<PageKey, string>> = {
 
 export const NAV_ORDER: PageKey[] = [
   "home",
+  "khipuxQuito",
   "about",
   "network",
   "research",

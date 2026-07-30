@@ -18,6 +18,23 @@ interface NavbarProps {
   content: LocaleContent;
 }
 
+const DESKTOP_LABELS: Partial<Record<Locale, Partial<Record<PageKey, string>>>> = {
+  es: {
+    khipuxQuito: "KHIPUx 2026",
+    research: "Investigación",
+    publications: "Public.",
+    governance: "Gobernanza",
+    cooperation: "Coop."
+  },
+  en: {
+    khipuxQuito: "KHIPUx 2026",
+    research: "Research",
+    publications: "Public.",
+    governance: "Governance",
+    cooperation: "Coop."
+  }
+};
+
 export function Navbar({ locale, pageKey, content }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,6 +43,7 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
       NAV_ORDER.map((key) => ({
         key,
         label: content.navLabels[key],
+        desktopLabel: DESKTOP_LABELS[locale]?.[key] ?? content.navLabels[key],
         href: getLocalizedPath(locale, key)
       })),
     [content.navLabels, locale]
@@ -44,7 +62,7 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
               alt="LAST Lab"
               width={600}
               height={203}
-              className="h-14 w-auto max-w-[320px] sm:h-16 sm:max-w-[380px] lg:h-[4.5rem] lg:max-w-[460px]"
+              className="h-12 w-auto max-w-[260px] sm:h-14 sm:max-w-[320px] xl:h-14 xl:max-w-[320px]"
               priority
             />
           </Link>
@@ -56,13 +74,15 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`rounded-md px-3 py-2 text-sm font-semibold transition ${
+                  title={item.label}
+                  aria-label={item.label}
+                  className={`shrink-0 whitespace-nowrap rounded-md px-2.5 py-2 text-[0.82rem] font-semibold leading-none transition 2xl:px-3 2xl:text-sm ${
                     active
                       ? "bg-brand-700 text-white"
                       : "text-ink hover:bg-brand-100 hover:text-brand-900"
                   }`}
                 >
-                  {item.label}
+                  {item.desktopLabel}
                 </Link>
               );
             })}
@@ -70,7 +90,7 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
 
           <Link
             href={languageHref}
-            className="hidden rounded-md border border-brand-300 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700 transition hover:bg-brand-100 xl:inline-flex"
+            className="hidden shrink-0 rounded-md border border-brand-300 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700 transition hover:bg-brand-100 xl:inline-flex"
           >
             {targetLocale.toUpperCase()}
           </Link>
