@@ -1,13 +1,15 @@
 import type { LocaleContent } from "@/content/schema";
 import { khipuxQuito2026 } from "@/content/khipux-quito-2026";
+import { esPeople } from "@/content/people";
 
 export const esContent: LocaleContent = {
-  siteName: "LAST Lab for Critical AI",
-  siteSubtitle: "Latin American SocioTechnical Laboratory for Critical AI & Digital Technologies",
+  siteName: "LAST Lab for Critical AI & Digital Technologies",
+  siteSubtitle:
+    "Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies",
   navLabels: {
     home: "Inicio",
     khipuxQuito: "KHIPUx Quito 2026",
-    about: "Sobre el Lab",
+    about: "Sobre LAST Lab",
     network: "Red",
     research: "Investigación y Acción",
     publications: "Publicaciones",
@@ -19,8 +21,8 @@ export const esContent: LocaleContent = {
   ui: {
     menuLabel: "Menú",
     switchTo: {
-      es: "Ver en Español",
-      en: "Ver en Inglés"
+      es: "Ver en español",
+      en: "Ver en inglés"
     },
     footerRights: "Todos los derechos reservados"
   },
@@ -29,16 +31,16 @@ export const esContent: LocaleContent = {
     khipuxQuito: khipuxQuito2026,
     home: {
       seo: {
-        title: "Inicio",
+        title: "LAST Lab for Critical AI & Digital Technologies",
         description:
-          "Red latinoamericana multinodal de investigación, innovación e incidencia en inteligencia artificial y tecnologías digitales."
+          "Red multinodal latinoamericana de investigación crítica, experimentación y acción sobre inteligencia artificial y tecnologías digitales."
       },
       hero: {
-        title: "LAST Lab for Critical AI",
+        title: "LAST Lab for Critical AI & Digital Technologies",
         subtitle:
-          "Red latinoamericana multinodal de investigación, innovación e incidencia en inteligencia artificial.",
+          "Red multinodal latinoamericana de investigación crítica, experimentación y acción sobre inteligencia artificial y tecnologías digitales.",
         description:
-          "Repensamos la inteligencia artificial como mediación socio-técnica que transforma los entornos de conocimiento, poder y reproducción social en América Latina y el Sur Global.",
+          "Investigamos la inteligencia artificial y las tecnologías digitales como configuraciones sociotécnicas que reorganizan conocimiento, poder, trabajo, instituciones y formas de vida en América Latina y el Sur Global.",
         actions: [
           { label: "Explorar la Red", page: "network" },
           { label: "Investigación y Acción", page: "research" }
@@ -48,13 +50,13 @@ export const esContent: LocaleContent = {
         eyebrow: "Problema estratégico",
         title: "¿Por qué una mirada latinoamericana sobre la IA?",
         body:
-          "La expansión de la inteligencia artificial está reconfigurando instituciones, economías y formas de vida en la región. Sin embargo, los marcos conceptuales, regulatorios y tecnológicos que estructuran esta transformación se producen mayoritariamente fuera de América Latina. El LAST Lab surge para producir conocimiento situado, desarrollar alternativas tecnológicas y contribuir estratégicamente al debate público regional."
+          "La expansión de la inteligencia artificial está reconfigurando instituciones, economías y formas de vida en la región. Buena parte de las infraestructuras, modelos, marcos regulatorios y categorías con las que se organiza esta transformación se producen fuera de América Latina. LAST Lab busca generar conocimiento situado, investigar las relaciones de poder que atraviesan estos procesos, experimentar con alternativas y contribuir al debate público y a la construcción de capacidades regionales."
       },
       whatWeDo: {
         eyebrow: "Qué hacemos",
-        title: "Investigación, prototipado e incidencia",
+        title: "Investigación, experimentación e incidencia",
         body:
-          "El LAST Lab combina producción académica rigurosa, experimentación tecnológica y elaboración de propuestas estratégicas."
+          "LAST Lab articula producción académica rigurosa, análisis técnico, experimentación tecnológica, formación e incidencia pública desde una perspectiva crítica, interdisciplinaria y latinoamericana."
       },
       pillars: {
         title: "Pilares",
@@ -62,66 +64,66 @@ export const esContent: LocaleContent = {
           {
             title: "Investigación",
             description:
-              "Investigación crítica interdisciplinaria que integra filosofía, ciencias sociales y análisis técnico."
+              "Investigación crítica interdisciplinaria sobre inteligencia artificial, tecnologías digitales, poder, desigualdades, trabajo, infraestructura y dependencia tecnológica."
           },
           {
-            title: "Innovación",
+            title: "Experimentación e innovación",
             description:
-              "Desarrollo y prototipado de IA inclusiva, feminista y crítica."
+              "Desarrollo, evaluación y experimentación con tecnologías y modelos alternativos, inclusivos, feministas y críticos."
           },
           {
             title: "Incidencia",
             description:
-              "Policy briefs, informes estratégicos y materiales orientados a decisores públicos, organismos multilaterales y actores privados."
+              "Informes estratégicos, policy briefs y materiales orientados a debates públicos, regulatorios, institucionales y sociales."
           },
           {
             title: "Formación",
             description:
-              "Cursos, seminarios y espacios de capacitación en ética, política y crítica de la IA."
+              "Cursos, seminarios y espacios de capacitación sobre ética, política, gobernanza y crítica de la inteligencia artificial y las tecnologías digitales."
           }
         ]
       },
       network: {
-        title: "Red binacional",
+        title: "Red multinodal",
         body:
-          "Una red multinodal con nodos fundacionales en Ecuador y Argentina que articula universidad y sociedad civil bajo un modelo de gobernanza flexible y resiliente."
+          "LAST Lab es una red autónoma y multinodal, de origen binacional, con nodos institucionales fundacionales en Ecuador y Argentina e integración de organizaciones de la sociedad civil. Su arquitectura permite incorporar nuevos nodos en América Latina y otras regiones sin perder su foco regional."
       },
       foundation: {
-        title: "Fundación",
+        title: "Origen",
         body:
-          "Concebido en 2024 por iniciativa académica del Dr. Horacio Correa Lucero y con el apoyo intelectual e institucional fundacional de la Dra. Cheryl Martens (IEAD-USFQ)."
+          "LAST Lab comenzó a gestarse en 2024 por iniciativa de Horacio Correa Lucero. Desde sus primeras etapas, Cheryl Martens se incorporó al desarrollo de la iniciativa y a su articulación institucional desde el Instituto de Estudios Avanzados en Desigualdades de la Universidad San Francisco de Quito. Durante la etapa fundacional se sumó Diversa, ampliando la articulación entre investigación académica, capacidades técnicas y sociedad civil. Sobre esa base, LAST Lab se consolidó como una red multinodal."
       },
       cta: {
-        title: "Colaborar con el LAST Lab",
+        title: "Colaborar con LAST Lab",
         actions: [
           { label: "Proponer una alianza", page: "cooperation" },
-          { label: "Solicitar información", page: "contact" }
+          { label: "Canales institucionales", page: "contact" }
         ]
       }
     },
     about: {
       seo: {
-        title: "Sobre el Lab",
+        title: "Sobre LAST Lab",
         description:
-          "Infraestructura académica multinodal para el estudio crítico y la formulación estratégica de la inteligencia artificial y las tecnologías digitales."
+          "Naturaleza, misión, visión y origen de LAST Lab como red multinodal autónoma de investigación crítica sobre inteligencia artificial y tecnologías digitales."
       },
       intro:
-        "El LAST Lab for Critical AI & Digital Technologies (Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies) es una infraestructura académica multinodal dedicada al estudio crítico y la formulación estratégica de la inteligencia artificial y las tecnologías digitales como configuraciones sociotécnicas que reestructuran instituciones, economías y formas de vida. Creado en 2024 por iniciativa académica del Dr. Horacio Correa Lucero, el laboratorio cuenta con aval institucional de la Universidad Nacional Arturo Jauretche (UNAJ), donde funciona en el ámbito del Instituto de Ciencias Sociales y Administración (ICSyA). Su desarrollo se articula de manera binacional con el IEAD-USFQ (Ecuador) y se proyecta como plataforma regional con inserción internacional. El LAST Lab se propone incidir en agendas académicas internacionales mediante producción teórica de alto nivel, cooperación científica y participación activa en redes, congresos y publicaciones. En paralelo, orienta su crecimiento institucional al desarrollo de proyectos con financiamiento competitivo, consolidando capacidades para presentar y ejecutar propuestas en convocatorias internacionales y esquemas de cooperación interinstitucional. Desde un enfoque crítico, el laboratorio entiende la tecnología no como herramienta neutral sino como entramado de mediaciones que organiza valor, poder y subjetividad. En este marco, desarrolla una línea analítica sociobiotécnica para describir impactos materiales, institucionales y bio-sociales de la digitalización, sin reducirlos a \"efectos\" secundarios.",
+        "LAST Lab for Critical AI & Digital Technologies (Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies) es una red multinodal, interdisciplinaria y autónoma de cooperación académica y sociotécnica. Investiga críticamente la inteligencia artificial y las tecnologías digitales como configuraciones que reestructuran los entornos de acción, conocimiento y reproducción social en América Latina y el Sur Global. LAST Lab articula investigación académica, análisis técnico, experimentación tecnológica, formación e incidencia pública, combinando perspectivas de las ciencias sociales, la filosofía, los estudios de ciencia y tecnología y otras áreas técnicas e interdisciplinarias.",
       sections: [
         {
           title: "Origen",
           body:
-            "El laboratorio se constituye como red académica autónoma y multinodal, con nodos fundacionales en UNAJ (Argentina) e IEAD-USFQ (Ecuador), y articulación con actores de la sociedad civil en Quito. Integra investigadoras e investigadores vinculados a espacios académicos asociados al proyecto, promoviendo cooperación regional, intercambio internacional y crecimiento institucional progresivo."
+            "LAST Lab comenzó a gestarse en 2024 por iniciativa de Horacio Correa Lucero. Desde sus primeras etapas, Cheryl Martens se incorporó al desarrollo de la iniciativa y a su articulación institucional desde el IEAD–USFQ. Durante la etapa fundacional se incorporó Diversa, fortaleciendo la articulación entre investigación académica, capacidades técnicas y sociedad civil. La red se estructuró con nodos institucionales fundacionales en IEAD–USFQ, Ecuador, e ICSyA–UNAJ, Argentina."
         },
         {
           title: "Misión",
           body:
-            "Consolidar un espacio crítico interdisciplinario para la investigación teórica avanzada y la formación especializada en inteligencia artificial y tecnologías digitales, desarrollando marcos analíticos propios y proyectos orientados a fortalecer capacidades institucionales, cooperación internacional y financiamiento competitivo."
+            "Constituir un espacio crítico, interdisciplinario y multinodal, arraigado en América Latina y el Sur Global, para investigar, experimentar y contribuir a transformar la inteligencia artificial y las tecnologías digitales; producir conocimiento situado sobre sus dimensiones éticas, políticas, sociales, económicas y culturales; fortalecer capacidades, desarrollar alternativas tecnológicas e incidir en debates y políticas públicas y privadas."
         },
         {
           title: "Visión",
           body:
-            "Constituirse como referente latinoamericano con proyección global en teoría crítica de la tecnología, inteligencia artificial y análisis sociotécnico/sociobiotécnico, capaz de incidir en debates académicos internacionales, nutrir agendas públicas y contribuir a la formulación estratégica de la transformación digital en América Latina y el Sur Global."
+            "Consolidar LAST Lab como un espacio de referencia regional e internacional para la investigación crítica, la formación especializada y la elaboración de propuestas estratégicas sobre inteligencia artificial y tecnologías digitales, fortaleciendo capacidades y redes desde América Latina y el Sur Global."
         }
       ]
     },
@@ -129,26 +131,46 @@ export const esContent: LocaleContent = {
       seo: {
         title: "Red",
         description:
-          "Estructura multinodal, nodos fundacionales y modelo de gobernanza del LAST Lab."
+          "Nodos institucionales fundacionales, nodo organizacional y equipo de LAST Lab como red multinodal autónoma."
       },
       intro:
-        "El LAST Lab funciona como una red descentralizada de nodos institucionales, organizacionales e individuales.",
+        "LAST Lab funciona como una red autónoma y multinodal de cooperación académica, sociotécnica y organizacional, con foco prioritario en América Latina y el Sur Global.",
       structure: {
         title: "Estructura multinodal",
         body:
-          "Este modelo garantiza flexibilidad, resiliencia y expansión regional, evitando centralismos y permitiendo continuidad más allá de cambios institucionales o personales."
+          "La red integra nodos institucionales, organizacionales e individuales bajo principios compartidos de investigación crítica, justicia social, autonomía intelectual y cooperación. Este modelo permite crecer sin perder articulación, memoria institucional ni foco regional."
       },
       seats: {
-        title: "Sedes formales y alcance",
+        title: "Sedes académicas y alcance",
         body:
-          "De acuerdo con el Acta Constitutiva, IEAD-USFQ y UNAJ son sedes formales del Lab. La red mantiene foco en América Latina y el Sur Global, con apertura a nuevos nodos internacionales alineados con su enfoque crítico."
+          "El IEAD–USFQ y el ICSyA–UNAJ son los nodos institucionales fundacionales de LAST Lab y funcionan como sedes académicas de la red en sus respectivas instituciones. Esta articulación no altera la autonomía organizativa de LAST Lab. La red puede incorporar nuevos nodos en América Latina y otras regiones, manteniendo su foco prioritario en América Latina y el Sur Global."
       },
       nodes: {
-        title: "Nodos fundacionales",
-        items: [
-          "IEAD - Universidad San Francisco de Quito (Ecuador)",
-          "ICSyA - Universidad Nacional Arturo Jauretche (Argentina)",
-          "Diversa (Quito, organización de la sociedad civil)"
+        title: "Nodos de la red",
+        institutionalTitle: "Nodos institucionales fundacionales",
+        institutional: [
+          {
+            name: "IEAD–USFQ",
+            institution:
+              "Instituto de Estudios Avanzados en Desigualdades, Universidad San Francisco de Quito",
+            location: "Ecuador"
+          },
+          {
+            name: "ICSyA–UNAJ",
+            institution:
+              "Instituto de Ciencias Sociales y Administración, Universidad Nacional Arturo Jauretche",
+            location: "Argentina"
+          }
+        ],
+        organizationalTitle:
+          "Nodo organizacional integrante desde la etapa fundacional",
+        organizational: [
+          {
+            name: "Diversa",
+            location: "Quito, Ecuador",
+            description:
+              "Organización de la sociedad civil que fortalece la articulación entre capacidades técnicas, perspectivas críticas y acción pública."
+          }
         ]
       },
       nodeTypes: {
@@ -157,79 +179,63 @@ export const esContent: LocaleContent = {
           {
             title: "Nodo institucional",
             description:
-              "Universidades, institutos o centros de investigación que albergan o participan en el Lab."
+              "Universidad, instituto o centro de investigación que integra la red y puede funcionar como sede académica cuando así sea reconocido."
           },
           {
             title: "Nodo organizacional",
             description:
-              "Organizaciones sociales, ONG o colectivos que se integran en la red multinodal."
+              "ONG, colectivo u organización de la sociedad civil que participa en la red desde sus capacidades, agendas y principios compartidos."
           },
           {
             title: "Nodo individual",
             description:
-              "Personas que participan a título personal, constituyendo un nodo propio dentro de la red."
+              "Persona que se incorpora a título personal y participa como unidad propia dentro de la red multinodal."
           }
         ]
       },
-      participants: {
-        title: "Nodos participantes (registro preliminar)",
-        items: [
-          {
-            node: "USFQ",
-            country: "Ecuador",
-            participants: "1 integrante"
-          },
-          {
-            node: "UNAJ",
-            country: "Argentina",
-            participants: "3 integrantes"
-          },
-          {
-            node: "Diversa",
-            country: "Ecuador",
-            participants: "1 integrante"
-          }
-        ]
+      people: {
+        title: "Equipo y miembros",
+        items: esPeople
       },
       governance: {
         title: "Modelo de gobernanza",
         body:
-          "El LAST Lab cuenta con una Dirección General responsable de la conducción estratégica y académica, y con un Consejo Asesor Multinodal (CAM) integrado por representantes de los nodos. Este modelo combina liderazgo definido con consulta multinodal para asegurar coherencia institucional y participación en las decisiones estratégicas."
+          "LAST Lab combina Dirección General, direcciones de nodos institucionales y representación de nodos organizacionales con el Consejo Asesor Multinodal (CAM). Este esquema preserva la autonomía organizativa de LAST Lab y, al mismo tiempo, respeta las competencias propias de las instituciones y organizaciones integrantes."
       }
     },
     research: {
       seo: {
         title: "Investigación y Acción",
         description:
-          "Líneas de investigación crítica, prototipado e incidencia estratégica del LAST Lab en América Latina."
+          "Áreas de investigación crítica, experimentación tecnológica e incidencia de LAST Lab sobre inteligencia artificial y tecnologías digitales."
       },
       intro:
-        "El LAST Lab articula investigación crítica, experimentación tecnológica e incidencia estratégica para intervenir en los procesos de diseño, regulación y aplicación de la inteligencia artificial en América Latina.",
+        "LAST Lab articula investigación crítica, experimentación tecnológica, cartografías, producción estratégica y modelos colaborativos para intervenir en debates y prácticas sobre inteligencia artificial y tecnologías digitales en América Latina y el Sur Global.",
       areas: [
         {
           title: "Investigación crítica interdisciplinaria",
           description:
-            "Desarrollamos investigaciones que integran filosofía, ciencias sociales y análisis técnico para comprender la inteligencia artificial como configuración socio-técnica de mediación que reestructura relaciones de poder, conocimiento y reproducción social."
+            "Investigamos la inteligencia artificial y las tecnologías digitales como configuraciones sociotécnicas atravesadas por desigualdades, poder, gobernanza, trabajo, infraestructura y dependencia tecnológica."
         },
         {
-          title: "Prototipado de IA alternativa",
+          title: "Experimentación y alternativas tecnológicas",
           description:
-            "Exploramos y desarrollamos modelos tecnológicos inclusivos, feministas y críticos, experimentando con alternativas al paradigma corporativo dominante."
+            "Investigamos, diseñamos y experimentamos con tecnologías y modelos alternativos, inclusivos, feministas y críticos, sin asumir la neutralidad de los sistemas digitales."
         },
         {
           title: "Cartografías y análisis de datos",
           description:
-            "Diseñamos metodologías para mapear desigualdades en el acceso, diseño, implementación y gobernanza de tecnologías digitales, generando insumos para investigación e incidencia pública."
+            "Desarrollamos metodologías para mapear dinámicas tecnológicas, cadenas de valor, desigualdades, infraestructuras y formas de gobernanza en la región."
         },
         {
           title: "Producción editorial y estratégica",
           description:
-            "Elaboramos policy briefs, informes técnicos, white papers y materiales de orientación destinados a decisores públicos, organismos multilaterales y actores institucionales."
+            "Elaboramos informes, documentos de trabajo, policy briefs y materiales pedagógicos que conectan investigación, debate público y toma de decisiones."
         },
         {
-          title: "Exploración de cooperativas tecnológicas",
+          title: "Modelos organizativos y tecnologías cooperativas",
           description:
-            "Impulsamos el estudio y la experimentación de modelos cooperativos de producción digital para priorizar colaboración, sostenibilidad y beneficio colectivo."
+            "Exploramos formas de organización, cooperación y producción tecnológica que prioricen justicia social, sostenibilidad, autonomía intelectual y beneficio colectivo."
         }
       ]
     },
@@ -237,70 +243,91 @@ export const esContent: LocaleContent = {
       seo: {
         title: "Publicaciones",
         description:
-          "Repositorio editorial del LAST Lab para publicaciones académicas y materiales estratégicos."
+          "Producción académica, estratégica y documentos de trabajo de LAST Lab, con series públicas en desarrollo."
       },
       intro:
-        "El LAST Lab produce y difunde conocimiento académico y estratégico orientado tanto a la comunidad científica como a actores institucionales y públicos.",
+        "LAST Lab está organizando sus líneas de producción académica, estratégica y metodológica. Las series públicas se publicarán cuando existan materiales institucionales listos para circulación.",
       collections: [
         {
-          title: "Publicaciones académicas",
-          status: "Próximamente"
+          title: "Producción académica",
+          description:
+            "Artículos y publicaciones vinculadas a integrantes, proyectos y líneas de investigación de la red.",
+          status: "En desarrollo"
         },
         {
-          title: "Policy briefs",
-          status: "Próximamente"
+          title: "Producción estratégica",
+          description:
+            "Policy briefs, informes y white papers orientados al debate público, institucional y regulatorio.",
+          status: "En desarrollo"
         },
         {
-          title: "White papers",
-          status: "Próximamente"
-        },
-        {
-          title: "Working papers",
-          status: "Próximamente"
-        },
-        {
-          title: "Series editoriales",
-          status: "Próximamente"
+          title: "Documentos de trabajo",
+          description:
+            "Working papers, materiales metodológicos y avances de investigación para discusión especializada.",
+          status: "En desarrollo"
         }
       ],
-      repositoryTitle: "Repositorio descargable",
+      repositoryTitle: "Repositorio público",
       repositoryNote:
-        "La estructura del repositorio descargable está preparada para futuras publicaciones."
+        "Cuando exista un repositorio público verificable, LAST Lab publicará aquí los enlaces y criterios de acceso correspondientes."
     },
     training: {
       seo: {
         title: "Formación",
         description:
-          "Programas de formación y capacitación del LAST Lab en ética, política y crítica de la IA."
+          "Áreas de formación de LAST Lab sobre ética, política, gobernanza y estudios críticos de inteligencia artificial y tecnologías digitales."
       },
       intro:
-        "El LAST Lab desarrolla programas de formación y capacitación orientados a fortalecer capacidades críticas y técnicas en inteligencia artificial y tecnologías digitales en América Latina.",
+        "LAST Lab desarrolla propuestas de formación para fortalecer capacidades críticas, técnicas e interdisciplinarias sobre inteligencia artificial y tecnologías digitales en América Latina.",
       areas: [
-        "Ética y política de la inteligencia artificial",
-        "Estudios críticos de tecnología",
-        "Justicia algorítmica y análisis de desigualdades",
-        "Diseño tecnológico inclusivo y crítico"
+        {
+          title: "Ética, política y gobernanza de la inteligencia artificial",
+          description:
+            "Marcos críticos para analizar decisiones, instituciones, regulaciones y responsabilidades en torno a la IA."
+        },
+        {
+          title: "Estudios críticos de tecnología",
+          description:
+            "Perspectivas sociotécnicas, filosóficas y latinoamericanas para comprender tecnologías digitales en contexto."
+        },
+        {
+          title: "Justicia algorítmica, desigualdades y poder",
+          description:
+            "Herramientas conceptuales y metodológicas para estudiar sesgos, exclusiones, asimetrías y disputas de poder."
+        },
+        {
+          title: "Métodos sociotécnicos y análisis crítico de IA",
+          description:
+            "Aproximaciones para investigar sistemas, datos, infraestructuras, trabajo y condiciones de implementación."
+        },
+        {
+          title: "Diseño y experimentación tecnológica inclusiva y crítica",
+          description:
+            "Criterios para imaginar, evaluar y experimentar alternativas tecnológicas compatibles con justicia social."
+        }
       ],
       catalogStatus:
-        "Catálogo de cursos en preparación. Próximamente se publicarán cohortes, contenidos y cronogramas."
+        "El catálogo de cursos se encuentra en preparación. LAST Lab publicará contenidos, cronogramas y cohortes cuando estén formalmente definidos."
     },
     governance: {
       seo: {
         title: "Gobernanza",
         description:
-          "Estructura de gobernanza, dirección y consejo asesor multinodal del LAST Lab."
+          "Estructura de gobernanza, principios y claves estatutarias de LAST Lab como red multinodal autónoma."
       },
       intro:
-        "El LAST Lab cuenta con una estructura de gobernanza que combina dirección estratégica definida y participación multinodal, garantizando coherencia institucional, transparencia y capacidad de expansión regional e internacional.",
+        "LAST Lab cuenta con una estructura de gobernanza que combina conducción estratégica y articulación multinodal, preservando su autonomía organizativa y las competencias propias de las instituciones y organizaciones que integran la red.",
       principlesTitle: "Principios rectores",
       principles:
-        "Su funcionamiento se rige por Estatutos propios y por principios de ética académica, autonomía intelectual, inclusión, justicia social, no discriminación, antiacoso, protección de datos y transparencia institucional.",
+        "El funcionamiento de LAST Lab se orienta por ética académica, justicia social, inclusión, no discriminación, prevención del acoso, protección de datos, autonomía intelectual, transparencia e independencia frente a condicionamientos externos.",
       statutesNotesTitle: "Claves estatutarias",
       statutesNotes: [
-        "El CAM es un órgano consultivo y no vinculante, salvo en los casos expresamente previstos por Estatuto.",
-        "La lengua oficial de trabajo es el español; la versión en inglés opera como traducción de cortesía.",
-        "La propiedad intelectual se reconoce por contribución efectiva, con preferencia por acceso abierto cuando sea posible.",
-        "Cada proyecto define su entidad administradora y se publica un resumen anual de financiamiento y ejecución agregada."
+        "LAST Lab es una red multinodal autónoma.",
+        "LAST Lab puede constituirse como persona jurídica propia.",
+        "Mientras no cuente con personería jurídica, los proyectos que requieran administración jurídica o financiera pueden ejecutarse mediante entidades administradoras elegidas caso por caso.",
+        "Los Estatutos de LAST Lab no sustituyen ni modifican las competencias o normas de las instituciones y organizaciones integrantes.",
+        "El español es el idioma oficial de trabajo y el inglés funciona como traducción de cortesía.",
+        "Existe preferencia por acceso abierto cuando sea posible."
       ],
       leadershipTitle: "Estructura de gobernanza",
       leadership: [
@@ -309,114 +336,99 @@ export const esContent: LocaleContent = {
           person: "Dr. Horacio Correa Lucero"
         },
         {
-          role: "Co-fundación y Dirección de Nodo IEAD-USFQ",
-          person: "Dra. Cheryl Martens - IEAD-USFQ"
+          role: "Dirección del nodo IEAD–USFQ",
+          person: "Dra. Cheryl Martens",
+          affiliation:
+            "Instituto de Estudios Avanzados en Desigualdades, Universidad San Francisco de Quito"
         },
         {
-          role: "Dirección de Nodo UNAJ",
-          person: "Dr. Horacio Correa Lucero - UNAJ"
+          role: "Dirección del nodo ICSyA–UNAJ",
+          person: "Dr. Horacio Correa Lucero",
+          affiliation:
+            "Instituto de Ciencias Sociales y Administración, Universidad Nacional Arturo Jauretche"
         },
         {
-          role: "Representación Nodo Diversa",
-          person: "Dra. Diana Mosquera - Diversa (Quito)"
+          role: "Representación del nodo Diversa",
+          person: "Diana Mosquera",
+          affiliation: "Diversa, Quito"
         }
       ],
-      membersTitle: "Miembros activos (registro preliminar)",
-      members: [
-        {
-          name: "Cheryl Martens",
-          role: "Directora de nodo",
-          node: "USFQ"
-        },
-        {
-          name: "Horacio Correa Lucero",
-          role: "Director General y director de nodo",
-          node: "UNAJ"
-        },
-        {
-          name: "Gabriel Perdomo",
-          role: "Miembro institucional",
-          node: "UNAJ"
-        },
-        {
-          name: "Mónica Casanova",
-          role: "Miembro institucional",
-          node: "UNAJ"
-        },
-        {
-          name: "Diana Mosquera",
-          role: "Miembro organizacional",
-          node: "Diversa"
-        }
-      ],
+      membersTitle: "Personas de la red",
+      members: esPeople,
       cam: {
         title: "Consejo Asesor Multinodal (CAM)",
-        body: "Órgano consultivo integrado por representantes de los nodos del Lab."
+        body:
+          "Órgano de articulación y consulta integrado por representantes de los nodos de LAST Lab. Acompaña a la Dirección General, formula recomendaciones y participa de manera vinculante en los casos específicamente previstos por los Estatutos."
       }
     },
     cooperation: {
       seo: {
         title: "Cooperación",
         description:
-          "Alianzas académicas, institucionales y sociales para investigación crítica y responsabilidad pública en IA."
+          "Alianzas académicas, sociales e institucionales compatibles con la autonomía intelectual y los principios de LAST Lab."
       },
       intro:
-        "El LAST Lab promueve alianzas académicas, institucionales y sociales que compartan sus principios de investigación crítica, autonomía intelectual y responsabilidad pública.",
+        "LAST Lab promueve colaboraciones académicas, sociales, institucionales y tecnológicas compatibles con sus principios de investigación crítica, justicia social, transparencia y autonomía intelectual.",
       partnerTitle: "Buscamos colaborar con",
       partners: [
         "Universidades y centros de investigación",
+        "Organizaciones de sociedad civil",
         "Organismos multilaterales",
-        "Fundaciones y programas de cooperación internacional",
-        "Organizaciones de la sociedad civil",
-        "Iniciativas tecnológicas comprometidas con criterios de inclusión y justicia social"
+        "Fundaciones",
+        "Redes académicas",
+        "Comunidades y colectivos",
+        "Instituciones públicas",
+        "Iniciativas tecnológicas compatibles con sus principios"
       ],
       principlesTitle: "Principios de cooperación",
       principles:
-        "Toda cooperación se desarrolla bajo principios de independencia académica, transparencia institucional y coherencia ética con los objetivos del Lab.",
-      fundingTitle: "Estrategia financiera y sostenibilidad",
+        "Toda cooperación debe preservar la independencia académica, la autonomía intelectual, la transparencia institucional y la coherencia ética con los objetivos de LAST Lab.",
+      fundingTitle: "Sostenibilidad compatible con principios",
       fundingSources: [
-        "Convocatorias competitivas nacionales e internacionales en IA y tecnologías digitales.",
-        "Alianzas con organismos multilaterales y fundaciones orientadas a innovación crítica.",
-        "Vinculación con empresas privadas bajo criterios de responsabilidad social corporativa.",
-        "Consorcios y redes académicas regionales para cofinanciar actividades.",
-        "Programas de cursos y formación especializada en IA crítica para sostener operaciones."
+        "Convocatorias nacionales e internacionales de investigación, formación, innovación crítica y cooperación.",
+        "Convenios con universidades, centros de investigación, instituciones públicas, organismos multilaterales y fundaciones.",
+        "Consorcios y redes académicas regionales orientados a fortalecer capacidades compartidas.",
+        "Programas de formación y actividades especializadas cuando estén formalmente definidos.",
+        "Colaboraciones con iniciativas tecnológicas u organizaciones privadas sólo cuando sean compatibles con la autonomía intelectual y los principios de LAST Lab."
       ],
       operationsTitle: "Marco operativo",
       operations:
-        "Los proyectos específicos podrán gestionarse a través de las entidades administradoras correspondientes, conforme a la normativa aplicable y a los Estatutos del Lab.",
+        "Mientras LAST Lab no cuente con personería jurídica propia, los proyectos o convenios que requieran administración jurídica o financiera podrán ejecutarse mediante una entidad administradora definida para cada iniciativa, de acuerdo con los Estatutos y los acuerdos específicos correspondientes.",
       contactPrompt:
-        "Las instituciones interesadas en explorar posibilidades de colaboración pueden contactarnos a través del formulario institucional."
+        "Los canales oficiales para proponer colaboraciones serán publicados cuando estén confirmados."
     },
     contact: {
       seo: {
         title: "Contacto",
         description:
-          "Canales oficiales del LAST Lab para consultas institucionales, colaboraciones e invitaciones académicas."
+          "Estado de canales institucionales y sedes académicas de LAST Lab."
       },
       intro:
-        "El LAST Lab recibe consultas institucionales, propuestas de colaboración, invitaciones académicas y solicitudes de información a través de sus canales oficiales.",
-      form: {
-        nameLabel: "Nombre",
-        emailLabel: "Correo electrónico",
-        institutionLabel: "Institución / Organización",
-        messageLabel: "Mensaje",
-        submitLabel: "Enviar consulta"
-      },
-      emailTitle: "Email institucional",
-      email: "info@lastlab.org",
-      locationsTitle: "Nodos y ubicaciones",
+        "LAST Lab está actualizando sus canales institucionales de contacto para consultas, colaboraciones e invitaciones académicas.",
+      statusTitle: "Canales institucionales en actualización",
+      status:
+        "Para consultas institucionales, los canales oficiales serán publicados próximamente. Hasta contar con una vía confirmada, LAST Lab no muestra direcciones de correo, formularios de envío ni redes sociales genéricas.",
+      locationsTitle: "Nodos y sedes académicas",
       locations: [
-        "Nodo IEAD-USFQ: Edificio Maxwell, oficina M-301, Campus Cumbayá, Universidad San Francisco de Quito (Ecuador).",
-        "Nodo UNAJ: Instituto de Ciencias Sociales y Administración, Florencio Varela (Argentina).",
-        "Nodo Diversa: Quito (Ecuador)."
-      ],
-      socialTitle: "Redes",
-      socialLinks: [
         {
-          label: "LinkedIn",
-          href: "https://www.linkedin.com/"
+          name: "IEAD–USFQ",
+          institution: "Universidad San Francisco de Quito",
+          location: "Quito, Ecuador"
+        },
+        {
+          name: "ICSyA–UNAJ",
+          institution: "Universidad Nacional Arturo Jauretche",
+          location: "Florencio Varela, Argentina"
+        },
+        {
+          name: "Diversa",
+          location: "Quito, Ecuador"
         }
-      ]
+      ],
+      socialTitle: "Redes institucionales",
+      socialStatus:
+        "Los perfiles oficiales serán publicados cuando estén confirmados.",
+      socialLinks: []
     }
   }
 };

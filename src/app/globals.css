@@ -30,13 +30,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading), serif;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 
 .container-shell {
   margin-inline: auto;
   width: 100%;
-  max-width: 80rem;
+  max-width: 86rem;
   padding-inline: 1rem;
 }
 

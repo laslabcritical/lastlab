@@ -15,6 +15,23 @@ export interface ContentCard {
   description: string;
 }
 
+export interface PersonProfile {
+  id: string;
+  name: string;
+  role: string;
+  affiliations: string[];
+  bio: string;
+  photoSrc: string | null;
+  externalUrl?: string | null;
+}
+
+export interface NetworkNode {
+  name: string;
+  institution?: string;
+  location: string;
+  description?: string;
+}
+
 export interface HomePageContent {
   seo: SeoFields;
   hero: {
@@ -73,19 +90,18 @@ export interface NetworkPageContent {
   };
   nodes: {
     title: string;
-    items: string[];
+    institutionalTitle: string;
+    institutional: NetworkNode[];
+    organizationalTitle: string;
+    organizational: NetworkNode[];
   };
   nodeTypes: {
     title: string;
     items: ContentCard[];
   };
-  participants: {
+  people: {
     title: string;
-    items: Array<{
-      node: string;
-      country: string;
-      participants: string;
-    }>;
+    items: PersonProfile[];
   };
   governance: {
     title: string;
@@ -104,6 +120,7 @@ export interface PublicationsPageContent {
   intro: string;
   collections: Array<{
     title: string;
+    description: string;
     status: string;
   }>;
   repositoryTitle: string;
@@ -113,7 +130,7 @@ export interface PublicationsPageContent {
 export interface TrainingPageContent {
   seo: SeoFields;
   intro: string;
-  areas: string[];
+  areas: ContentCard[];
   catalogStatus: string;
 }
 
@@ -128,13 +145,10 @@ export interface GovernancePageContent {
   leadership: Array<{
     role: string;
     person: string;
+    affiliation?: string;
   }>;
   membersTitle: string;
-  members: Array<{
-    name: string;
-    role: string;
-    node: string;
-  }>;
+  members: PersonProfile[];
   cam: {
     title: string;
     body: string;
@@ -158,18 +172,12 @@ export interface CooperationPageContent {
 export interface ContactPageContent {
   seo: SeoFields;
   intro: string;
-  form: {
-    nameLabel: string;
-    emailLabel: string;
-    institutionLabel: string;
-    messageLabel: string;
-    submitLabel: string;
-  };
-  emailTitle: string;
-  email: string;
+  statusTitle: string;
+  status: string;
   locationsTitle: string;
-  locations: string[];
+  locations: NetworkNode[];
   socialTitle: string;
+  socialStatus: string;
   socialLinks: Array<{
     label: string;
     href: string;

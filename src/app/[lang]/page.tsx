@@ -41,7 +41,7 @@ export async function generateMetadata({
   const canonical = withBasePath(getLocalizedPath(locale, "home"));
 
   return {
-    title: page.seo.title,
+    title: { absolute: page.seo.title },
     description: page.seo.description,
     alternates: {
       canonical,

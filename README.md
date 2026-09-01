@@ -1,6 +1,6 @@
 # LAST Lab Web
 
-Sitio institucional bilingue (`/es`, `/en`) para LAST Lab for Critical AI, construido con Next.js (App Router) y Tailwind CSS.
+Sitio institucional bilingue (`/es`, `/en`) para LAST Lab for Critical AI & Digital Technologies, construido con Next.js (App Router) y Tailwind CSS.
 
 ## Caracteristicas
 
@@ -34,7 +34,7 @@ npm run lint
 
 ## Estructura clave
 
-- `src/app/[lang]/[[...slug]]/page.tsx`: enrutamiento localizado.
+- `src/app/[lang]/page.tsx` y `src/app/[lang]/[slug]/page.tsx`: enrutamiento localizado.
 - `src/content/es.ts`: contenido en espanol.
 - `src/content/en.ts`: contenido en ingles (placeholder traducido).
 - `src/components/layout/*`: navbar, footer y layout general.

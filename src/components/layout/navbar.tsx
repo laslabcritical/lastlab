@@ -18,23 +18,6 @@ interface NavbarProps {
   content: LocaleContent;
 }
 
-const DESKTOP_LABELS: Partial<Record<Locale, Partial<Record<PageKey, string>>>> = {
-  es: {
-    khipuxQuito: "KHIPUx 2026",
-    research: "Investigación",
-    publications: "Public.",
-    governance: "Gobernanza",
-    cooperation: "Coop."
-  },
-  en: {
-    khipuxQuito: "KHIPUx 2026",
-    research: "Research",
-    publications: "Public.",
-    governance: "Governance",
-    cooperation: "Coop."
-  }
-};
-
 export function Navbar({ locale, pageKey, content }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,7 +26,6 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
       NAV_ORDER.map((key) => ({
         key,
         label: content.navLabels[key],
-        desktopLabel: DESKTOP_LABELS[locale]?.[key] ?? content.navLabels[key],
         href: getLocalizedPath(locale, key)
       })),
     [content.navLabels, locale]
@@ -59,15 +41,15 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
           <Link href={getLocalizedPath(locale, "home")} className="flex min-w-0 items-center">
             <Image
               src={withBasePath("/brand/3.svg")}
-              alt="LAST Lab"
+              alt={content.siteName}
               width={600}
               height={203}
-              className="h-12 w-auto max-w-[260px] sm:h-14 sm:max-w-[320px] xl:h-14 xl:max-w-[320px]"
+              className="h-12 w-auto max-w-[250px] sm:h-14 sm:max-w-[310px] xl:max-w-[210px] 2xl:max-w-[250px]"
               priority
             />
           </Link>
 
-          <nav aria-label="Main navigation" className="ml-auto hidden xl:flex xl:items-center xl:gap-1">
+          <nav aria-label="Main navigation" className="ml-auto hidden xl:flex xl:items-center xl:gap-0.5 2xl:gap-1">
             {links.map((item) => {
               const active = item.key === pageKey;
               return (
@@ -76,13 +58,13 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
                   href={item.href}
                   title={item.label}
                   aria-label={item.label}
-                  className={`shrink-0 whitespace-nowrap rounded-md px-2.5 py-2 text-[0.82rem] font-semibold leading-none transition 2xl:px-3 2xl:text-sm ${
+                  className={`shrink-0 whitespace-nowrap rounded-md px-1.5 py-2 text-[0.72rem] font-semibold leading-none transition 2xl:px-2.5 2xl:text-[0.8rem] ${
                     active
                       ? "bg-brand-700 text-white"
                       : "text-ink hover:bg-brand-100 hover:text-brand-900"
                   }`}
                 >
-                  {item.desktopLabel}
+                  {item.label}
                 </Link>
               );
             })}
@@ -90,7 +72,7 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
 
           <Link
             href={languageHref}
-            className="hidden shrink-0 rounded-md border border-brand-300 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700 transition hover:bg-brand-100 xl:inline-flex"
+            className="hidden shrink-0 rounded-md border border-brand-300 px-2.5 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700 transition hover:bg-brand-100 xl:inline-flex"
           >
             {targetLocale.toUpperCase()}
           </Link>

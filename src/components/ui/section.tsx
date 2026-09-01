@@ -20,7 +20,7 @@ export function Section({
   };
 
   return (
-    <section className="reveal rounded-2xl border border-brand-100 bg-white p-7 shadow-panel" style={style}>
+    <section className="reveal rounded-lg border border-brand-100 bg-white p-7 shadow-panel" style={style}>
       {eyebrow ? (
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">{eyebrow}</p>
       ) : null}

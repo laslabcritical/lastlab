@@ -23,30 +23,36 @@ const khipu = Montserrat({
 });
 
 const siteUrl = getSiteUrl();
+const siteName = "LAST Lab for Critical AI & Digital Technologies";
+const siteDescription =
+  "Red multinodal latinoamericana de investigación crítica, experimentación y acción sobre inteligencia artificial y tecnologías digitales.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "LAST Lab for Critical AI",
-    template: "%s | LAST Lab"
+    default: siteName,
+    template: `%s | ${siteName}`
   },
-  description:
-    "LAST Lab for Critical AI: red latinoamericana multinodal de investigación, innovación e incidencia sobre inteligencia artificial y tecnologías digitales.",
+  description: siteDescription,
   openGraph: {
     type: "website",
-    siteName: "LAST Lab for Critical AI",
+    siteName,
     url: siteUrl,
+    title: siteName,
+    description: siteDescription,
     images: [
       {
         url: withBasePath("/brand/og-image.svg"),
         width: 1200,
         height: 630,
-        alt: "LAST Lab for Critical AI"
+        alt: siteName
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
     images: [withBasePath("/brand/og-image.svg")]
   }
 };
