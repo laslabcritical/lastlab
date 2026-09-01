@@ -68,3 +68,51 @@ h6 {
   opacity: 0;
   animation: fadeUp 0.7s ease-out forwards;
 }
+
+.khipux-site h1,
+.khipux-site h2,
+.khipux-site h3,
+.khipux-site h4,
+.khipux-site h5,
+.khipux-site h6 {
+  font-family: var(--font-khipu), Montserrat, sans-serif;
+  letter-spacing: 0;
+}
+
+.khipux-site {
+  scroll-behavior: smooth;
+}
+
+.khipux-content-container {
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .khipux-content-container {
+    max-width: 48rem;
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .khipux-content-container {
+    max-width: 64rem;
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .khipux-content-container {
+    max-width: 80rem;
+    padding-inline: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .khipux-content-container {
+    max-width: 96rem;
+    padding-inline: 6rem;
+  }
+}

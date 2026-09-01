@@ -6,6 +6,7 @@ import { khipuxQuito2026 } from "@/content/khipux-quito-2026";
 import { withBasePath } from "@/lib/base-path";
 
 const canonical = withBasePath("/es/khipux-quito");
+const previewImage = withBasePath("/khipux/og-image.svg");
 
 export const metadata: Metadata = {
   title: {
@@ -23,10 +24,10 @@ export const metadata: Metadata = {
     url: canonical,
     images: [
       {
-        url: withBasePath("/brand/og-image.svg"),
+        url: previewImage,
         width: 1200,
         height: 630,
-        alt: "LAST Lab for Critical AI"
+        alt: "KHIPUx Quito 2026"
       }
     ]
   },
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: khipuxQuito2026.seo.title,
     description: khipuxQuito2026.seo.description,
-    images: [withBasePath("/brand/og-image.svg")]
+    images: [previewImage]
   }
 };
 

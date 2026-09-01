@@ -23,11 +23,24 @@ const config: Config = {
         },
         ink: "#13233a",
         muted: "#48607d",
-        accent: "#b18a4b"
+        accent: "#b18a4b",
+        khipu: {
+          black: "#000000",
+          orange: "#e95b30",
+          white: "#ffffff",
+          gray: "#414141"
+        },
+        udla: {
+          red: "#c10230"
+        },
+        uide: {
+          orange: "#eaaa00"
+        }
       },
       fontFamily: {
         body: ["var(--font-body)", "sans-serif"],
-        heading: ["var(--font-heading)", "serif"]
+        heading: ["var(--font-heading)", "serif"],
+        montserrat: ["var(--font-khipu)", "Montserrat", "sans-serif"]
       },
       boxShadow: {
         soft: "0 20px 60px -28px rgba(15, 32, 57, 0.35)",

@@ -183,28 +183,6 @@ export interface EventContactFields {
   linkedinUrl: string | null;
 }
 
-export type CallForProposalsStatus = "draft" | "open" | "closed" | "results";
-
-export interface EventDateField {
-  label: string;
-  date: string;
-  display: string;
-}
-
-export interface OpenCallStatusContent {
-  label: string;
-  body: string;
-  actionLabel: string;
-}
-
-export interface OpenCallModality {
-  title: string;
-  description: string;
-  detailsTitle: string;
-  details: string[];
-  note?: string;
-}
-
 export interface KhipuxQuitoPageContent {
   seo: SeoFields;
   slug: string;
@@ -274,51 +252,12 @@ export interface KhipuxQuitoPageContent {
     pendingTitle: string;
     pendingBody: string;
   };
-  openCall: {
-    status: CallForProposalsStatus;
-    openingDate: EventDateField;
-    deadline: EventDateField;
-    notificationDate: EventDateField;
-    confirmationDeadline: EventDateField;
-    submissionUrl: string | null;
-    guidelinesUrl: string | null;
-    contactEmail: string | null;
-    statusContent: Record<CallForProposalsStatus, OpenCallStatusContent>;
-    title: string;
-    paragraphs: string[];
-    datesTitle: string;
-    draftDatesLabel: string;
-    modalitiesTitle: string;
-    modalities: OpenCallModality[];
-    topicsTitle: string;
-    topics: string[];
-    topicsNote: string;
-    participantsTitle: string;
-    participants: string[];
-    participantsNote: string;
-    languagesTitle: string;
-    languages: string[];
-    languagesNote: string;
-    participationModeTitle: string;
-    participationModeBody: string;
-    participationModeNote: string;
-    selectionCriteriaTitle: string;
-    selectionCriteria: string[];
-    selectionCriteriaNote: string;
-    googleFormTitle: string;
-    googleFormBody: string;
-    googleFormFields: Array<{
-      title: string;
-      items: string[];
-    }>;
-  };
   registration: {
     title: string;
     body: string;
     modalitiesTitle: string;
     modalities: string[];
     statusLabel: string;
-    futureFields: string[];
   };
   organization: {
     title: string;

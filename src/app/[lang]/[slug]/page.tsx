@@ -71,6 +71,11 @@ export async function generateMetadata({
   const canonical = withBasePath(getLocalizedPath(locale, pageKey));
   const title =
     pageKey === "khipuxQuito" ? { absolute: page.seo.title } : page.seo.title;
+  const previewImage = withBasePath(
+    pageKey === "khipuxQuito" ? "/khipux/og-image.svg" : "/brand/og-image.svg"
+  );
+  const previewAlt =
+    pageKey === "khipuxQuito" ? "KHIPUx Quito 2026" : content.siteName;
 
   return {
     title,
@@ -90,10 +95,10 @@ export async function generateMetadata({
       url: canonical,
       images: [
         {
-          url: withBasePath("/brand/og-image.svg"),
+          url: previewImage,
           width: 1200,
           height: 630,
-          alt: content.siteName
+          alt: previewAlt
         }
       ]
     },
@@ -101,7 +106,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: page.seo.title,
       description: page.seo.description,
-      images: [withBasePath("/brand/og-image.svg")]
+      images: [previewImage]
     }
   };
 }

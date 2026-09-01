@@ -12,6 +12,10 @@ interface SiteLayoutProps {
 }
 
 export function SiteLayout({ locale, pageKey, content, children }: SiteLayoutProps) {
+  if (pageKey === "khipuxQuito") {
+    return <main className="min-h-screen">{children}</main>;
+  }
+
   return (
     <div className="relative flex min-h-screen flex-col">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(63,111,181,0.12),_transparent_55%),radial-gradient(circle_at_80%_22%,_rgba(177,138,75,0.10),_transparent_40%)]" />

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">KHIPUx Quito 2026</title>
+  <desc id="desc">Open, Responsible and Critical AI. 19 and 20 November 2026, FLACSO Ecuador.</desc>
+  <rect width="1200" height="630" fill="#1f1f1f"/>
+  <g opacity="0.24">
+    <path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M0 560H1200" stroke="#ffffff" stroke-width="1"/>
+    <path d="M80 0V630M160 0V630M240 0V630M320 0V630M400 0V630M480 0V630M560 0V630M640 0V630M720 0V630M800 0V630M880 0V630M960 0V630M1040 0V630M1120 0V630" stroke="#e95b30" stroke-width="1"/>
+  </g>
+  <circle cx="1010" cy="112" r="150" fill="none" stroke="#e95b30" stroke-width="28" opacity="0.9"/>
+  <circle cx="1010" cy="112" r="82" fill="none" stroke="#e95b30" stroke-width="16" opacity="0.65"/>
+  <path d="M84 526C210 424 334 416 464 458C576 494 676 508 800 436C892 383 981 370 1116 414" fill="none" stroke="#e95b30" stroke-width="18" stroke-linecap="round"/>
+  <text x="84" y="178" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="92" font-weight="800">KHIPUx Quito</text>
+  <text x="88" y="244" fill="#e95b30" font-family="Montserrat, Arial, sans-serif" font-size="38" font-weight="800">Open, Responsible and Critical AI</text>
+  <text x="88" y="336" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="42" font-weight="700">19 and 20 November 2026</text>
+  <text x="88" y="390" fill="#ffffff" opacity="0.78" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="700">FLACSO Ecuador, Quito</text>
+  <text x="88" y="474" fill="#ffffff" opacity="0.72" font-family="Montserrat, Arial, sans-serif" font-size="26" font-weight="700">Launch of LAST Lab for Critical AI &amp; Digital Technologies</text>
+</svg>
