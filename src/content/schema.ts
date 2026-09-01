@@ -183,6 +183,32 @@ export interface EventContactFields {
   linkedinUrl: string | null;
 }
 
+export interface EventParticipantPerson {
+  id: string;
+  name: string;
+  institution: string;
+  biography: string;
+  photoSrc: string | null;
+  externalUrl: string | null;
+  confirmationStatus: string;
+  modality: string | null;
+  talkTitle: string | null;
+}
+
+export interface EventOrganizerPerson {
+  id: string;
+  name: string;
+  role: string | null;
+  affiliations: string[];
+  photoSrc: string | null;
+}
+
+export interface EventInstitution {
+  name: string;
+  logoSrc: string | null;
+  placeholder: string;
+}
+
 export interface KhipuxQuitoPageContent {
   seo: SeoFields;
   slug: string;
@@ -193,6 +219,7 @@ export interface KhipuxQuitoPageContent {
     start: string;
     end: string;
     display: string;
+    shortDisplay: string;
   };
   location: {
     city: string;
@@ -219,6 +246,7 @@ export interface KhipuxQuitoPageContent {
     eyebrow: string;
     primaryAction: string;
     secondaryAction: string;
+    launchNote: string;
   };
   overview: {
     title: string;
@@ -228,29 +256,27 @@ export interface KhipuxQuitoPageContent {
     title: string;
     items: string[];
   };
-  topics: ContentCard[];
-  eventFormat: {
+  themes: {
+    eyebrow: string;
     title: string;
-    body: string;
-    items: string[];
+    intro: string;
+    note: string;
   };
+  topics: ContentCard[];
   program: {
     title: string;
     body: string;
-    items: ContentCard[];
-    closing: string;
     actionLabel: string;
   };
-  speakers: {
+  participants: {
     title: string;
-    people: Array<{
-      name: string;
-      institution: string;
-      biography: string;
-      externalUrl: string | null;
-    }>;
-    pendingTitle: string;
+    people: EventParticipantPerson[];
     pendingBody: string;
+  };
+  organizingTeam: {
+    title: string;
+    body: string;
+    people: EventOrganizerPerson[];
   };
   registration: {
     title: string;
@@ -261,24 +287,10 @@ export interface KhipuxQuitoPageContent {
   };
   organization: {
     title: string;
-    organizers: Array<{
-      name: string;
-      logoSrc: string | null;
-      placeholder: string;
+    groups: Array<{
+      label: string;
+      items: EventInstitution[];
     }>;
-    supportTitle: string;
-    supportText: string;
-  };
-  lastLab: {
-    title: string;
-    paragraphs: string[];
-    actionLabel: string;
-    actionPage: PageKey;
-  };
-  community: {
-    title: string;
-    paragraphs: string[];
-    actionLabel: string;
   };
   contact: {
     title: string;
