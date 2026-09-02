@@ -39,7 +39,7 @@ export const esPeople: PersonProfile[] = [
     name: "Gabriel Perdomo",
     role: "Miembro institucional del nodo ICSyA–UNAJ / Investigador en formación",
     affiliations: ["Instituto de Ciencias Sociales y Administración (ICSyA–UNAJ)"],
-    bio: "Psicólogo Social y estudiante avanzado de Psicología en UADE. Investigador en formación de la Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab y UADE. Su trabajo clínico e investigativo integra el psicoanálisis y el análisis psicosocial con foco en el análisis institucional dentro de contextos de vulnerabilidad infanto-juvenil, problemáticas de la infancia y ludopatía. Asimismo, desarrolla estudios sobre la intersección entre inteligencia artificial y clínica, enfocados en una crítica sociobiotécnica de la IA.",
+    bio: "Psicólogo Social e Investigador en formación de la Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab y UADE. Su trabajo clínico e investigativo integra el psicoanálisis y el análisis psicosocial con foco en el análisis institucional dentro de contextos de vulnerabilidad infanto-juvenil, problemáticas de la infancia y ludopatía. Asimismo, desarrolla estudios sobre la intersección entre inteligencia artificial y clínica, enfocados en una crítica sociobiotécnica de la IA.",
     photoSrc: null,
     externalUrl: null
   },
@@ -102,7 +102,7 @@ export const enPeople: PersonProfile[] = [
     name: "Gabriel Perdomo",
     role: "Institutional member of the ICSyA–UNAJ node / Researcher in training",
     affiliations: ["Instituto de Ciencias Sociales y Administración (ICSyA–UNAJ)"],
-    bio: "Social Psychologist and advanced Psychology student at UADE. Researcher in training at Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab, and UADE. His clinical and research work integrates psychoanalysis and psychosocial analysis, with a focus on institutional analysis in contexts of child and youth vulnerability, childhood issues, and gambling. He also develops studies on the intersection between artificial intelligence and clinical practice, focused on a sociobiotechnical critique of AI.",
+    bio: "Social Psychologist and researcher in training at Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab, and UADE. His clinical and research work integrates psychoanalysis and psychosocial analysis, with a focus on institutional analysis in contexts of child and youth vulnerability, childhood issues, and gambling. He also develops studies on the intersection between artificial intelligence and clinical practice, focused on a sociobiotechnical critique of AI.",
     photoSrc: null,
     externalUrl: null
   },
