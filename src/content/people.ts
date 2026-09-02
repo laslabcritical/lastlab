@@ -14,6 +14,18 @@ export const esPeople: PersonProfile[] = [
     externalUrl: null
   },
   {
+    id: "gabriel-perdomo",
+    name: "Gabriel Perdomo",
+    role: "Investigador / miembro del equipo UNAJ",
+    affiliations: [
+      "Universidad Nacional Arturo Jauretche (UNAJ)",
+      "Universidad Argentina de la Empresa (UADE)"
+    ],
+    bio: "Psicólogo Social e Investigador en formación de la Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab y UADE. Su campo de desarrollo e investigación integra el psicoanálisis y el análisis psicosocial con foco en el análisis institucional dentro de contextos de vulnerabilidad infanto-juvenil, problemáticas de la infancia y ludopatía. Asimismo, desarrolla estudios sobre la intersección entre inteligencia artificial y clínica, enfocados en una crítica sociobiotécnica de la IA.",
+    photoSrc: null,
+    externalUrl: null
+  },
+  {
     id: "cheryl-martens",
     name: "Cheryl Martens",
     role: "Directora del nodo IEAD–USFQ",
@@ -31,18 +43,6 @@ export const esPeople: PersonProfile[] = [
     role: "Representante del nodo Diversa / Directora de Diversa",
     affiliations: ["Diversa"],
     bio: "Física y científica cognitiva, directora de Diversa. Trabaja en inteligencia artificial, análisis de datos y tecnologías geoespaciales desde perspectivas críticas y feministas, con foco en gobernanza tecnológica, cadenas globales de IA, derechos humanos, justicia social y relaciones entre tecnología y poder. Es Fellow del Center for AI and Digital Policy (CAIDP).",
-    photoSrc: null,
-    externalUrl: null
-  },
-  {
-    id: "gabriel-perdomo",
-    name: "Gabriel Perdomo",
-    role: "Investigador / miembro del equipo UNAJ",
-    affiliations: [
-      "Universidad Nacional Arturo Jauretche (UNAJ)",
-      "Universidad Argentina de la Empresa (UADE)"
-    ],
-    bio: "Psicólogo Social e Investigador en formación de la Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab y UADE. Su campo de desarrollo e investigación integra el psicoanálisis y el análisis psicosocial con foco en el análisis institucional dentro de contextos de vulnerabilidad infanto-juvenil, problemáticas de la infancia y ludopatía. Asimismo, desarrolla estudios sobre la intersección entre inteligencia artificial y clínica, enfocados en una crítica sociobiotécnica de la IA.",
     photoSrc: null,
     externalUrl: null
   },
@@ -80,6 +80,18 @@ export const enPeople: PersonProfile[] = [
     externalUrl: null
   },
   {
+    id: "gabriel-perdomo",
+    name: "Gabriel Perdomo",
+    role: "Researcher / member of the UNAJ team",
+    affiliations: [
+      "Universidad Nacional Arturo Jauretche (UNAJ)",
+      "Universidad Argentina de la Empresa (UADE)"
+    ],
+    bio: "Social Psychologist and researcher in training at Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab, and UADE. His area of development and research integrates psychoanalysis and psychosocial analysis, with a focus on institutional analysis in contexts of child and youth vulnerability, childhood issues, and gambling. He also develops studies on the intersection between artificial intelligence and clinical practice, focused on a sociobiotechnical critique of AI.",
+    photoSrc: null,
+    externalUrl: null
+  },
+  {
     id: "cheryl-martens",
     name: "Cheryl Martens",
     role: "Director of the IEAD–USFQ node",
@@ -97,18 +109,6 @@ export const enPeople: PersonProfile[] = [
     role: "Representative of the Diversa node / Director of Diversa",
     affiliations: ["Diversa"],
     bio: "Physicist and cognitive scientist, director of Diversa. She works on artificial intelligence, data analysis, and geospatial technologies from critical and feminist perspectives, with a focus on technology governance, global AI chains, human rights, social justice, and relationships between technology and power. She is a Fellow at the Center for AI and Digital Policy (CAIDP).",
-    photoSrc: null,
-    externalUrl: null
-  },
-  {
-    id: "gabriel-perdomo",
-    name: "Gabriel Perdomo",
-    role: "Researcher / member of the UNAJ team",
-    affiliations: [
-      "Universidad Nacional Arturo Jauretche (UNAJ)",
-      "Universidad Argentina de la Empresa (UADE)"
-    ],
-    bio: "Social Psychologist and researcher in training at Universidad Nacional Arturo Jauretche (UNAJ), LAST Lab, and UADE. His area of development and research integrates psychoanalysis and psychosocial analysis, with a focus on institutional analysis in contexts of child and youth vulnerability, childhood issues, and gambling. He also develops studies on the intersection between artificial intelligence and clinical practice, focused on a sociobiotechnical critique of AI.",
     photoSrc: null,
     externalUrl: null
   },
