@@ -217,6 +217,26 @@ export interface EventInstitution {
   placeholder: string;
 }
 
+export interface ProgrammeSession {
+  id: string;
+  time: string;
+  title: string;
+  type: string;
+  participants: string[];
+  moderator?: string;
+  room: string | null;
+  description?: string;
+  parallel: boolean;
+  status: "confirmed" | "draft";
+}
+
+export interface ProgrammeDay {
+  date: string;
+  label: string;
+  theme: string;
+  sessions: ProgrammeSession[];
+}
+
 export interface KhipuxQuitoPageContent {
   seo: SeoFields;
   slug: string;
@@ -234,17 +254,27 @@ export interface KhipuxQuitoPageContent {
     country: string;
     firstVenue: string;
     secondVenue: string | null;
+    mainRoom: string;
+    mapUrl: string;
   };
   format: string;
   duration: string;
   status: {
-    program: "in_progress";
-    registration: "coming_soon";
+    program: "in_progress" | "published";
+    registration: "coming_soon" | "open";
   };
   links: {
     registrationUrl: string | null;
     fullProgramUrl: string | null;
+    scholarshipUrl: string;
+    posterUrl: string | null;
   };
+  locale: "es" | "en";
+  ui: Record<"venue" | "mainRoom" | "city" | "format" | "openMenu" | "closeMenu" | "moderator" | "participants" | "room" | "pendingRoom" | "parallel" | "plenary" | "draft" | "profile" | "talk" | "organization" | "status" | "scholarship" | "materials" | "downloadProgram" | "viewProgram" | "downloadPoster" | "viewPoster" | "posterAlt" | "mapTitle", string>;
+  venueDescription: string;
+  scheduleNote: string;
+  launch: { title: string; date: string; activity: string; description: string; participants: string[] };
+  programmeDays: ProgrammeDay[];
   eventContact: EventContactFields;
   anchors: Array<{
     id: string;

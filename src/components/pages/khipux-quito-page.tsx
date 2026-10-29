@@ -18,30 +18,6 @@ interface KhipuxQuitoPageProps {
   page: KhipuxQuitoPageContent;
 }
 
-interface ProgrammeSession {
-  time?: string;
-  title: string;
-  type?: string;
-  participants?: string[];
-  moderator?: string;
-  room?: string;
-  description?: string;
-  status: "confirmed" | "draft" | "coming_soon";
-}
-
-interface ProgrammeDay {
-  date?: string;
-  sessions: ProgrammeSession[];
-}
-
-interface ProgrammeModel {
-  days: ProgrammeDay[];
-}
-
-const futureProgrammeModel: ProgrammeModel = {
-  days: []
-};
-
 function assetPath(path: string) {
   return withBasePath(`/khipux/assets/${path}`);
 }
@@ -184,7 +160,7 @@ function KhipuxNavbar({ page }: { page: KhipuxQuitoPageContent }) {
   const logo = assetPath("khipu-logo.svg");
   const circle = assetPath("khipu-circle.svg");
   const links = page.anchors.filter((anchor) =>
-    ["about", "themes", "programme", "participants", "venue", "partners"].includes(
+    ["about", "programme", "participants", "venue", "materials"].includes(
       anchor.id
     )
   );
@@ -223,18 +199,14 @@ function KhipuxNavbar({ page }: { page: KhipuxQuitoPageContent }) {
             ))}
           </div>
 
+          <Link href={getLocalizedPath(page.locale === "es" ? "en" : "es", "khipuxQuito")} hrefLang={page.locale === "es" ? "en" : "es"} className="font-bold text-khipu-orange">{page.locale === "es" ? "EN" : "ES"}</Link>
           <div className="relative hidden shrink-0 items-center justify-center xl:flex">
             <MaskedAsset
               src={circle}
               className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 text-khipu-orange opacity-40"
               label="Khipu Circle"
             />
-            <span
-              className="relative z-10 whitespace-nowrap rounded-full border border-khipu-orange px-4 py-2 text-xs font-bold text-khipu-orange"
-              aria-label={page.hero.secondaryAction}
-            >
-              {page.hero.secondaryAction}
-            </span>
+            <a href={page.links.registrationUrl ?? "#participation"} className="relative z-10 whitespace-nowrap rounded-full border border-khipu-orange px-4 py-2 text-xs font-bold text-khipu-orange">{page.hero.primaryAction}</a>
           </div>
         </div>
       </nav>
@@ -251,11 +223,12 @@ function KhipuxNavbar({ page }: { page: KhipuxQuitoPageContent }) {
               KHIPUx Quito
             </p>
           </div>
+          <Link href={getLocalizedPath(page.locale === "es" ? "en" : "es", "khipuxQuito")} hrefLang={page.locale === "es" ? "en" : "es"} className="p-2 font-bold text-khipu-orange">{page.locale === "es" ? "EN" : "ES"}</Link>
           <button
             type="button"
             className="flex items-center justify-end p-2 font-bold text-khipu-orange"
             onClick={() => setMenuOpen(true)}
-            aria-label="Abrir menú"
+            aria-label={page.ui.openMenu}
             aria-expanded={menuOpen}
             aria-controls="khipux-mobile-menu"
           >
@@ -266,6 +239,7 @@ function KhipuxNavbar({ page }: { page: KhipuxQuitoPageContent }) {
 
       <div
         id="khipux-mobile-menu"
+        inert={!menuOpen}
         className={cx(
           "fixed inset-0 z-[60] max-h-screen bg-khipu-black p-8 transition-opacity duration-200 md:hidden",
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
@@ -281,7 +255,7 @@ function KhipuxNavbar({ page }: { page: KhipuxQuitoPageContent }) {
             type="button"
             className="flex items-center justify-end p-2 text-khipu-white"
             onClick={() => setMenuOpen(false)}
-            aria-label="Cerrar menú"
+            aria-label={page.ui.closeMenu}
           >
             <CloseIcon />
           </button>
@@ -350,19 +324,19 @@ function Hero({ page }: { page: KhipuxQuitoPageContent }) {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="#programme"
-              onClick={(event) => scrollToSection(event, "#programme")}
+              href={page.links.registrationUrl ?? "#participation"}
               className="rounded-full bg-khipu-orange px-6 py-3 font-bold text-khipu-white transition hover:opacity-90 md:px-8 md:py-4"
             >
               {page.hero.primaryAction}
             </a>
             <a
-              href="#participation"
-              onClick={(event) => scrollToSection(event, "#participation")}
+              href="#programme"
+              onClick={(event) => scrollToSection(event, "#programme")}
               className="rounded-full border-2 border-khipu-orange px-6 py-3 font-bold text-khipu-white transition hover:bg-khipu-orange/15 md:px-8 md:py-4"
             >
               {page.hero.secondaryAction}
             </a>
+            <a href={page.links.scholarshipUrl} className="rounded-full border-2 border-khipu-orange px-6 py-3 font-bold text-khipu-white hover:bg-khipu-orange/15 md:px-8 md:py-4">{page.ui.scholarship}</a>
           </div>
         </div>
 
@@ -370,19 +344,19 @@ function Hero({ page }: { page: KhipuxQuitoPageContent }) {
           <dl className="grid gap-5">
             <div>
               <dt className="text-sm font-bold uppercase tracking-wider text-khipu-orange">
-                Sede
+                {page.ui.venue}
               </dt>
               <dd className="mt-1 text-2xl font-bold">{page.location.firstVenue}</dd>
             </div>
             <div>
               <dt className="text-sm font-bold uppercase tracking-wider text-khipu-orange">
-                Sala principal
+                {page.ui.mainRoom}
               </dt>
-              <dd className="mt-1 text-2xl font-bold">Hemiciclo</dd>
+              <dd className="mt-1 text-2xl font-bold">{page.location.mainRoom}</dd>
             </div>
             <div>
               <dt className="text-sm font-bold uppercase tracking-wider text-khipu-orange">
-                Ciudad
+                {page.ui.city}
               </dt>
               <dd className="mt-1 text-2xl font-bold">
                 {page.location.city}, {page.location.country}
@@ -390,7 +364,7 @@ function Hero({ page }: { page: KhipuxQuitoPageContent }) {
             </div>
             <div>
               <dt className="text-sm font-bold uppercase tracking-wider text-khipu-orange">
-                Formato
+                {page.ui.format}
               </dt>
               <dd className="mt-1 text-2xl font-bold">{page.format}</dd>
             </div>
@@ -407,7 +381,7 @@ function AboutEvent({ page }: { page: KhipuxQuitoPageContent }) {
       <div className="khipux-content-container">
         <div className="mb-12 max-w-4xl">
           <h2 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Sobre el <span className="text-khipu-orange">evento</span>
+            {page.overview.title}
           </h2>
           <div className="space-y-5 text-base leading-relaxed text-white/80 md:text-lg">
             {page.overview.paragraphs.map((paragraph) => (
@@ -485,45 +459,84 @@ function Themes({ page }: { page: KhipuxQuitoPageContent }) {
   );
 }
 
+function RegistrationActions({ page }: { page: KhipuxQuitoPageContent }) {
+  return <div className="flex flex-wrap gap-3">
+    {page.links.registrationUrl && <a className="rounded-full bg-khipu-orange px-6 py-3 font-bold text-white hover:opacity-90" href={page.links.registrationUrl}>{page.hero.primaryAction}</a>}
+    <a className="rounded-full border-2 border-khipu-orange px-6 py-3 font-bold hover:bg-khipu-orange/15" href={page.links.scholarshipUrl}>{page.ui.scholarship}</a>
+  </div>;
+}
+
+function Launch({ page }: { page: KhipuxQuitoPageContent }) {
+  return <section id="launch" className="scroll-mt-24 bg-khipu-orange py-14 text-white">
+    <div className="khipux-content-container">
+      <p className="font-bold">{page.launch.date}</p>
+      <h2 className="mt-4 max-w-4xl text-3xl font-bold md:text-5xl">{page.launch.title}</h2>
+      <h3 className="mt-6 text-xl font-bold">{page.launch.activity}</h3>
+      <p className="mt-2">{page.location.mainRoom}</p>
+      <ul className="mt-5 grid gap-2 md:grid-cols-2">{page.launch.participants.map(person => <li key={person}>{person}</li>)}</ul>
+      <p className="mt-6 max-w-4xl text-lg leading-relaxed">{page.launch.description}</p>
+    </div>
+  </section>;
+}
+
 function Programme({ page }: { page: KhipuxQuitoPageContent }) {
-  const publishedSessionsCount = futureProgrammeModel.days.reduce(
-    (count, day) => count + day.sessions.length,
-    0
-  );
-
-  return (
-    <section
-      id="programme"
-      className="scroll-mt-24 bg-khipu-gray py-12 text-khipu-white"
-      data-published-sessions={publishedSessionsCount}
-    >
-      <div className="khipux-content-container">
-        <h2 className="mb-4 text-center text-4xl font-bold md:text-6xl">
-          Programa <span className="text-khipu-orange">2026</span>
-        </h2>
-        <p className="mx-auto mb-10 max-w-3xl text-center text-base font-semibold leading-relaxed text-white/75 md:text-lg">
-          {page.program.body}
-        </p>
-
-        <div className="mx-auto flex max-w-3xl flex-col items-center border-l-4 border-khipu-orange bg-black/20 p-6 text-center md:p-8">
-          <Image
-            src={assetPath("desc-bulletpoint-1.svg")}
-            alt=""
-            width={64}
-            height={48}
-            loading="lazy"
-            decoding="async"
-            className="h-12 w-auto opacity-80"
-            aria-hidden="true"
-          />
-          <p className="mt-5 text-sm font-bold uppercase tracking-wider text-khipu-orange">
-            Estado del programa
-          </p>
-          <h3 className="mt-2 text-3xl font-bold">{page.program.actionLabel}</h3>
-        </div>
+  const [activeDay, setActiveDay] = useState(0);
+  return <section id="programme" className="scroll-mt-24 bg-khipu-gray py-14 text-khipu-white" data-published-sessions={page.programmeDays.reduce((n, day) => n + day.sessions.length, 0)}>
+    <div className="khipux-content-container">
+      <h2 className="text-4xl font-bold md:text-6xl">{page.program.title}</h2>
+      <p className="mt-5 max-w-4xl leading-relaxed text-white/80">{page.program.body}</p>
+      <p className="mt-3 max-w-4xl text-sm leading-relaxed text-white/70">{page.scheduleNote}</p>
+      <div role="tablist" aria-label={page.program.title} className="my-8 flex gap-3">
+        {page.programmeDays.map((day, index) => <button key={day.date} type="button" role="tab" id={`day-tab-${index}`} aria-controls={`day-panel-${index}`} aria-selected={activeDay === index} tabIndex={activeDay === index ? 0 : -1}
+          onClick={() => setActiveDay(index)} onKeyDown={event => {
+            let next = activeDay;
+            if (event.key === "ArrowRight" || event.key === "ArrowLeft") next = (activeDay + 1) % page.programmeDays.length;
+            else if (event.key === "Home") next = 0;
+            else if (event.key === "End") next = page.programmeDays.length - 1;
+            else return;
+            event.preventDefault(); setActiveDay(next); document.getElementById(`day-tab-${next}`)?.focus();
+          }} className={cx("flex-1 rounded-lg border-2 border-khipu-orange px-4 py-4 text-left font-bold", activeDay === index ? "bg-khipu-orange" : "hover:bg-white/10")}>{day.label}</button>)}
       </div>
-    </section>
-  );
+      {page.programmeDays.map((day, index) => <div key={day.date} role="tabpanel" id={`day-panel-${index}`} aria-labelledby={`day-tab-${index}`} hidden={activeDay !== index}>
+        <h3 className="mb-6 text-xl font-bold text-khipu-orange md:text-2xl">{day.theme}</h3>
+        <div className="space-y-3">{day.sessions.map(session => <details key={session.id} className={cx("group rounded-lg border-l-4 bg-black/20", session.parallel ? "border-khipu-orange" : "border-white/30")}>
+          <summary className="cursor-pointer p-5 marker:text-khipu-orange">
+            <span className="ml-2 inline-block font-bold text-khipu-orange">{session.time}</span>
+            <span className="ml-3 text-sm text-white/70">{session.type}{session.parallel ? ` · ${page.ui.parallel}` : ""}{session.status === "draft" ? ` · ${page.ui.draft}` : ""}</span>
+            <span className="mt-2 block text-lg font-bold">{session.title}</span>
+          </summary>
+          <div className="space-y-3 border-t border-white/10 p-5 text-white/85">
+            {session.participants.length > 0 && <div><p className="mb-2 font-bold text-khipu-orange">{page.ui.participants}</p><ul className="space-y-1">{session.participants.map(person => <li key={person}>{person}</li>)}</ul></div>}
+            {session.moderator && <p><strong>{page.ui.moderator}:</strong> {session.moderator}</p>}
+            <p><strong>{page.ui.room}:</strong> {session.room ?? page.ui.pendingRoom}</p>
+            {session.description && <p className="leading-relaxed">{session.description}</p>}
+          </div>
+        </details>)}</div>
+      </div>)}
+      <div className="mt-8"><MaterialLinks page={page} /></div>
+    </div>
+  </section>;
+}
+
+function MaterialLinks({ page }: { page: KhipuxQuitoPageContent }) {
+  return <div className="flex flex-wrap gap-3">
+    {page.links.fullProgramUrl && <>
+      <a href={withBasePath(page.links.fullProgramUrl)} download className="rounded-full bg-khipu-orange px-5 py-3 font-bold hover:opacity-90">{page.ui.downloadProgram}</a>
+      <a href={withBasePath(page.links.fullProgramUrl)} target="_blank" rel="noopener noreferrer" className="rounded-full border border-khipu-orange px-5 py-3 font-bold hover:bg-white/10">{page.ui.viewProgram}</a>
+    </>}
+    {page.links.posterUrl && <>
+      <a href={withBasePath(page.links.posterUrl)} download className="rounded-full bg-khipu-orange px-5 py-3 font-bold hover:opacity-90">{page.ui.downloadPoster}</a>
+      <a href={withBasePath(page.links.posterUrl)} target="_blank" rel="noopener noreferrer" className="rounded-full border border-khipu-orange px-5 py-3 font-bold hover:bg-white/10">{page.ui.viewPoster}</a>
+    </>}
+  </div>;
+}
+
+function Materials({ page }: { page: KhipuxQuitoPageContent }) {
+  return <section id="materials" className="scroll-mt-24 bg-khipu-black py-16"><div className="khipux-content-container">
+    <h2 className="mb-8 text-4xl font-bold md:text-5xl">{page.ui.materials}</h2>
+    <MaterialLinks page={page} />
+    {page.links.posterUrl && <a href={withBasePath(page.links.posterUrl)} target="_blank" rel="noopener noreferrer" className="mt-8 block max-w-2xl"><Image src={withBasePath(page.links.posterUrl)} alt={page.ui.posterAlt} width={1200} height={1700} className="h-auto w-full rounded-lg" /></a>}
+  </div></section>;
 }
 
 function initials(name: string) {
@@ -566,7 +579,7 @@ function PersonMark({
         "relative grid aspect-square place-items-center rounded-sm border-l-4 border-khipu-orange bg-white/10 font-bold text-khipu-orange shadow-lg",
         compact ? "w-16 text-xl" : "w-full text-4xl"
       )}
-      aria-label={`Fotografía pendiente de ${name}`}
+      aria-label={name}
       role="img"
     >
       {initials(name)}
@@ -583,13 +596,13 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
         </h2>
 
         {page.participants.people.length > 0 ? (
-          <div className="flex w-full max-w-4xl flex-col gap-12">
+          <div className="grid w-full gap-6 md:grid-cols-2 xl:grid-cols-3">
             {page.participants.people.map((person) => (
               <article
                 key={person.id}
-                className="group relative flex cursor-default flex-col items-center gap-6 md:flex-row md:items-start md:gap-8"
+                className="group relative flex cursor-default flex-col gap-4 border-l-4 border-khipu-orange bg-white/5 p-5"
               >
-                <div className="relative w-48 shrink-0 md:w-56">
+                <div className="relative w-20 shrink-0">
                   <div className="absolute -inset-2 rounded-lg bg-khipu-orange/0 blur-xl transition-all duration-500 ease-out group-hover:bg-khipu-orange/20" />
                   <div className="relative transition-all duration-500 ease-out group-hover:-translate-x-3 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-khipu-orange/30">
                     <PersonMark name={person.name} photoSrc={person.photoSrc} />
@@ -597,7 +610,7 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
                 </div>
 
                 <div className="flex flex-col gap-2 text-center transition-all duration-300 md:text-left md:group-hover:translate-x-1">
-                  <h3 className="text-2xl font-bold text-khipu-orange transition-all duration-300 group-hover:text-khipu-white md:text-3xl">
+                  <h3 className="text-xl font-bold text-khipu-orange">
                     {person.name}
                   </h3>
                   <p className="text-base italic text-khipu-orange md:text-lg">
@@ -614,10 +627,11 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
                       </span>
                     ) : null}
                   </div>
+                  {person.biography ? <p className="mt-3 text-white/75">{person.biography}</p> : null}
                   {person.talkTitle ? (
                     <div className="mt-4 border-l-4 border-khipu-orange bg-white/10 p-4">
                       <p className="text-xs font-bold uppercase tracking-wider text-white/60">
-                        Título confirmado
+                        {page.ui.talk}
                       </p>
                       <p className="mt-2 text-sm font-semibold italic leading-relaxed text-white/85 md:text-base">
                         “{person.talkTitle}”
@@ -631,7 +645,7 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
                       rel="noopener noreferrer"
                       className="mt-3 w-fit self-center rounded-full border border-khipu-orange px-4 py-2 text-sm font-bold text-khipu-white transition hover:bg-khipu-orange/15 md:self-start"
                     >
-                      Perfil
+                      {page.ui.profile}
                     </a>
                   ) : null}
                 </div>
@@ -670,7 +684,7 @@ function OrganizingTeam({ page }: { page: KhipuxQuitoPageContent }) {
       <div className="khipux-content-container">
         <div className="mb-8 max-w-3xl">
           <p className="text-sm font-bold uppercase tracking-wider text-khipu-orange">
-            Organización
+            {page.ui.organization}
           </p>
           <h2 className="mt-2 text-3xl font-bold md:text-4xl">
             {page.organizingTeam.title}
@@ -722,9 +736,11 @@ function Participation({ page }: { page: KhipuxQuitoPageContent }) {
             <p className="text-lg font-semibold leading-relaxed md:text-xl">
               {page.registration.body}
             </p>
+            <RegistrationActions page={page} />
+            <p className="text-white/75">{page.scheduleNote}</p>
             <div className="rounded-xl border-2 border-khipu-orange bg-khipu-orange/20 px-6 py-5">
               <p className="text-sm font-medium uppercase tracking-wider text-khipu-white/80">
-                Estado
+                {page.ui.status}
               </p>
               <p className="mt-1 text-3xl font-bold text-khipu-orange">
                 {page.registration.statusLabel}
@@ -770,42 +786,13 @@ function Participation({ page }: { page: KhipuxQuitoPageContent }) {
 }
 
 function Venue({ page }: { page: KhipuxQuitoPageContent }) {
-  return (
-    <section id="venue" className="scroll-mt-24 bg-khipu-black py-12 text-khipu-white">
-      <div className="khipux-content-container flex flex-col gap-8">
-        <h2 className="text-center text-4xl font-bold md:text-6xl">Sede</h2>
-
-        <div className="flex flex-col items-center gap-8 md:flex-row">
-          <div className="text-lg font-semibold leading-relaxed md:w-1/2 md:text-xl">
-            <p>
-              El encuentro se realizará en{" "}
-              <span className="text-khipu-orange">{page.location.firstVenue}</span>,
-              en Quito.
-            </p>
-            <p className="mt-5">
-              El Hemiciclo será la sala principal durante ambas jornadas. Otras
-              salas de FLACSO se utilizarán para actividades paralelas, con las
-              asignaciones específicas a confirmar junto con el programa
-              definitivo.
-            </p>
-          </div>
-
-          <div className="aspect-video w-full overflow-hidden rounded-lg md:w-1/2">
-            <iframe
-              src="https://www.google.com/maps?q=FLACSO%20Ecuador%2C%20Quito&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa de FLACSO Ecuador, Quito"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="venue" className="scroll-mt-24 bg-khipu-black py-14 text-khipu-white"><div className="khipux-content-container">
+    <h2 className="mb-8 text-4xl font-bold md:text-6xl">{page.ui.venue}</h2>
+    <div className="grid items-center gap-8 md:grid-cols-2"><div className="space-y-5 text-lg leading-relaxed">
+      <p className="font-bold text-khipu-orange">{page.location.firstVenue} · {page.location.city}</p>
+      <p>{page.venueDescription}</p><p>{page.scheduleNote}</p>
+    </div><div className="aspect-video overflow-hidden rounded-lg"><iframe src={page.location.mapUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title={page.ui.mapTitle} /></div></div>
+  </div></section>;
 }
 
 function Partners({ page }: { page: KhipuxQuitoPageContent }) {
@@ -828,14 +815,14 @@ function Partners({ page }: { page: KhipuxQuitoPageContent }) {
                     key={`${group.label}-${institution.name}`}
                     className="flex min-h-40 flex-col justify-between border-l-4 border-khipu-orange bg-white/10 p-5"
                   >
-                    <div className="flex h-16 items-center">
+                    <div className="flex h-24 items-center rounded bg-white p-3">
                       {institution.logoSrc ? (
                         <Image
                           src={withBasePath(institution.logoSrc)}
                           alt={institution.name}
                           width={260}
                           height={90}
-                          className="max-h-14 w-auto brightness-0 invert"
+                          className="max-h-20 w-auto object-contain"
                         />
                       ) : (
                         <div className="grid h-14 min-w-28 place-items-center border border-dashed border-khipu-orange/60 px-4 text-xs font-bold uppercase tracking-wider text-white/65">
@@ -876,7 +863,7 @@ function KhipuxFooter({ page, locale }: { page: KhipuxQuitoPageContent; locale: 
 
         <div className="mt-5 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-5 sm:flex-row">
           <p className="text-sm font-semibold text-khipu-white md:text-base">
-            {page.eventFooter.title} · {page.eventFooter.dates}
+            {page.eventFooter.title} · {page.eventFooter.dates}<br />{page.eventFooter.location}
           </p>
           <Link
             href={getLocalizedPath(locale, "about")}
@@ -920,9 +907,14 @@ function EventStructuredData({
         addressCountry: "EC"
       }
     },
+    offers: [25, 18].map((price, index) => ({
+      "@type": "Offer", price, priceCurrency: "USD", url: page.links.registrationUrl,
+      name: index === 0 ? (locale === "es" ? "Público general" : "General admission") : (locale === "es" ? "Estudiantes y comunidad USFQ" : "Students and USFQ community"),
+      availability: "https://schema.org/InStock"
+    })),
     organizer:
       page.organization.groups
-        .find((group) => group.label === "ORGANIZAN")
+        .find((group) => ["ORGANIZAN", "ORGANIZERS"].includes(group.label))
         ?.items.map((institution) => ({
           "@type": "Organization",
           name: institution.name
@@ -949,6 +941,7 @@ export function KhipuxQuitoPage({ locale, page }: KhipuxQuitoPageProps) {
       <EventStructuredData locale={locale} page={page} />
       <KhipuxNavbar page={page} />
       <Hero page={page} />
+      <Launch page={page} />
       <AboutEvent page={page} />
       <Themes page={page} />
       <Programme page={page} />
@@ -957,6 +950,7 @@ export function KhipuxQuitoPage({ locale, page }: KhipuxQuitoPageProps) {
       <Participation page={page} />
       <Venue page={page} />
       <Partners page={page} />
+      <Materials page={page} />
       <KhipuxFooter page={page} locale={locale} />
     </article>
   );

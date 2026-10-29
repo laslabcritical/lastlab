@@ -1,5 +1,5 @@
 import type { LocaleContent } from "@/content/schema";
-import { khipuxQuito2026 } from "@/content/khipux-quito-2026";
+import { khipuxQuito2026En } from "@/content/khipux-quito-2026";
 import { enPeople } from "@/content/people";
 
 export const enContent: LocaleContent = {
@@ -28,7 +28,7 @@ export const enContent: LocaleContent = {
   },
   footerLinks: ["contact", "governance", "cooperation"],
   pages: {
-    khipuxQuito: khipuxQuito2026,
+    khipuxQuito: khipuxQuito2026En,
     home: {
       seo: {
         title: "LAST Lab for Critical AI & Digital Technologies",

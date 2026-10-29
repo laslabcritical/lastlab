@@ -6,7 +6,7 @@ import { khipuxQuito2026 } from "@/content/khipux-quito-2026";
 import { withBasePath } from "@/lib/base-path";
 
 const canonical = withBasePath("/es/khipux-quito");
-const previewImage = withBasePath("/khipux/og-image.svg");
+const previewImage = withBasePath("/khipux/og-image.png");
 
 export const metadata: Metadata = {
   title: {

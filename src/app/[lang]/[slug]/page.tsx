@@ -72,7 +72,7 @@ export async function generateMetadata({
   const title =
     pageKey === "khipuxQuito" ? { absolute: page.seo.title } : page.seo.title;
   const previewImage = withBasePath(
-    pageKey === "khipuxQuito" ? "/khipux/og-image.svg" : "/brand/og-image.svg"
+    pageKey === "khipuxQuito" ? "/khipux/og-image.png" : "/brand/og-image.svg"
   );
   const previewAlt =
     pageKey === "khipuxQuito" ? "KHIPUx Quito 2026" : content.siteName;
