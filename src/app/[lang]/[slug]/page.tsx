@@ -72,7 +72,7 @@ export async function generateMetadata({
   const title =
     pageKey === "khipuxQuito" ? { absolute: page.seo.title } : page.seo.title;
   const previewImage = withBasePath(
-    pageKey === "khipuxQuito" ? "/khipux/og-image.png" : "/brand/og-image.svg"
+    pageKey === "khipuxQuito" ? "/khipux/og-image.png" : "/brand/og-image.png"
   );
   const previewAlt =
     pageKey === "khipuxQuito" ? "KHIPUx Quito 2026" : content.siteName;
@@ -88,6 +88,7 @@ export async function generateMetadata({
       }
     },
     openGraph: {
+      siteName: content.siteName,
       title: page.seo.title,
       description: page.seo.description,
       locale: getLocaleCode(locale),

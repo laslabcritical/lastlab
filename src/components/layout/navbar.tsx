@@ -40,10 +40,10 @@ export function Navbar({ locale, pageKey, content }: NavbarProps) {
         <div className="flex items-center gap-4">
           <Link href={getLocalizedPath(locale, "home")} className="flex min-w-0 items-center">
             <Image
-              src={withBasePath("/brand/3.svg")}
+              src={withBasePath("/brand/lastlab-logo-negro.svg")}
               alt={content.siteName}
-              width={600}
-              height={203}
+              width={1200}
+              height={360}
               className="h-12 w-auto max-w-[250px] sm:h-14 sm:max-w-[310px] xl:max-w-[210px] 2xl:max-w-[250px]"
               priority
             />

@@ -51,6 +51,7 @@ export async function generateMetadata({
       }
     },
     openGraph: {
+      siteName: content.siteName,
       title: page.seo.title,
       description: page.seo.description,
       locale: getLocaleCode(locale),
@@ -58,7 +59,7 @@ export async function generateMetadata({
       url: canonical,
       images: [
         {
-          url: withBasePath("/brand/og-image.svg"),
+          url: withBasePath("/brand/og-image.png"),
           width: 1200,
           height: 630,
           alt: content.siteName
@@ -69,7 +70,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: page.seo.title,
       description: page.seo.description,
-      images: [withBasePath("/brand/og-image.svg")]
+      images: [withBasePath("/brand/og-image.png")]
     }
   };
 }

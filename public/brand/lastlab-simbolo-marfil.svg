@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="53 24 293 331" width="293" height="331"><g fill="none" stroke="#f8fef5" stroke-linecap="round" stroke-linejoin="round" id="g2">
+    <line id="arista-superior-izquierda" x1="72.3" y1="114.7" x2="200.7" y2="42" stroke-width="2.7" />
+    <line id="arista-superior-derecha" x1="200.7" y1="42" x2="327.3" y2="116.7" stroke-width="2.7" />
+    <line id="arista-vertical-derecha" x1="327.3" y1="116.7" x2="326.7" y2="264" stroke-width="2.7" />
+    <line id="arista-inferior-derecha" x1="326.7" y1="264" x2="198" y2="336.7" stroke-width="2.7" />
+    <line id="arista-inferior-izquierda" x1="198" y1="336.7" x2="71" y2="262" stroke-width="2.7" />
+    <line id="arista-vertical-izquierda" x1="71" y1="262" x2="72.3" y2="114.7" stroke-width="2.7" />
+    <line id="arista-diagonal-interior" x1="211.2" y1="178.7" x2="327.3" y2="116.7" stroke-width="2.7" />
+    <line id="eje-central-superior" x1="198.7" y1="197.5" x2="198.582662" y2="231.3" stroke-width="2.7" />
+    <line id="eje-central-medio" x1="198.582662" y1="231.3" x2="198.478017" y2="261.3" stroke-width="2.7" />
+    <line id="eje-central-inferior" x1="198.478017" y1="261.3" x2="198.391755" y2="286" stroke-width="2.7" />
+    <line id="eje-central-base" x1="198.391755" y1="286" x2="198" y2="336.7" stroke-width="2.7" />
+    <line id="rama-superior-izquierda" x1="159" y1="207.3" x2="198.7" y2="231.3" stroke-width="2.7" />
+    <line id="rama-superior-derecha" x1="198.7" y1="231.3" x2="237.3" y2="208" stroke-width="2.7" />
+    <line id="rama-media-izquierda" x1="138" y1="226.7" x2="198.7" y2="261.3" stroke-width="2.7" />
+    <line id="rama-media-derecha" x1="198.7" y1="261.3" x2="260" y2="226.7" stroke-width="2.7" />
+    <line id="rama-inferior-izquierda" x1="151.3" y1="257.3" x2="198.7" y2="286" stroke-width="2.7" />
+    <line id="rama-inferior-derecha" x1="198.7" y1="286" x2="246" y2="258" stroke-width="2.7" />
+    <circle cx="198.7" cy="184.7" r="12.7" fill="#f8fef5" stroke-width="2.7" id="nodo-1" />
+    <g fill="#f8fef5" stroke-width="1.4" id="g1">
+      <circle cx="159" cy="207.3" r="7.7" id="nodo-2" />
+      <circle cx="237.3" cy="208" r="7.7" id="nodo-3" />
+      <circle cx="138" cy="226.7" r="7.7" id="nodo-4" />
+      <circle cx="260" cy="226.7" r="7.7" id="nodo-5" />
+      <circle cx="151.3" cy="257.3" r="7.7" id="nodo-6" />
+      <circle cx="246" cy="258" r="7.7" id="nodo-7" />
+    </g>
+  </g>
+  </svg>
