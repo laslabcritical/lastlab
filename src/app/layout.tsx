@@ -1,26 +1,8 @@
 import type { Metadata } from "next";
-import { Merriweather, Montserrat, Source_Sans_3 } from "next/font/google";
+import "@/app/local-fonts.css";
 import "@/app/globals.css";
 import { getSiteUrl } from "@/lib/seo";
 import { withBasePath } from "@/lib/base-path";
-
-const heading = Merriweather({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "700", "900"]
-});
-
-const body = Source_Sans_3({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"]
-});
-
-const khipu = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-khipu",
-  weight: ["400", "500", "600", "700", "800"]
-});
 
 const siteUrl = getSiteUrl();
 const siteName = "LAST Lab for Critical AI & Digital Technologies";
@@ -29,6 +11,7 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
+  icons: {icon: withBasePath("/brand/favicon.svg")},
   title: {
     default: siteName,
     template: `%s | ${siteName}`
@@ -57,14 +40,17 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-  children
+export default async function RootLayout({
+  children, params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{lang?: string}>;
 }>) {
+  const {lang} = await params;
   return (
-    <html lang="es">
-      <body className={`${heading.variable} ${body.variable} ${khipu.variable} font-body antialiased`}>{children}</body>
+    <html lang={lang === "en" ? "en" : "es"} suppressHydrationWarning>
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }
+

@@ -8,7 +8,7 @@ const [owner, repository] = process.env.GITHUB_REPOSITORY?.split("/") ?? [
 const basePath = isGitHubActions ? `/${repository}` : "";
 const defaultSiteUrl = isGitHubActions
   ? `https://${owner}.github.io`
-  : "https://lastlab.org";
+  : `https://${owner}.github.io`;
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -26,3 +26,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

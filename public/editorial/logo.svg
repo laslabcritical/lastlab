@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="397" height="362" viewBox="0 0 397 362">
+  <title>LAST Lab — isotipo</title>
+  
+  <g fill="none" stroke="#f8fef5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M72.3 114.7 200.7 42 327.3 116.7 326.7 264 198 336.7 71 262 Z" stroke-width="2.7"/>
+    <path d="M211.2 178.7 327.3 116.7 M198.7 197.5 198 336.7 M159 207.3 198.7 231.3 237.3 208 M138 226.7 198.7 261.3 260 226.7 M151.3 257.3 198.7 286 246 258" stroke-width="2.7"/>
+    <circle cx="198.7" cy="184.7" r="12.7" fill="#061f16" stroke-width="2.7"/>
+    <g fill="#061f16" stroke-width="1.4">
+      <circle cx="159" cy="207.3" r="7.7"/>
+      <circle cx="237.3" cy="208" r="7.7"/>
+      <circle cx="138" cy="226.7" r="7.7"/>
+      <circle cx="260" cy="226.7" r="7.7"/>
+      <circle cx="151.3" cy="257.3" r="7.7"/>
+      <circle cx="246" cy="258" r="7.7"/>
+    </g>
+  </g>
+</svg>

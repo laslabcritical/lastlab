@@ -26,6 +26,8 @@ export interface PersonProfile {
 }
 
 export interface NetworkNode {
+  expandedDescription?: string;
+  externalUrl?: string;
   name: string;
   institution?: string;
   location: string;
@@ -113,9 +115,23 @@ export interface ResearchPageContent {
   seo: SeoFields;
   intro: string;
   areas: ContentCard[];
+  applicationAreas?: ContentCard[];
+  applicationNote?: string;
+  methods?: ContentCard[];
+  methodsTitle?: string;
 }
 
+export interface PublicationEntry {
+  title: string; authors: string; year: number; venue: string; details: string;
+  url: string; doi: string | null; status: string;
+}
+export interface ConferencePaper {
+  title: string; authors: string; year: number; event: string; institution: string;
+  dates: string; page: number; status: string; url: string | null;
+}
 export interface PublicationsPageContent {
+  entries?: PublicationEntry[];
+  conferencePapers?: ConferencePaper[];
   seo: SeoFields;
   intro: string;
   collections: Array<{
@@ -128,6 +144,8 @@ export interface PublicationsPageContent {
 }
 
 export interface TrainingPageContent {
+  proposedAreas?: string[];
+  formats?: string;
   seo: SeoFields;
   intro: string;
   areas: ContentCard[];
@@ -135,6 +153,9 @@ export interface TrainingPageContent {
 }
 
 export interface GovernancePageContent {
+  directionDescription?: string;
+  diversaStatus?: string;
+  legalNote?: string;
   seo: SeoFields;
   intro: string;
   principlesTitle: string;
@@ -156,6 +177,8 @@ export interface GovernancePageContent {
 }
 
 export interface CooperationPageContent {
+  collaborationAreas?: string;
+  sustainability?: string;
   seo: SeoFields;
   intro: string;
   partnerTitle: string;
@@ -367,3 +390,4 @@ export interface LocaleContent {
     contact: ContactPageContent;
   };
 }
+

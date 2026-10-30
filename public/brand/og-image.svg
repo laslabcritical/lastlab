@@ -1,18 +1,1 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1A2D49"/>
-      <stop offset="1" stop-color="#274879"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1050" cy="-40" r="340" fill="#B18A4B" fill-opacity="0.12"/>
-  <circle cx="120" cy="560" r="260" fill="#D9E6F7" fill-opacity="0.10"/>
-  <rect x="90" y="110" width="150" height="150" rx="30" fill="#F4F7FB" fill-opacity="0.15"/>
-  <path d="M136 145H154V225H136V145Z" fill="#F4F7FB"/>
-  <path d="M166 145H188C216 145 232 159 232 185C232 211 216 225 188 225H166V145ZM184 162V208H188C201 208 214 201 214 185C214 169 201 162 188 162H184Z" fill="#F4F7FB"/>
-  <text x="90" y="330" fill="#F4F7FB" font-size="58" font-weight="700" font-family="Georgia, 'Times New Roman', serif">LAST Lab for Critical</text>
-  <text x="90" y="398" fill="#F4F7FB" font-size="58" font-weight="700" font-family="Georgia, 'Times New Roman', serif">AI &amp; Digital Technologies</text>
-  <text x="90" y="470" fill="#D9E6F7" font-size="30" font-family="Helvetica, Arial, sans-serif">Latin American Socio-Technical Laboratory for</text>
-  <text x="90" y="512" fill="#D9E6F7" font-size="30" font-family="Helvetica, Arial, sans-serif">Critical AI and Digital Technologies</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#061f16"/><text x="80" y="250" fill="#f2f0e7" font-family="Georgia,serif" font-size="88">LAST Lab</text><text x="84" y="330" fill="#f2f0e7" font-family="Georgia,serif" font-size="45">Critical AI &amp; Digital Technologies</text><text x="84" y="430" fill="#b3c59c" font-family="Arial,sans-serif" font-size="24">América Latina · Investigación crítica · Cooperación</text></svg>
