@@ -737,6 +737,11 @@ function Participation({ page }: { page: KhipuxQuitoPageContent }) {
               {page.registration.body}
             </p>
             <RegistrationActions page={page} />
+            {page.links.paymentUrl && (
+              <a href={page.links.paymentUrl} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full border border-khipu-orange px-5 py-3 font-bold text-khipu-orange hover:bg-white/10">
+                {page.locale === "es" ? "Pago de inscripción (USFQ)" : "Registration payment (USFQ)"}
+              </a>
+            )}
             <p className="text-white/75">{page.scheduleNote}</p>
             <div className="rounded-xl border-2 border-khipu-orange bg-khipu-orange/20 px-6 py-5">
               <p className="text-sm font-medium uppercase tracking-wider text-khipu-white/80">

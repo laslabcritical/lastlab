@@ -288,6 +288,7 @@ export interface KhipuxQuitoPageContent {
   };
   links: {
     registrationUrl: string | null;
+    paymentUrl: string | null;
     fullProgramUrl: string | null;
     scholarshipUrl: string;
     posterUrl: string | null;
