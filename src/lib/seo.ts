@@ -1,4 +1,4 @@
-export const DEFAULT_SITE_URL = "https://lastlab.org";
+export const DEFAULT_SITE_URL = "https://laslabcritical.github.io";
 
 export function getSiteUrl(): URL {
   const configured = process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
@@ -9,3 +9,4 @@ export function getSiteUrl(): URL {
     return new URL(DEFAULT_SITE_URL);
   }
 }
+

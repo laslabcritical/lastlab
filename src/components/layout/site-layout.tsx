@@ -1,27 +1,10 @@
-import type { ReactNode } from "react";
-import type { LocaleContent } from "@/content/schema";
-import type { Locale, PageKey } from "@/lib/i18n";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
-
-interface SiteLayoutProps {
-  locale: Locale;
-  pageKey: PageKey;
-  content: LocaleContent;
-  children: ReactNode;
-}
-
-export function SiteLayout({ locale, pageKey, content, children }: SiteLayoutProps) {
-  if (pageKey === "khipuxQuito") {
-    return <main className="min-h-screen">{children}</main>;
-  }
-
-  return (
-    <div className="relative flex min-h-screen flex-col">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(63,111,181,0.12),_transparent_55%),radial-gradient(circle_at_80%_22%,_rgba(177,138,75,0.10),_transparent_40%)]" />
-      <Navbar locale={locale} pageKey={pageKey} content={content} />
-      <main className="container-shell flex-1 py-8 md:py-12">{children}</main>
-      <Footer locale={locale} content={content} />
-    </div>
-  );
+import type {ReactNode} from 'react';
+import Link from 'next/link';
+import type {LocaleContent} from '@/content/schema';
+import {getLocalizedPath,type Locale,type PageKey} from '@/lib/i18n';
+import {EditorialHeader} from '@/components/editorial/header';
+import '@/components/editorial/editorial.css';
+export function SiteLayout({locale,pageKey,content,children}:{locale:Locale;pageKey:PageKey;content:LocaleContent;children:ReactNode}) {
+ if(pageKey==='khipuxQuito')return <main className="min-h-screen">{children}</main>;
+ return <div className="editorial-site" lang={locale}><EditorialHeader locale={locale} pageKey={pageKey} labels={content.navLabels}/><main id="main">{children}</main><footer><div className="foot-top"><div><strong>LAST Lab</strong><p>Critical AI &amp; Digital Technologies</p><p>{locale==='es'?'Investigación crítica desde América Latina.':'Critical research from Latin America.'}</p></div><nav aria-label={locale==='es'?'Enlaces del pie':'Footer links'}>{content.footerLinks.map(k=><Link key={k} href={getLocalizedPath(locale,k)}>{content.navLabels[k]}</Link>)}</nav></div><div className="foot-bottom"><span>{content.siteSubtitle}</span><span>{locale==='es'?'Red autónoma y multinodal · América Latina y el Sur Global':'An autonomous multinodal network · Latin America and the Global South'}</span></div></footer></div>;
 }
