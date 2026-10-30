@@ -3,12 +3,12 @@ import { khipuxQuito2026En } from "@/content/khipux-quito-2026";
 import { enPeople } from "@/content/people";
 
 export const enContent: LocaleContent = {
-  "siteName": "LAST Lab for Critical AI & Digital Technologies",
+  "siteName": "LASTLab for Critical AI & Digital Technologies",
   "siteSubtitle": "Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies",
   "navLabels": {
     "home": "Home",
     "khipuxQuito": "KHIPUx Quito 2026",
-    "about": "About LAST Lab",
+    "about": "About LASTLab",
     "network": "Network",
     "research": "Research and Action",
     "publications": "Publications",
@@ -37,11 +37,11 @@ export const enContent: LocaleContent = {
     khipuxQuito: khipuxQuito2026En,
     "home": {
       "seo": {
-        "title": "LAST Lab for Critical AI & Digital Technologies",
+        "title": "LASTLab for Critical AI & Digital Technologies",
         "description": "A multinodal Latin American network for critical research, experimentation, and action on artificial intelligence and digital technologies."
       },
       "hero": {
-        "title": "LAST Lab for Critical AI & Digital Technologies",
+        "title": "LASTLab for Critical AI & Digital Technologies",
         "subtitle": "A Latin American network for critical research, technological experimentation, and multinodal cooperation.",
         "description": "We investigate how artificial intelligence and digital technologies reshape knowledge production, power relations, labour, institutions, and social life. From Latin America, we connect rigorous research, applied methods, education, and cooperation to develop situated sociotechnical capacities and alternatives.",
         "actions": [
@@ -58,7 +58,7 @@ export const enContent: LocaleContent = {
       "strategic": {
         "eyebrow": "Strategic challenge",
         "title": "Why a Latin American perspective on AI?",
-        "body": "The infrastructures, models, and decisions shaping the expansion of AI are distributed unequally. In Latin America, their implications are intertwined with historical dependency, struggles over knowledge and data, transformations of labour, and territorial inequalities. LAST Lab studies these configurations, develops tools to analyse them, and fosters public and technological initiatives grounded in regional realities."
+        "body": "The infrastructures, models, and decisions shaping the expansion of AI are distributed unequally. In Latin America, their implications are intertwined with historical dependency, struggles over knowledge and data, transformations of labour, and territorial inequalities. LASTLab studies these configurations, develops tools to analyse them, and fosters public and technological initiatives grounded in regional realities."
       },
       "whatWeDo": {
         "eyebrow": "What we do",
@@ -92,14 +92,14 @@ export const enContent: LocaleContent = {
       },
       "network": {
         "title": "Multinodal network",
-        "body": "LAST Lab originated from an initiative conceived in Ecuador in 2024. It developed into a network with founding institutional nodes at IEAD–USFQ (Ecuador) and ICSyA–UNAJ (Argentina), together with Diversa's participation during its foundational stage. The network welcomes institutional, organisational, and individual nodes that share its commitments to academic rigour, intellectual autonomy, cooperation, inclusion, and social justice."
+        "body": "LASTLab originated from an initiative conceived in Ecuador in 2024. It developed into a network with founding institutional nodes at IEAD–USFQ (Ecuador) and ICSyA–UNAJ (Argentina), together with Diversa as an organizational node participating since its foundational stage. The network welcomes institutional, organisational, and individual nodes that share its commitments to academic rigour, intellectual autonomy, cooperation, inclusion, and social justice."
       },
       "foundation": {
         "title": "Origin",
-        "body": "The initiative was conceived in Ecuador in late 2024 by Horacio Correa Lucero. Cheryl Martens, at the Institute for Advanced Studies in Inequalities, Universidad San Francisco de Quito, supported its early development and institutional articulation. Diversa participated during the foundational stage, connecting academic research, technical capabilities, and civil society. In 2026, LAST Lab consolidated its internal organisational instruments and its multinodal structure across Ecuador and Argentina."
+        "body": "The initiative was conceived in Ecuador in late 2024 by Horacio Correa Lucero. Cheryl Martens, at the Institute for Advanced Studies in Inequalities, Universidad San Francisco de Quito, supported its early development and institutional articulation. Diversa participated during the foundational stage, connecting academic research, technical capabilities, and civil society. In 2026, LASTLab consolidated its internal organisational instruments and its multinodal structure across Ecuador and Argentina."
       },
       "cta": {
-        "title": "Collaborate with LAST Lab",
+        "title": "Collaborate with LASTLab",
         "actions": [
           {
             "label": "Propose an alliance",
@@ -114,14 +114,14 @@ export const enContent: LocaleContent = {
     },
     "about": {
       "seo": {
-        "title": "About LAST Lab",
-        "description": "Nature, mission, vision, and origin of LAST Lab as an autonomous multinodal network for critical research on artificial intelligence and digital technologies."
+        "title": "About LASTLab",
+        "description": "Nature, mission, vision, and origin of LASTLab as an autonomous multinodal network for critical research on artificial intelligence and digital technologies."
       },
-      "intro": "LAST Lab for Critical AI & Digital Technologies — the Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies — is an autonomous, interdisciplinary, and multinodal network for academic, scientific, and sociotechnical cooperation. Its priority focus is Latin America and the Global South, with an international collaborative outlook. It examines AI and digital technologies as sociotechnical configurations shaped by knowledge, design choices, institutions, economic relations, social actors, and material infrastructures.",
+      "intro": "LASTLab for Critical AI & Digital Technologies — the Latin American Socio-Technical Laboratory for Critical AI and Digital Technologies — is an autonomous, interdisciplinary, and multinodal network for academic, scientific, and sociotechnical cooperation. Its priority focus is Latin America and the Global South, with an international collaborative outlook. It examines AI and digital technologies as sociotechnical configurations shaped by knowledge, design choices, institutions, economic relations, social actors, and material infrastructures.",
       "sections": [
         {
           "title": "Origins",
-          "body": "The initiative was conceived in Ecuador in late 2024 by Horacio Correa Lucero. Cheryl Martens, at the Institute for Advanced Studies in Inequalities, Universidad San Francisco de Quito, supported its early development and institutional articulation. Diversa participated during the foundational stage, connecting academic research, technical capabilities, and civil society. In 2026, LAST Lab consolidated its internal organisational instruments and its multinodal structure across Ecuador and Argentina."
+          "body": "The initiative was conceived in Ecuador in late 2024 by Horacio Correa Lucero. Cheryl Martens, at the Institute for Advanced Studies in Inequalities, Universidad San Francisco de Quito, supported its early development and institutional articulation. Diversa participated during the foundational stage, connecting academic research, technical capabilities, and civil society. In 2026, LASTLab consolidated its internal organisational instruments and its multinodal structure across Ecuador and Argentina."
         },
         {
           "title": "Mission",
@@ -142,14 +142,14 @@ export const enContent: LocaleContent = {
         "title": "Network",
         "description": "Founding institutional nodes, participating organisations and people in an autonomous multinodal network."
       },
-      "intro": "LAST Lab is organised as a multinodal network. Its participants work through institutional, organisational, and individual nodes, each retaining their own identity and competencies. This model supports sustained collaboration and project-specific teams across Latin America, the Global South, and beyond.",
+      "intro": "LASTLab is organised as a multinodal network. Its participants work through institutional, organisational, and individual nodes, each retaining their own identity and competencies. This model supports sustained collaboration and project-specific teams across Latin America, the Global South, and beyond.",
       "structure": {
         "title": "Multinodal structure",
         "body": "The network integrates institutional, organizational, and individual nodes under shared principles of critical research, social justice, intellectual autonomy, and cooperation. This model enables growth while preserving articulation, institutional memory, and regional focus. A person’s professional affiliation does not automatically make their institution a node, partner or sponsor of the Lab."
       },
       "seats": {
         "title": "Institutional participation and scope",
-        "body": "These are founding institutional nodes for the purposes of LAST Lab’s internal organisation. Their institutional participation is subject to each university’s applicable authorisations, procedures and agreements. The network welcomes new nodes in Latin America and beyond."
+        "body": "These are founding institutional nodes for the purposes of LASTLab’s internal organisation. Their institutional participation is subject to each university’s applicable authorisations, procedures and agreements. The network welcomes new nodes in Latin America and beyond."
       },
       "nodes": {
         "title": "Network nodes",
@@ -166,12 +166,12 @@ export const enContent: LocaleContent = {
             "location": "Argentina"
           }
         ],
-        "organizationalTitle": "Participating organisation since the foundational stage",
+        "organizationalTitle": "Organizational node of LASTLab",
         "organizational": [
           {
-            "name": "Diversa",
+            "name": "Diversa — organizational node of LASTLab",
             "location": "Quito, Ecuador",
-            "description": "Diversa is a Quito-based organisation that researches, develops and applies artificial intelligence, data analysis and geospatial technologies from critical and feminist perspectives rooted in the Global South. It combines technical expertise with applied research, education and public engagement on social justice, governance and technological power. Diversa has participated in LAST Lab since its foundational stage; its formal admission as an organisational node follows the procedure set out in the Statutes.",
+            "description": "Diversa is a Quito-based organisation that researches, develops and applies artificial intelligence, data analysis and geospatial technologies from critical and feminist perspectives rooted in the Global South. It combines technical expertise with applied research, education and public engagement on social justice, governance and technological power. Diversa is an organizational node of LASTLab and has participated in the network since its foundational stage.",
             "expandedDescription": "Diversa works at the intersection of artificial intelligence, digital technologies and social justice from a Global South perspective. Its multidisciplinary team brings expertise in AI systems development, data analysis, geospatial technologies and digital infrastructure, combining technical skills with critical perspectives on governance, ethics and power.\n\nIts applied projects address migration, natural resources, mining, human rights and online hate speech, while investigating less visible dimensions of AI development, including data colonialism, the political economy of AI, global digital labour chains, resource extraction and territorial impacts.\n\nDiversa conducts applied research, develops technical tools, delivers educational activities and contributes to public-policy debates. Its work emphasises human rights and the rights of nature, feminist perspectives, community participation, transparency and the redistribution of power. It approaches technology as a sociopolitical process whose design and implementation choices have distributive consequences.",
             "externalUrl": "https://diversa.studio/en/about"
           }
@@ -200,13 +200,13 @@ export const enContent: LocaleContent = {
       },
       "governance": {
         "title": "Governance model",
-        "body": "LAST Lab combines a General Directorate, node directorates and organisational representation under the applicable procedures, together with the Multinodal Articulation Council (CAM). The CAM advises on ordinary management and has decision-making powers on matters expressly established in the Statutes. The network respects each institution’s and organisation’s competencies."
+        "body": "LASTLab combines a General Directorate, node directorates and organisational representation under the applicable procedures, together with the Multinodal Articulation Council (CAM). The CAM advises on ordinary management and has decision-making powers on matters expressly established in the Statutes. The network respects each institution’s and organisation’s competencies."
       }
     },
     "research": {
       "seo": {
         "title": "Research and Action",
-        "description": "Critical research, technological experimentation, and public engagement areas of LAST Lab on artificial intelligence and digital technologies."
+        "description": "Critical research, technological experimentation, and public engagement areas of LASTLab on artificial intelligence and digital technologies."
       },
       "intro": "Our research examines AI and digital technologies in relation to power, political economy, institutions, knowledge, territories, and social life. We combine conceptual and empirical inquiry, technical methods, evidence production, and experimentation to understand technological transformation and engage with it responsibly.",
       "areas": [
@@ -287,7 +287,7 @@ export const enContent: LocaleContent = {
         "title": "Publications",
         "description": "Verified publications by network members, conference abstracts and forthcoming institutional series."
       },
-      "intro": "Publications by LAST Lab participants contribute to the network's critical research agenda. This section presents selected, verifiable publications by people in the network and will progressively feature materials produced through LAST Lab projects. Authorship and publishing rights remain with the respective authors and publishers.",
+      "intro": "Publications by LASTLab participants contribute to the network's critical research agenda. This section presents selected, verifiable publications by people in the network and will progressively feature materials produced through LASTLab projects. Authorship and publishing rights remain with the respective authors and publishers.",
       "collections": [
         {
           "title": "Working papers and research series",
@@ -377,9 +377,9 @@ export const enContent: LocaleContent = {
     "training": {
       "seo": {
         "title": "Training",
-        "description": "Training areas of LAST Lab on ethics, policy, governance, and critical studies of artificial intelligence and digital technologies."
+        "description": "Training areas of LASTLab on ethics, policy, governance, and critical studies of artificial intelligence and digital technologies."
       },
-      "intro": "Education is integral to LAST Lab's work. The network develops proposals for researchers, students, educators, organisations, and public-interest actors seeking critical and technical understanding of artificial intelligence and digital technologies.",
+      "intro": "Education is integral to LASTLab's work. The network develops proposals for researchers, students, educators, organisations, and public-interest actors seeking critical and technical understanding of artificial intelligence and digital technologies.",
       "areas": [
         {
           "title": "Ethics, politics, and governance of artificial intelligence",
@@ -415,17 +415,17 @@ export const enContent: LocaleContent = {
     "governance": {
       "seo": {
         "title": "Governance",
-        "description": "Governance structure, principles, and statutory highlights of LAST Lab as an autonomous multinodal network."
+        "description": "Governance structure, principles, and statutory highlights of LASTLab as an autonomous multinodal network."
       },
-      "intro": "LAST Lab is an autonomous, multinodal network for academic, scientific, and sociotechnical cooperation. Its internal organisation is governed by a Foundational Document, Statutes, and a Constitutive Act. The network does not currently have legal personality. Projects requiring contractual capacity or financial administration are carried out through legally eligible entities designated for each initiative.",
+      "intro": "LASTLab is an autonomous, multinodal network for academic, scientific, and sociotechnical cooperation. Its internal organisation is governed by a Foundational Document, Statutes, and a Constitutive Act. The network does not currently have legal personality. Projects requiring contractual capacity or financial administration are carried out through legally eligible entities designated for each initiative.",
       "principlesTitle": "Guiding principles",
       "principles": "academic integrity; intellectual and organisational independence; social justice; inclusion; non-discrimination; data protection; transparency; conflict-of-interest management; recognition of authorship; and open access where feasible. This also includes harassment prevention.",
       "statutesNotesTitle": "Statutory highlights",
       "statutesNotes": [
-        "LAST Lab is an autonomous multinodal network.",
+        "LASTLab is an autonomous multinodal network.",
         "The network does not currently have legal personality. Its internal instruments do not constitute a legally registered foundation or association.",
-        "Until LAST Lab has legal personality, projects requiring legal or financial administration may be carried out through administrative entities selected case by case.",
-        "The Statutes of LAST Lab do not replace or modify the competencies or rules of participating institutions and organizations.",
+        "Until LASTLab has legal personality, projects requiring legal or financial administration may be carried out through administrative entities selected case by case.",
+        "The Statutes of LASTLab do not replace or modify the competencies or rules of participating institutions and organizations.",
         "Spanish is the official working language, and English functions as a courtesy translation.",
         "There is a preference for open access whenever possible."
       ],
@@ -446,7 +446,7 @@ export const enContent: LocaleContent = {
           "affiliation": "Instituto de Ciencias Sociales y Administración, Universidad Nacional Arturo Jauretche"
         },
         {
-          "role": "Foundational participation of Diversa; prospective representation upon statutory admission",
+          "role": "Director of Diversa — organizational node of LASTLab",
           "person": "Diana Mosquera",
           "affiliation": "Diversa, Quito"
         }
@@ -458,15 +458,15 @@ export const enContent: LocaleContent = {
         "body": "The CAM is the network's representative and deliberative body. It advises on ordinary management and holds specific internal decision-making powers concerning matters expressly set out in the Statutes, including admission of nodes, statutory amendments, and decisions regarding the General Directorate. It cannot impose legal or financial obligations upon institutions without their consent."
       },
       "directionDescription": "Dr Horacio Correa Lucero. Responsible for executive, academic, and strategic leadership, project coordination and partnerships, and convening and chairing the CAM within statutory limits.",
-      "diversaStatus": "Under the Constitutive Act, Diana Mosquera is the prospective representative of Diversa upon completion of its formal acceptance under the Statutes.",
+      "diversaStatus": "Diversa is an organizational node of LASTLab, directed by Diana Mosquera. Membership in the network does not itself confer governance powers or legal representation.",
       "legalNote": "The internal instruments do not themselves constitute a registered foundation or association. When required, individual projects may use a separately authorised administrative entity; such an entity does not govern the whole network by virtue of this role."
     },
     "cooperation": {
       "seo": {
         "title": "Cooperation",
-        "description": "Academic, social, and institutional partnerships compatible with LAST Lab principles and intellectual autonomy."
+        "description": "Academic, social, and institutional partnerships compatible with LASTLab principles and intellectual autonomy."
       },
-      "intro": "LAST Lab develops research, training, technological experimentation, and public-engagement partnerships with universities, research centres, community organisations, public and multilateral bodies, and technological actors whose work aligns with its mission.",
+      "intro": "LASTLab develops research, training, technological experimentation, and public-engagement partnerships with universities, research centres, community organisations, public and multilateral bodies, and technological actors whose work aligns with its mission.",
       "partnerTitle": "We seek collaboration with",
       "partners": [
         "Universities and research centers",
@@ -486,10 +486,10 @@ export const enContent: LocaleContent = {
         "Agreements with universities, research centers, public institutions, multilateral organizations, and foundations.",
         "Regional academic consortia and networks aimed at strengthening shared capacities.",
         "Training programs and specialized activities once they are formally defined.",
-        "Collaborations with technological initiatives or private organizations only when compatible with the intellectual autonomy and principles of LAST Lab."
+        "Collaborations with technological initiatives or private organizations only when compatible with the intellectual autonomy and principles of LASTLab."
       ],
       "operationsTitle": "Operational framework",
-      "operations": "Until LAST Lab has its own legal personality, projects or agreements that require legal or financial administration may be executed through an administrative entity defined for each initiative, in accordance with the Statutes and the corresponding specific agreements.",
+      "operations": "Until LASTLab has its own legal personality, projects or agreements that require legal or financial administration may be executed through an administrative entity defined for each initiative, in accordance with the Statutes and the corresponding specific agreements.",
       "contactPrompt": "Official channels for proposing collaborations will be published once confirmed.",
       "collaborationAreas": "joint research and comparative studies; AI evaluation methods; data and inequality analysis; workshops and education; policy briefs and strategic reports; and participatory sociotechnical design.",
       "sustainability": "The network explores competitive funding calls, project-specific agreements, and partnerships consistent with its principles. Legal capacity and financial administration are established case by case under the relevant instruments."
@@ -497,9 +497,9 @@ export const enContent: LocaleContent = {
     "contact": {
       "seo": {
         "title": "Contact",
-        "description": "Locations and status of LAST Lab’s official contact channels."
+        "description": "Locations and status of LASTLab’s official contact channels."
       },
-      "intro": "LAST Lab welcomes proposals for academic collaboration, research projects, education, institutional cooperation and media enquiries.",
+      "intro": "LASTLab welcomes proposals for academic collaboration, research projects, education, institutional cooperation and media enquiries.",
       "statusTitle": "Institutional channels being updated",
       "status": "Official contact channels will be published and activated once confirmed by the General Directorate.",
       "locationsTitle": "Nodes and locations",
@@ -517,7 +517,7 @@ export const enContent: LocaleContent = {
         {
           "name": "Diversa",
           "location": "Quito, Ecuador",
-          "description": "Participating organisation since the foundational stage; formal node admission follows the statutory procedure."
+          "description": "Organizational node of LASTLab; participant since the foundational stage."
         }
       ],
       "socialTitle": "Institutional social profiles",

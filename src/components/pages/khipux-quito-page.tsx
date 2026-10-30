@@ -866,10 +866,10 @@ function KhipuxFooter({ page, locale }: { page: KhipuxQuitoPageContent; locale: 
             {page.eventFooter.title} · {page.eventFooter.dates}<br />{page.eventFooter.location}
           </p>
           <Link
-            href={getLocalizedPath(locale, "about")}
+            href={getLocalizedPath(locale, "home")}
             className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-khipu-gray transition-all hover:bg-white/90 md:text-base"
           >
-            LAST Lab
+            <img src={withBasePath("/brand/lastlab-logo-negro.svg")} width="1200" height="360" alt="LASTLab — For Critical AI &amp; Digital Technologies" className="h-auto w-48 max-w-full" />
           </Link>
         </div>
       </div>

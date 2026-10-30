@@ -19,10 +19,10 @@ export function Footer({ locale, content }: FooterProps) {
       <div className="container-shell flex flex-col gap-5 py-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-col gap-3">
           <Image
-            src={withBasePath("/brand/3.svg")}
+            src={withBasePath("/brand/lastlab-logo-negro.svg")}
             alt={content.siteName}
-            width={600}
-            height={203}
+            width={1200}
+            height={360}
             className="h-8 w-auto max-w-[230px]"
           />
           <p className="text-sm text-muted">

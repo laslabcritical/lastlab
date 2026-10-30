@@ -6,7 +6,7 @@ import type { Locale } from "@/lib/i18n";
 export const eventPeople = {
   cesar: ["Cesar Zambrano", "USFQ"], arnaldo: ["Arnaldo Medina", "UNAJ"],
   diana: ["Diana Mosquera", "Diversa"], cheryl: ["Cheryl Martens", "USFQ"],
-  horacio: ["Horacio Correa Lucero", "UNAJ / LAST Lab / USFQ"],
+  horacio: ["Horacio Correa Lucero", "UNAJ / LASTLab / USFQ"],
   belen: ["María Belén Albornoz", "CTS Lab–FLACSO Ecuador"],
   laura: ["Laura Melo", "ONU Ecuador"], luis: ["Luis Enriquez", "Superintendencia de Protección de Datos Personales"],
   alexandra: ["Alexandra Gualavisí", "FLACSO Ecuador"], daniel: ["Daniel Riofrío", "USFQ"],
@@ -42,7 +42,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
       theme: t("Vigilancia, seguridad técnica y sostenibilidad de la IA", "Surveillance, technical security and AI sustainability"), sessions: [
         session("registration-1", "08:30–08:50", "Registro", "Registration", logistics),
         session("welcome", "08:50–09:00", "Apertura institucional · Bienvenida", "Institutional opening · Welcome", ["Apertura", "Opening"], ["cesar", "arnaldo"], theatre),
-        session("launch", "09:00–09:50", "IA abierta, responsable y crítica en América Latina · Lanzamiento de LAST Lab", "Open, responsible and critical AI in Latin America · LAST Lab launch", ["Conferencia inaugural", "Opening keynote"], ["diana", "cheryl", "belen", "horacio"], theatre),
+        session("launch", "09:00–09:50", "IA abierta, responsable y crítica en América Latina · Lanzamiento de LASTLab", "Open, responsible and critical AI in Latin America · LASTLab launch", ["Conferencia inaugural", "Opening keynote"], ["diana", "cheryl", "belen", "horacio"], theatre),
         session("keynotes-1", "10:00–11:00", "Conferencias magistrales", "Keynote lectures", keynote, ["laura", "luis"], theatre),
         session("coffee-1", "11:00–11:30", "Pausa café", "Coffee break", logistics, [], t("Hall principal", "Main hall")),
         session("surveillance", "11:30–12:45", "Inteligencia artificial, vigilancia y derechos", "Artificial intelligence, surveillance and rights", plenary, ["belen", "alexandra", "daniel", "ola"], theatre, "diana"),
