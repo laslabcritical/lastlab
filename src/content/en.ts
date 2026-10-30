@@ -360,17 +360,6 @@ export const enContent: LocaleContent = {
           "dates": "29–30 May 2025",
           "status": "Abstract published in the conference book of abstracts",
           "url": null
-        },
-        {
-          "title": "¿Puede la inteligencia artificial devenir sujeto epistémico? Emergencia, razón instrumental y redes sociobiotécnicas",
-          "authors": "Horacio Correa Lucero; Gabriel Perdomo",
-          "page": 46,
-          "year": 2025,
-          "event": "VII Congreso Internacional de Epistemología y Metodología",
-          "institution": "Universidad Nacional de Lanús",
-          "dates": "29–30 May 2025",
-          "status": "Abstract published in the conference book of abstracts",
-          "url": null
         }
       ]
     },
