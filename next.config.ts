@@ -5,10 +5,9 @@ const [owner, repository] = process.env.GITHUB_REPOSITORY?.split("/") ?? [
   "laslabcritical",
   "lastlab"
 ];
-const basePath = isGitHubActions ? `/${repository}` : "";
-const defaultSiteUrl = isGitHubActions
-  ? `https://${owner}.github.io`
-  : `https://${owner}.github.io`;
+// GitHub Pages provides an empty base path when a custom domain is configured.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isGitHubActions ? `/${repository}` : "");
+const defaultSiteUrl = `https://${owner}.github.io`;
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,

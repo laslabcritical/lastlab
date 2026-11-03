@@ -12,7 +12,7 @@ Sitio institucional bilingue (`/es`, `/en`) para LAST Lab for Critical AI & Digi
 - Componentes reutilizables de layout y UI.
 - SEO por pagina (metadata, OpenGraph, Twitter).
 - `sitemap.xml` y `robots.txt`.
-- Configuracion lista para Vercel.
+- Publicacion automatica en GitHub Pages.
 
 ## Instalacion
 
@@ -48,8 +48,29 @@ npm run lint
 - Ajustar paleta/tipografia: `tailwind.config.ts` y `src/app/globals.css`.
 - Actualizar dominio canonico: variable `NEXT_PUBLIC_SITE_URL`.
 
-## Deploy en Vercel
+## Deploy en GitHub Pages
 
-1. Importar el repositorio en Vercel.
-2. Configurar variable `NEXT_PUBLIC_SITE_URL` (ejemplo: `https://lastlab.org`).
-3. Deploy.
+Cada push a `main` ejecuta `.github/workflows/deploy-pages.yml`. El build toma
+el origen y la ruta base de la configuracion de Pages, tanto para la URL
+`github.io/lastlab` como para un dominio propio.
+
+### Dominio `lastlab.lat`
+
+En Porkbun, configurar los siguientes registros DNS:
+
+| Tipo | Host | Valor |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | laslabcritical.github.io |
+
+Reemplazar los registros de estacionamiento que entren en conflicto con `@`
+y `www`, conservando los registros de correo y otros servicios.
+
+Configurar `lastlab.lat` en Settings > Pages > Custom domain del repositorio
+y volver a ejecutar el workflow para generar el sitio con el nuevo origen y
+sin el prefijo `/lastlab`. Este despliegue usa GitHub Actions y no requiere
+un archivo `CNAME`. Una vez que GitHub valide el DNS y emita el certificado,
+activar Enforce HTTPS y verificar tanto el dominio principal como `www`.
