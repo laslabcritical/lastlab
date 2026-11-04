@@ -30,7 +30,7 @@ export const esPeople: PersonProfile[] = [
       "Diversa, Quito, Ecuador."
     ],
     "bio": "Física y científica cognitiva con más de diez años de experiencia en inteligencia artificial. Es directora de Diversa, donde articula investigación aplicada, desarrollo técnico y perspectivas críticas y feministas. Su trabajo abarca migración, recursos naturales, derechos humanos, gobernanza tecnológica y cadenas globales de IA. Se formó en ética y gobernanza de IA, así como en IA cooperativa y enfoques sociotécnicos mediante programas de MILA y The New School. Es Fellow del Center for AI and Digital Policy (CAIDP), donde contribuye al análisis comparado de políticas públicas. Investiga las «geografías ocultas» de la inteligencia artificial y sus impactos sociales.",
-    "photoSrc": null,
+    "photoSrc": "/people/diana.webp",
     "externalUrl": null
   },
   {
@@ -96,7 +96,7 @@ export const enPeople: PersonProfile[] = [
       "Diversa, Quito, Ecuador."
     ],
     "bio": "Diana Mosquera is a physicist and cognitive scientist with more than ten years of experience in artificial intelligence. She directs Diversa, combining applied research and technical development with critical and feminist perspectives. Her work addresses migration, natural resources, human rights, technology governance, and global AI production chains. She has studied AI ethics and governance, cooperative AI, and sociotechnical approaches through programmes at MILA and The New School. She is a Fellow at the Center for AI and Digital Policy (CAIDP), contributing to comparative public policy analysis. Her research and creative projects explore the 'hidden geographies' of AI and social impacts.",
-    "photoSrc": null,
+    "photoSrc": "/people/diana.webp",
     "externalUrl": null
   },
   {
