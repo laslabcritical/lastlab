@@ -1,9 +1,10 @@
 import type { KhipuxQuitoPageContent } from "@/content/schema";
 import type { Locale } from "@/lib/i18n";
-import { eventPeople, getProgramme, personLine } from "@/content/khipux-programme";
+import { eventPeople, getProgramme, personLine as localizedPersonLine } from "@/content/khipux-programme";
 
 function createEvent(locale: Locale): KhipuxQuitoPageContent {
   const t = (es: string, en: string) => locale === "es" ? es : en;
+  const personLine = (id: keyof typeof eventPeople) => localizedPersonLine(id, locale);
   const venue = "Campus Santiago Gangotena, Universidad San Francisco de Quito (USFQ)";
   const dates = t("9 y 10 de noviembre de 2026", "November 9–10, 2026");
   const subtitle = t("Inteligencia Artificial Abierta, Responsable y Crítica", "Open, Responsible and Critical AI");
@@ -15,7 +16,7 @@ function createEvent(locale: Locale): KhipuxQuitoPageContent {
   const activeParticipantKeys = participantKeys.filter(key => scheduledPeople.has(personLine(key)));
   // Portraits supplied by participants; public use confirmed by Gabriel on 2026-11-03.
   const portraits: Partial<Record<keyof typeof eventPeople, string>> = Object.fromEntries(
-    ["pierre", "pablo", "mor", "julian", "guanche", "miguel", "alexandra", "juan", "angel"].map(key => [key, `/people/${key}.webp`])
+    ["pierre", "pablo", "mor", "julian", "guanche", "miguel", "alexandra", "juan", "angel", "gabriel", "horacio"].map(key => [key, `/people/${key}.webp`])
   );
   const institution = (name: string, logo: string | null) => ({ name, logoSrc: logo, placeholder: name });
   return {
@@ -24,7 +25,7 @@ function createEvent(locale: Locale): KhipuxQuitoPageContent {
     location: { city: "Quito", country: "Ecuador", firstVenue: venue, secondVenue: null, mainRoom: "Teatro Calderón de la Barca", mapUrl: "https://www.google.com/maps?q=Campus%20Santiago%20Gangotena%20USFQ%20Cumbaya%20Ecuador&output=embed" },
     format: t("Híbrida", "Hybrid"), duration: t("Dos jornadas", "Two days"),
     status: { program: "published", registration: "open" },
-    links: { registrationUrl: "https://forms.cloud.microsoft/r/kWQWfU7vmU", scholarshipUrl: "https://forms.cloud.microsoft/r/dwSWizyVe9", paymentUrl: "https://btnpagos.usfq.edu.ec/pagos/Eventos.aspx", fullProgramUrl: null, posterUrl: "/khipux/descargas/afiche-khipux-quito-2026-20261103.jpg" },
+    links: { registrationUrl: "https://forms.cloud.microsoft/r/kWQWfU7vmU", scholarshipUrl: "https://forms.cloud.microsoft/r/dwSWizyVe9", paymentUrl: "https://btnpagos.usfq.edu.ec/pagos/Eventos.aspx", fullProgramUrl: "/khipux/descargas/programa-khipux-quito-2026-v5.pdf", posterUrl: "/khipux/descargas/afiche-khipux-quito-2026-20261103.jpg" },
     eventContact: { email: null, formUrl: null, instagramUrl: null, linkedinUrl: null },
     seo: { title: "KHIPUx Quito 2026 | LASTLab", description: t("KHIPUx Quito 2026: Inteligencia Artificial Abierta, Responsable y Crítica. 9 y 10 de noviembre en Campus Santiago Gangotena, USFQ, Quito. Evento híbrido inaugural de LASTLab durante ambas jornadas.", "KHIPUx Quito 2026: Open, Responsible and Critical AI. November 9–10 at Campus Santiago Gangotena, USFQ, Quito. Two-day hybrid inaugural event of LASTLab.") },
     ui: {
@@ -65,7 +66,8 @@ function createEvent(locale: Locale): KhipuxQuitoPageContent {
     scheduleNote: t("Lunes 9: 08:30–17:00; martes 10: 08:15–18:00. Horarios de Quito (UTC−5), según el detalle de la agenda.", "Monday 9: 08:30–17:00; Tuesday 10: 08:15–18:00. Quito local time (UTC−5), following the detailed programme."),
     launch: { title: t("Acto institucional de presentación de LASTLab", "Institutional launch session of LASTLab"), date: t("Lunes 9 de noviembre · 10:15–11:00 · Quito (UTC−5)", "Monday, November 9 · 10:15–11:00 · Quito (UTC−5)"), activity: t("Presentación «IA abierta, responsable y crítica en América Latina»", "Institutional presentation ‘Open, responsible and critical AI in Latin America’"), participants: ["diana", "cheryl", "horacio", "belen"].map(k => personLine(k as keyof typeof eventPeople)), description: t("LASTLab es una iniciativa latinoamericana independiente, de estructura multinodal y proyección internacional, dedicada a la investigación crítica de la inteligencia artificial y las tecnologías digitales, la cooperación académica, el desarrollo de capacidades y la incidencia en políticas públicas.", "LASTLab is an independent Latin American initiative with a multinodal structure and international reach, dedicated to critical research on artificial intelligence and digital technologies, academic cooperation, capacity building and public policy engagement.") },
     participants: { title: t("Conferencistas, panelistas y moderadores", "Speakers, panellists and moderators"), pendingBody: t("Participantes e instituciones según la agenda oficial. Las fotografías, biografías y enlaces académicos se incorporarán cuando estén disponibles y autorizados.", "Participants and affiliations follow the official agenda. Photographs, biographies and academic links will be added when available and authorized."), people: activeParticipantKeys.map(key => {
-      const [name, institution] = eventPeople[key];
+      const [name, affiliation] = eventPeople[key];
+      const institution = key === "gabriel" ? t("UADE y UNAJ", "UADE and UNAJ") : affiliation;
       const sessions = programmeDays.flatMap(d => d.sessions).filter(s => s.participants.includes(personLine(key)) || s.moderator === personLine(key));
       return { id: key, name, institution, photoSrc: portraits[key] ?? null, externalUrl: null, biography: "", confirmationStatus: t("En la agenda oficial", "Listed in the official agenda"), modality: ["juan", "julian"].includes(key) ? t("Participación online", "Online participation") : null, talkTitle: sessions.map(session => `${session.moderator === personLine(key) ? t("Moderación: ", "Moderator: ") : ""}${session.title} (${session.time})`).join(" · ") || null };
     }) },

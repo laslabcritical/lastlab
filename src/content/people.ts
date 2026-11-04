@@ -8,7 +8,7 @@ export const esPeople: PersonProfile[] = [
       "Universidad Nacional Arturo Jauretche; investigador externo del IEAD–USFQ."
     ],
     "bio": "Doctor en Ciencias Sociales y Humanas por la Universidad Nacional de Quilmes y magíster en Estudios Sociales de la Ciencia y la Tecnología por la Universidad de Salamanca. Es docente e investigador de la Universidad Nacional Arturo Jauretche e investigador externo del IEAD–USFQ. Su trabajo articula estudios de ciencia y tecnología, filosofía de la tecnología, teoría crítica y economía política para comprender las relaciones entre inteligencia artificial, tecnologías digitales, poder, trabajo, desigualdades y dependencia tecnológica en América Latina. Ha dirigido proyectos de investigación sobre tecnologías emergentes y promueve la cooperación académica regional. Es fundador y Director General de LASTLab.",
-    "photoSrc": null,
+    "photoSrc": "/people/horacio.webp",
     "externalUrl": null
   },
   {
@@ -36,9 +36,9 @@ export const esPeople: PersonProfile[] = [
   {
     "id": "gabriel-perdomo",
     "name": "Gabriel Perdomo",
-    "role": "Investigador colaborador de LASTLab; contribución a investigación y desarrollo técnico.",
+    "role": "Investigador de LASTLab e integrante de un equipo de investigación de la Universidad Nacional Arturo Jauretche (UNAJ).",
     "affiliations": [],
-    "bio": "Investigador con formación en psicología social y programación. Su trayectoria combina análisis psicosocial, estudios institucionales y perspectivas críticas de la tecnología, con especial atención a los vínculos entre inteligencia artificial, subjetividad, prácticas clínicas y condiciones sociales. Se interesa por los contextos de vulnerabilidad infantojuvenil, los problemas de la infancia y las transformaciones de las relaciones humanas mediadas tecnológicamente. En LASTLab participa en actividades de investigación sociotécnica y contribuye al desarrollo, organización y documentación de herramientas y plataformas digitales. Su trabajo busca articular el análisis conceptual de la IA con procedimientos técnicos y metodológicos reproducibles y colaborativos.",
+    "bio": "Gabriel Perdomo es psicólogo social y estudiante avanzado de la Licenciatura en Psicología de la Universidad Argentina de la Empresa (UADE). Paralelamente a su formación e investigación clínica, se desempeña profesionalmente en el desarrollo de software y la gestión de infraestructura tecnológica.\n\nIntegra un equipo de investigación de la Universidad Nacional Arturo Jauretche (UNAJ) y participa en actividades de investigación en LASTLab y la UADE. Su trabajo teórico se concentra en la intersección entre el psicoanálisis de orientación lacaniana, el análisis psicosocial y la crítica sociobiotécnica de la inteligencia artificial. Sus intereses abarcan las relaciones entre tecnología, subjetividad, instituciones y prácticas clínicas, así como las transformaciones de la experiencia humana mediadas por sistemas de IA.\n\nEn LASTLab articula estas perspectivas con su experiencia técnica, contribuyendo tanto a la investigación crítica como al desarrollo de herramientas, plataformas e infraestructura digital para el trabajo colaborativo.",
     "photoSrc": "/people/gabriel.webp",
     "externalUrl": null
   },
@@ -74,7 +74,7 @@ export const enPeople: PersonProfile[] = [
       "Universidad Nacional Arturo Jauretche; investigador externo del IEAD–USFQ."
     ],
     "bio": "He holds a PhD in Social Sciences and Humanities from Universidad Nacional de Quilmes and a Master's degree in Social Studies of Science and Technology from the University of Salamanca. He is a lecturer and researcher at Universidad Nacional Arturo Jauretche and an external researcher at IEAD–USFQ. His work brings together science and technology studies, philosophy of technology, critical theory, and political economy to examine artificial intelligence, digital technologies, power, labour, inequalities, and technological dependency in Latin America. He has directed research projects on emerging technologies and promotes regional academic cooperation. He is the founder and General Director of LASTLab.",
-    "photoSrc": null,
+    "photoSrc": "/people/horacio.webp",
     "externalUrl": null
   },
   {
@@ -102,9 +102,9 @@ export const enPeople: PersonProfile[] = [
   {
     "id": "gabriel-perdomo",
     "name": "Gabriel Perdomo",
-    "role": "Research collaborator",
+    "role": "LASTLab researcher and member of a research team at Universidad Nacional Arturo Jauretche (UNAJ).",
     "affiliations": [],
-    "bio": "Gabriel Perdomo is a researcher with a background in social psychology and programming. His work combines psychosocial analysis, institutional studies, and critical perspectives on technology, with particular attention to artificial intelligence, subjectivity, clinical practices, and social conditions. His interests include childhood and youth vulnerability, issues affecting children, and changing forms of technologically mediated human interaction. At LASTLab he participates in sociotechnical research and contributes to the development, organisation, and documentation of digital tools and platforms. His approach seeks to connect conceptual analysis of artificial intelligence with technical procedures and reproducible research methods across diverse interdisciplinary projects.",
+    "bio": "Gabriel Perdomo is a social psychologist and an advanced undergraduate student in Psychology at Universidad Argentina de la Empresa (UADE). Alongside his clinical training and research, he works professionally in software development and technology infrastructure management.\n\nHe is a member of a research team at Universidad Nacional Arturo Jauretche (UNAJ) and participates in research activities at LASTLab and UADE. His theoretical work focuses on the intersection of Lacanian psychoanalysis, psychosocial analysis and the sociobiotechnical critique of artificial intelligence. His interests encompass the relationships between technology, subjectivity, institutions and clinical practices, as well as the transformations of human experience mediated by AI systems.\n\nAt LASTLab, he connects these perspectives with his technical experience, contributing both to critical research and to the development of tools, platforms and digital infrastructure for collaborative work.",
     "photoSrc": "/people/gabriel.webp",
     "externalUrl": null
   },

@@ -1,7 +1,7 @@
 import type { ProgrammeDay, ProgrammeSession } from "@/content/schema";
 import type { Locale } from "@/lib/i18n";
 
-// Transcribed from the agenda supplied on 2026-11-03 (detailed pages 3–4). Missing rooms remain null.
+// Transcribed from official agenda version (5), supplied on 2026-11-03 (pages 3–4). Missing rooms remain null.
 // Names and affiliations are shared across locales; only editorial copy is translated.
 export const eventPeople = {
   paolo: ["Paolo Moncagatta", "USFQ"], arnaldo: ["Arnaldo Medina", "UNAJ"],
@@ -17,6 +17,7 @@ export const eventPeople = {
   fernando: ["Fernando Astudillo", "USFQ"], luciana: ["Luciana Mussello", "USFQ"],
   cristina: ["Cristina Cabezas", "USFQ"], felipe: ["Felipe Grijalva", "USFQ"],
   ricardo: ["Ricardo Flores-Moyano", "USFQ"], pierre: ["Pierre Escalante", "USFQ / ZHIDAO GOVTECH"],
+  gabriel: ["Gabriel Perdomo", "UADE y UNAJ"], lizette: ["Lizette Aguirre", "UNAJ"],
   jaime: ["Jaime Ramírez", "DINERS"], andres: ["Andrés Domínguez Hernández", "Queen Mary University of London"],
   juan: ["Juan Grigera", "King’s College London"], vizuete: ["Daniel Vizuete", "CTS Lab–FLACSO Ecuador"],
   ernesto: ["Ernesto Vivares", "FLACSO Ecuador"], angel: ["Ángel Alonso Gutiérrez Pérez", "FLACSO Ecuador"],
@@ -26,14 +27,15 @@ export const eventPeople = {
 } satisfies Record<string, [string, string]>;
 
 type Person = keyof typeof eventPeople;
-export const personLine = (id: Person) => eventPeople[id].join(" — ");
+export const personLine = (id: Person, locale: Locale = "es") =>
+  `${eventPeople[id][0]} — ${id === "gabriel" && locale === "en" ? "UADE and UNAJ" : eventPeople[id][1]}`;
 const theatre = "Teatro Calderón de la Barca";
 
 export function getProgramme(locale: Locale): ProgrammeDay[] {
   const t = (es: string, en: string) => locale === "es" ? es : en;
   function session(id: string, time: string, es: string, en: string, type: [string, string], people: Person[] = [], room: string | null = null, moderator?: Person, parallel = false, description?: string): ProgrammeSession {
-    return { id, time, title: t(es, en), type: t(...type), participants: people.map(personLine), room,
-      moderator: moderator ? personLine(moderator) : undefined, parallel, status: "confirmed", description };
+    return { id, time, title: t(es, en), type: t(...type), participants: people.map(id => personLine(id, locale)), room,
+      moderator: moderator ? personLine(moderator, locale) : undefined, parallel, status: "confirmed", description };
   }
   const logistics: [string, string] = ["Logística", "Logistics"];
   const keynote: [string, string] = ["Conferencia magistral", "Keynote"];
@@ -61,12 +63,12 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
       theme: t("Conferencias, sesiones paralelas, gobernanza, trabajo, colonialidad e infraestructura de IA", "Keynotes, parallel sessions, governance, labour, coloniality and AI infrastructure"), sessions: [
         session("registration-2", "08:15–08:30", "Registro", "Registration", logistics, [], theatre),
         session("pedagogy", "08:30–09:50", "Pedagogías críticas de IA", "Critical AI pedagogies", parallel, ["tracey", "fernando", "luciana"], theatre, "cristina", true),
-        session("security", "08:30–09:50", "Seguridad, vulnerabilidades y evaluación de modelos de IA", "Security, vulnerabilities and AI model evaluation", parallel, ["felipe", "ricardo", "jaime"], "Auditorio Biblioteca", "daniel", true),
+        session("security", "08:30–09:50", "Seguridad, vulnerabilidades y evaluación de modelos de IA", "Security, vulnerabilities and AI model evaluation", parallel, ["felipe", "ricardo", "jaime", "gabriel"], "Auditorio Biblioteca", "daniel", true),
         session("transition-2", "09:50–10:00", "Transición", "Transition", logistics),
         session("sociotechnical", "10:00–11:00", "IA, tecnología y cambio sociotécnico", "AI, technology and sociotechnical change", keynote, ["andres", "juan"], theatre, "horacio", false,
           t("Andrés Domínguez Hernández: «Hacia una ecología sociotécnica de la inteligencia artificial». Juan Grigera: «IA y las leyes del movimiento del capital: comprender la difusión tecnológica desigual».", "Andrés Domínguez Hernández: ‘Towards a sociotechnical ecology of artificial intelligence’. Juan Grigera: ‘AI and the Laws of Motion of Capital: Understanding Uneven Technological Diffusion’.")),
         session("coffee-2", "11:00–11:30", "Pausa café", "Coffee break", logistics, [], t("Hall principal", "Main hall")),
-        session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre"], "Patio Interno Da Vinci", "belen", true),
+        session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette"], "Patio Interno Da Vinci", "belen", true),
         session("governance-2", "11:30–12:45", "Gobernanza de la IA y sostenibilidad", "AI governance and sustainability", parallel, ["ernesto", "angel", "emilie", "pablo"], theatre, "horacio", true),
         session("lunch-2", "12:45–14:15", "Almuerzo libre", "Lunch break", logistics),
         session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false,
