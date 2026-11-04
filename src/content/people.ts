@@ -12,7 +12,7 @@ export const esPeople: PersonProfile[] = [
     "externalUrl": null
   },
   {
-    "id": "gabriel-perdomo",
+    "id": "cheryl-martens",
     "name": "Cheryl Martens",
     "role": "Dirección del nodo IEAD–USFQ, conforme a los procedimientos institucionales correspondientes.",
     "affiliations": [
@@ -23,7 +23,7 @@ export const esPeople: PersonProfile[] = [
     "externalUrl": null
   },
   {
-    "id": "cheryl-martens",
+    "id": "diana-mosquera",
     "name": "Diana Mosquera",
     "role": "Directora de Diversa; colaboradora de la etapa fundacional de LASTLab.",
     "affiliations": [
@@ -34,12 +34,12 @@ export const esPeople: PersonProfile[] = [
     "externalUrl": null
   },
   {
-    "id": "diana-mosquera",
+    "id": "gabriel-perdomo",
     "name": "Gabriel Perdomo",
     "role": "Investigador colaborador de LASTLab; contribución a investigación y desarrollo técnico.",
     "affiliations": [],
     "bio": "Investigador con formación en psicología social y programación. Su trayectoria combina análisis psicosocial, estudios institucionales y perspectivas críticas de la tecnología, con especial atención a los vínculos entre inteligencia artificial, subjetividad, prácticas clínicas y condiciones sociales. Se interesa por los contextos de vulnerabilidad infantojuvenil, los problemas de la infancia y las transformaciones de las relaciones humanas mediadas tecnológicamente. En LASTLab participa en actividades de investigación sociotécnica y contribuye al desarrollo, organización y documentación de herramientas y plataformas digitales. Su trabajo busca articular el análisis conceptual de la IA con procedimientos técnicos y metodológicos reproducibles y colaborativos.",
-    "photoSrc": null,
+    "photoSrc": "/people/gabriel.webp",
     "externalUrl": null
   },
   {
@@ -78,7 +78,7 @@ export const enPeople: PersonProfile[] = [
     "externalUrl": null
   },
   {
-    "id": "gabriel-perdomo",
+    "id": "cheryl-martens",
     "name": "Cheryl Martens",
     "role": "IEAD–USFQ Node Directorate (subject to applicable procedures)",
     "affiliations": [
@@ -89,7 +89,7 @@ export const enPeople: PersonProfile[] = [
     "externalUrl": null
   },
   {
-    "id": "cheryl-martens",
+    "id": "diana-mosquera",
     "name": "Diana Mosquera",
     "role": "Director of Diversa; foundational collaborator of LASTLab",
     "affiliations": [
@@ -100,12 +100,12 @@ export const enPeople: PersonProfile[] = [
     "externalUrl": null
   },
   {
-    "id": "diana-mosquera",
+    "id": "gabriel-perdomo",
     "name": "Gabriel Perdomo",
     "role": "Research collaborator",
     "affiliations": [],
     "bio": "Gabriel Perdomo is a researcher with a background in social psychology and programming. His work combines psychosocial analysis, institutional studies, and critical perspectives on technology, with particular attention to artificial intelligence, subjectivity, clinical practices, and social conditions. His interests include childhood and youth vulnerability, issues affecting children, and changing forms of technologically mediated human interaction. At LASTLab he participates in sociotechnical research and contributes to the development, organisation, and documentation of digital tools and platforms. His approach seeks to connect conceptual analysis of artificial intelligence with technical procedures and reproducible research methods across diverse interdisciplinary projects.",
-    "photoSrc": null,
+    "photoSrc": "/people/gabriel.webp",
     "externalUrl": null
   },
   {

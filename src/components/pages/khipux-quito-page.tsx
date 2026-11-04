@@ -535,6 +535,7 @@ function Materials({ page }: { page: KhipuxQuitoPageContent }) {
   return <section id="materials" className="scroll-mt-24 bg-khipu-black py-16"><div className="khipux-content-container">
     <h2 className="mb-8 text-4xl font-bold md:text-5xl">{page.ui.materials}</h2>
     <MaterialLinks page={page} />
+    {!page.links.fullProgramUrl && <p className="mt-5 text-white/80">{page.locale === "es" ? "El PDF actualizado estará disponible tras la revisión de la agenda oficial. Consultá el programa de ambas jornadas en esta página." : "The updated PDF will be available after the official agenda is reviewed. Explore both days in the programme on this page."}</p>}
     {page.links.posterUrl && <a href={withBasePath(page.links.posterUrl)} target="_blank" rel="noopener noreferrer" className="mt-8 block max-w-2xl"><Image src={withBasePath(page.links.posterUrl)} alt={page.ui.posterAlt} width={1200} height={1700} className="h-auto w-full rounded-lg" /></a>}
   </div></section>;
 }
@@ -552,17 +553,19 @@ function initials(name: string) {
 function PersonMark({
   name,
   photoSrc,
-  compact = false
+  compact = false,
+  locale
 }: {
   name: string;
   photoSrc: string | null;
   compact?: boolean;
+  locale: Locale;
 }) {
   if (photoSrc) {
     return (
       <Image
         src={withBasePath(photoSrc)}
-        alt={name}
+        alt={`${locale === "es" ? "Retrato de" : "Portrait of"} ${name}`}
         width={compact ? 96 : 224}
         height={compact ? 96 : 224}
         className={cx(
@@ -605,7 +608,7 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
                 <div className="relative w-20 shrink-0">
                   <div className="absolute -inset-2 rounded-lg bg-khipu-orange/0 blur-xl transition-all duration-500 ease-out group-hover:bg-khipu-orange/20" />
                   <div className="relative transition-all duration-500 ease-out group-hover:-translate-x-3 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-khipu-orange/30">
-                    <PersonMark name={person.name} photoSrc={person.photoSrc} />
+                    <PersonMark locale={page.locale} name={person.name} photoSrc={person.photoSrc} />
                   </div>
                 </div>
 
@@ -703,6 +706,7 @@ function OrganizingTeam({ page }: { page: KhipuxQuitoPageContent }) {
               <PersonMark
                 name={person.name}
                 photoSrc={person.photoSrc}
+                locale={page.locale}
                 compact
               />
               <div>

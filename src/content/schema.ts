@@ -35,6 +35,7 @@ export interface NetworkNode {
 }
 
 export interface HomePageContent {
+  inaugural: { eyebrow: string; title: string; subtitle: string; paragraphs: string[]; eventLabel: string; registerLabel: string };
   seo: SeoFields;
   hero: {
     title: string;

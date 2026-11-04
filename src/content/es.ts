@@ -36,6 +36,17 @@ export const esContent: LocaleContent = {
   "pages": {
     khipuxQuito: khipuxQuito2026,
     "home": {
+      "inaugural": {
+        "eyebrow": "EVENTO INAUGURAL · 9 Y 10 DE NOVIEMBRE DE 2026",
+        "title": "KHIPUx Quito 2026",
+        "subtitle": "Inteligencia Artificial Abierta, Responsable y Crítica",
+        "paragraphs": [
+                "LASTLab inicia públicamente sus actividades con KHIPUx Quito 2026, un encuentro internacional de dos jornadas que reúne a investigadores, especialistas, estudiantes y representantes de diversas organizaciones para debatir los desafíos de la inteligencia artificial y las tecnologías digitales desde una perspectiva latinoamericana.",
+                "El programa comprende conferencias magistrales, mesas de discusión, talleres y espacios de colaboración, además del acto institucional de presentación del laboratorio, que tendrá lugar el lunes 9 de noviembre."
+        ],
+        "eventLabel": "Conocer el evento",
+        "registerLabel": "Inscribirse"
+},
       "seo": {
         "title": "LASTLab for Critical AI & Digital Technologies",
         "description": "Red multinodal latinoamericana de investigación crítica, experimentación y acción sobre inteligencia artificial y tecnologías digitales."
@@ -96,7 +107,7 @@ export const esContent: LocaleContent = {
       },
       "foundation": {
         "title": "Origen",
-        "body": "La iniciativa fue concebida en Ecuador a fines de 2024 por Horacio Correa Lucero. Cheryl Martens, desde el Instituto de Estudios Avanzados en Desigualdades de la Universidad San Francisco de Quito, acompañó su desarrollo temprano y contribuyó a su articulación institucional. Diversa, organización de Quito que combina capacidades técnicas de IA y análisis de datos con investigación crítica e incidencia pública, participó desde la etapa fundacional y fortaleció el vínculo entre investigación académica, tecnología y sociedad civil. Durante 2026, LASTLab consolidó sus instrumentos de organización interna y una estructura multinodal con anclajes en Ecuador y Argentina."
+        "body": "La iniciativa fue concebida en Ecuador a fines de 2024 por Horacio Correa Lucero. Cheryl Martens, desde el Instituto de Estudios Avanzados en Desigualdades de la Universidad San Francisco de Quito, acompañó su desarrollo temprano y contribuyó a su articulación institucional. Tras el regreso de Horacio a Argentina, Mónica Casanovas, desde el Instituto de Ciencias Sociales y Administración de la Universidad Nacional Arturo Jauretche, brindó su apoyo a la creación del laboratorio y a su proyección inicialmente binacional. Diversa, organización de Quito que combina capacidades técnicas de IA y análisis de datos con investigación crítica e incidencia pública, participó desde la etapa fundacional y fortaleció el vínculo entre investigación académica, tecnología y sociedad civil. Durante 2026, LASTLab consolidó sus instrumentos de organización interna y una estructura multinodal con anclajes en Ecuador y Argentina."
       },
       "cta": {
         "title": "Colaborar con LASTLab",
@@ -156,14 +167,18 @@ export const esContent: LocaleContent = {
         "institutionalTitle": "Nodos institucionales fundacionales",
         "institutional": [
           {
-            "name": "IEAD–USFQ",
-            "institution": "Instituto de Estudios Avanzados en Desigualdades, Universidad San Francisco de Quito",
-            "location": "Ecuador"
-          },
-          {
             "name": "ICSyA–UNAJ",
+            "expandedDescription": "El Instituto de Ciencias Sociales y Administración (ICSyA) forma parte de la Universidad Nacional Arturo Jauretche (UNAJ), universidad pública argentina situada en Florencio Varela. Su actividad académica articula formación, investigación y vinculación con el territorio en campos como las ciencias sociales, la administración, las políticas públicas y el trabajo social, con atención a las desigualdades y a las transformaciones de la vida colectiva.\n\nICSyA–UNAJ participa en LASTLab como nodo institucional fundacional en Argentina. La articulación surgió a partir del trabajo de Horacio Correa Lucero y del apoyo temprano de Mónica Casanovas a la creación del laboratorio y a su proyección inicialmente binacional. Este vínculo aporta un espacio para examinar críticamente cómo las tecnologías digitales y la inteligencia artificial reconfiguran el trabajo, el conocimiento, las instituciones y las relaciones de poder.\n\nDesde este nodo se busca fortalecer la investigación interdisciplinaria, la formación, el intercambio entre equipos y la cooperación con los demás integrantes de la red. Su contribución se inscribe en una perspectiva latinoamericana, atenta a las condiciones concretas de desarrollo y uso de las tecnologías y a las posibilidades de construir capacidades sociotécnicas propias.",
+            "externalUrl": "https://www.unaj.edu.ar/carreras/ciencias-sociales-y-administracion/",
             "institution": "Instituto de Ciencias Sociales y Administración, Universidad Nacional Arturo Jauretche",
             "location": "Argentina"
+          },
+          {
+            "name": "IEAD–USFQ",
+            "expandedDescription": "El Instituto de Estudios Avanzados en Desigualdades (IEAD) es una unidad académica interdisciplinaria de la Universidad San Francisco de Quito (USFQ), articulada con el Colegio de Ciencias Sociales y Humanidades. Investiga las desigualdades desde perspectivas críticas, participativas y situadas, con líneas vinculadas a género y territorio, movilidad humana, ecología política, comunicación, tecnologías y saberes.\n\nIEAD–USFQ constituye el nodo institucional fundacional de LASTLab en Ecuador. Cheryl Martens acompañó el desarrollo temprano de la iniciativa concebida en Quito a fines de 2024 y contribuyó a su articulación académica. El nodo conecta el trabajo del laboratorio con debates sobre desigualdad, poder, gobernanza tecnológica y las consecuencias sociales de la inteligencia artificial en América Latina y el Sur Global.\n\nSu participación favorece la investigación colaborativa, la circulación de conocimientos, la formación y los vínculos con comunidades, universidades y organizaciones. Las metodologías críticas y participativas del IEAD enriquecen el análisis de las tecnologías digitales en sus contextos históricos y territoriales, así como la construcción colectiva de alternativas responsables.",
+            "externalUrl": "https://www.usfq.edu.ec/es/institutos-de-investigacion/instituto-de-estudios-avanzados-en-desigualdades-iead",
+            "institution": "Instituto de Estudios Avanzados en Desigualdades, Universidad San Francisco de Quito",
+            "location": "Ecuador"
           }
         ],
         "organizationalTitle": "Nodo organizacional de LASTLab",

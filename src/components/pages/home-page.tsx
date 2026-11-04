@@ -42,10 +42,11 @@ export function HomePage({ locale, page }: HomePageProps) {
       </section>
 
       <section className="rounded-[1.75rem] border-l-4 border-khipu-orange bg-khipu-black p-8 text-white md:p-10">
-        <p className="font-semibold text-khipu-orange">KHIPUx Quito 2026 · {locale === "es" ? "9 y 10 de noviembre · USFQ · Híbrido" : "November 9–10 · USFQ · Hybrid"}</p>
-        <h2 className="mt-3 font-heading text-2xl font-bold md:text-3xl">{locale === "es" ? "Lanzamiento oficial de LASTLab for Critical AI & Digital Technologies" : "Official launch of LASTLab for Critical AI & Digital Technologies"}</h2>
-        <p className="mt-4 leading-relaxed text-white/80">{locale === "es" ? "Lunes 9 de noviembre, 10:00–11:00 (Quito, UTC−5). Lanzamiento «IA abierta, responsable y crítica en América Latina», en el Campus Santiago Gangotena, Universidad San Francisco de Quito." : "Monday, November 9, 10:00–11:00 (Quito, UTC−5). Launch session ‘Open, responsible and critical AI in Latin America’ at Campus Santiago Gangotena, Universidad San Francisco de Quito."}</p>
-        <div className="mt-6"><Button href={getLocalizedPath(locale, "khipuxQuito")} variant="light">{locale === "es" ? "Conocé el evento y participá" : "Explore the event and join us"}</Button></div>
+        <p className="font-semibold text-khipu-orange">{page.inaugural.eyebrow}</p>
+        <h2 className="mt-3 font-heading text-2xl font-bold md:text-3xl">{page.inaugural.title}</h2>
+        <p className="mt-4 font-semibold">{page.inaugural.subtitle}</p>
+        {page.inaugural.paragraphs.map(p => <p key={p} className="mt-4 leading-relaxed text-white/80">{p}</p>)}
+        <div className="mt-6 flex flex-wrap gap-3"><Button href={getLocalizedPath(locale, "khipuxQuito")} variant="light">{page.inaugural.eventLabel}</Button><Button href="https://forms.cloud.microsoft/r/kWQWfU7vmU" variant="light">{page.inaugural.registerLabel}</Button></div>
       </section>
 
       <Section
