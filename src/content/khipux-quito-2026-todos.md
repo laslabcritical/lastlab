@@ -1,28 +1,33 @@
 # Pendientes KHIPUx Quito 2026
 
-Actualización puntual con la agenda oficial (5), recibida el 3 de noviembre de 2026. Rama `update/khipux-agenda-v5`, sobre `9297eb4`. Revisión completada y publicación a producción autorizada por Gabriel el 3 de noviembre de 2026.
+Actualización auditada del 4 de noviembre de 2026, sobre `230c230`, rama `update/khipux-audited-20261104`. Gabriel autorizó expresamente actualizar y publicar a producción; esa instrucción prevalece sobre la revisión previa solicitada en el paquete.
 
 ## Revisión de coordinación
 
-- Mor Naaman: confirmar el título definitivo. El PDF dice «AI, Information, and Democracy» y el registro declara «The Democratic Costs of AI-Mediated Information». La web muestra su nombre y «Título por confirmar».
-- Confirmar sala del Taller D y ubicación del cierre del martes. Se muestran como «Sala por confirmar».
-- Confirmar la sala de la conversación con Julián Posada, que tampoco figura explícitamente en la agenda.
-- El PDF oficial (5), entregado como `Agenda K.pdf`, reemplaza la descarga anterior en ambos idiomas mediante `programa-khipux-quito-2026-v5.pdf`. Se publica sin modificar su contenido; conserva erratas editoriales de origen. Descarga y visualización comprobadas y SHA-256 idéntico al adjunto.
-- Gabriel Perdomo está confirmado en la sesión de seguridad del martes, 08:30–09:50, con afiliación UADE y UNAJ (EN: UADE and UNAJ). Se reutiliza `/people/gabriel.webp`; cargo y biografía actualizados en Equipo y miembros ES/EN.
-- Lizette Aguirre está confirmada en La IA y el trabajo del martes, 11:30–12:45. No se cambiaron horarios, salas, moderadores ni otras sesiones.
-- Horacio: incorporado el retrato original indicado por Gabriel en Descargas, con recorte de rostro y hombros y versión WebP local. Se reutiliza en Equipo y miembros, participantes y organización del evento ES/EN, conservando su biografía.
-- Faltan retratos autorizados del resto de participantes/equipo y biografías editoriales verificadas de los ponentes. Se conservan iniciales y no se inventan perfiles. Las diez fotos del paquete tienen permiso de publicación confirmado por Gabriel el 3 de noviembre de 2026: diez en el evento, y Gabriel también en el equipo.
-- Incorporar correo de contacto público cuando se confirme.
+- Paolo Moncagatta continúa en la apertura, según PDF v6. Confirmar con la organización su papel y el orden de intervenciones; no se le asignó otro cargo ni se lo eliminó.
+- Diego Quiroga Ferri se incorpora como rector USFQ, con participación remota desde Valencia, según la confirmación de Horacio incluida en el paquete del 4/11. Arnaldo Medina figura como rector UNAJ; no se le atribuye ubicación remota. Cargos contrastados en las páginas oficiales de autoridades USFQ y UNAJ.
+- No se recibieron enlaces ni credenciales de reuniones Zoom. Se muestran solo las sesiones correspondientes, sin crear enlaces de acceso.
+- Confirmar sala del Taller D, ubicación precisa del cierre y sala de la conversación con Julián Posada. Se conservan los valores pendientes existentes, sin inferir salas del JSON complementario.
+- Incorporar fotografías autorizadas del resto de personas o contacto público cuando se reciban. No se buscaron imágenes externas ni se publicaron datos privados del registro.
 
-## Implementación y comprobaciones
+## Cambios aplicados
 
-- Portadas ES/EN: evento inaugural completo de dos jornadas, botones de evento e inscripción y texto aprobado de Origen con Mónica Casanovas.
-- Red/Network: tarjetas UNAJ → USFQ → Diversa y tres desplegables nativos con el estilo existente; texto de Diversa conservado.
-- Agenda ES/EN: 26 bloques y 33 participantes únicos; horarios, paralelas, salas, participantes y moderadores compartidos. Laura Melo y Ola Bini retirados; Ricardo Flores-Moyano y Pierre Escalante incorporados. La ficha de Horacio muestra todas sus actividades.
-- Equipo: biografías, cargos y afiliaciones conservados; se corrigieron identificadores intercambiados de Cheryl, Diana y Gabriel para asociar correctamente la foto.
-- Afiche original copiado sin modificaciones (SHA-256 verificado), con vista previa, ampliación y descarga ES/EN. Fotos locales WebP de 640 × 640 con recortes revisados.
-- `npm run build`: correcto; incluye ESLint y comprobación TypeScript. Avisos existentes sobre `<img>` y datos de Browserslist antiguos, sin errores. `npx tsc --noEmit`: correcto. `git diff --check`: correcto.
-- Navegador Chromium: seis rutas en 1440 y 390 px (12 combinaciones), sin errores JavaScript ni desbordamiento horizontal. Verificados pestañas, agenda, participantes, imágenes, enlaces, precios y desplegables con teclado.
-- Registro, becas y pago: HTTP 200 con sus destinos actuales, sin enviar formularios ni realizar pagos.
-- No hay enlaces a `20261030` ni nombres retirados en el código activo/HTML generado. Los PDF históricos del repositorio se conservan sin enlaces desde la web.
-- Capturas de esta actualización en `tmp/lastlab-v5-review/`. El despliegue utiliza GitHub Pages al incorporar los cambios revisados a `main`.
+- Una sola fuente de agenda con 26 actividades: indicador Zoom para las 9 sesiones académicas de las llaves del PDF v6 (lunes 5, martes 4). Registro, pausas y transiciones quedan fuera del filtro. Las vistas usan los mismos días y acordeones existentes.
+- Control de vista completo/Zoom con radios nativos, estados visibles, foco accesible, navegación con teclado y horario de Quito UTC-5. Se conservan las pestañas lunes/martes y el estado de los desplegables compartidos.
+- Título definitivo de Mor Naaman: The Democratic Costs of AI-Mediated Information, tanto en la agenda como en su ficha. Eliminada la indicación de título pendiente.
+- PDF oficial v6 copiado sin modificar, enlazado en Programa y Materiales ES/EN. Descarga efectiva y SHA-256 idéntico al adjunto. Los PDF históricos se conservan sin enlaces activos.
+- Fotos locales nuevas para Ariel Vercelli, Priscilla Purtschert y Lizette Aguirre. Lizette también en Equipo y miembros. Gabriel confirmó permiso de publicación sin crédito obligatorio el 4/11. Optimización WebP conservando la proporción original y quitando EXIF/XMP; encuadre con el componente y CSS existentes.
+- Foto institucional nueva de Gabriel comparada con la publicada: se conserva la elegida. No se modificaron su biografía, cargo ni foto, ni el retrato de Horacio. Las demás fotos existentes se conservan.
+- Sobre/About: se insertó únicamente la oración aprobada sobre Mónica Casanovas después de Cheryl. El texto de Origen de las portadas queda intacto.
+- Portadas: añadido acceso Becas/Scholarships con el mismo estilo del registro existente. No se cambiaron títulos ni descripciones.
+- Gabriel y Lizette permanecen una sola vez en sus paneles y fichas; nodos, orden y desplegables intactos. No se cambiaron horarios, otras sesiones, instituciones ni biografías.
+
+## Validaciones
+
+- `npm run build`: correcto, con ESLint y validación TypeScript. Solo avisos preexistentes sobre img y datos antiguos de Browserslist. `git diff --check`: correcto.
+- Comprobación estructural ES/EN: 26 sesiones, filtro de 9 (5/4) contrastado con agenda_zoom.json; el resto de sesiones se comparó contra la versión anterior sin diferencias. Biografías y portada sin cambios; Sobre/About incorpora exclusivamente la cláusula aprobada.
+- Chromium: ocho rutas en 1440 y 390 px (16 combinaciones). Verificados radios con flechas, pestañas de días, conservación de desplegables, filtro sin logística, retorno al programa completo manteniendo día, rectores, título Mor, 34 participantes, 14 fotos, estado Gabriel/Lizette, enlaces y descarga v6.
+- Sin errores JavaScript, imágenes rotas ni desbordamiento horizontal. No hay enlaces Zoom inventados ni referencias activas a v5.
+- Informe y capturas antes/después: `tmp/lastlab-v6-review/`.
+
+Fuentes de cargos: https://www.usfq.edu.ec/es/gobernanza-autoridades y https://www.unaj.edu.ar/autoridades/. El anuncio de asistencia y Valencia proceden del paquete autorizado, no de estas páginas institucionales.

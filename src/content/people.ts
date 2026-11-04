@@ -61,7 +61,7 @@ export const esPeople: PersonProfile[] = [
       "Instituto de Ciencias Sociales y Administración, Universidad Nacional Arturo Jauretche."
     ],
     "bio": "Economista por la Pontificia Universidad Católica del Ecuador y magíster en Economía Social por la Universidad Nacional de General Sarmiento. Es docente e investigadora vinculada al Instituto de Ciencias Sociales y Administración de la Universidad Nacional Arturo Jauretche, donde coordina la Licenciatura en Administración. Sus líneas de trabajo incluyen economía social y solidaria, desarrollo económico local, transformación productiva y políticas públicas. Participa en proyectos de investigación y articulación institucional, aportando una perspectiva económica sobre los vínculos entre organización social, capacidades productivas y desarrollo. En LASTLab contribuye a discusiones interdisciplinarias sobre las implicancias socioeconómicas de las tecnologías digitales.",
-    "photoSrc": null,
+    "photoSrc": "/people/lizette.webp",
     "externalUrl": null
   }
 ];
@@ -127,7 +127,7 @@ export const enPeople: PersonProfile[] = [
       "Instituto de Ciencias Sociales y Administración, Universidad Nacional Arturo Jauretche."
     ],
     "bio": "Lizette Aguirre is an economist from Pontificia Universidad Católica del Ecuador and has an MA in Social Economy from Universidad Nacional de General Sarmiento. She is a lecturer and researcher associated with the Institute of Social Sciences and Administration at Universidad Nacional Arturo Jauretche, where she coordinates the Bachelor's programme in Administration. Her areas of work include social and solidarity economy, local economic development, productive transformation, and public policy. She participates in research projects and institutional collaboration, bringing an economic perspective to social organisation, productive capacities, and development. At LASTLab she examines socioeconomic implications of digital technologies.",
-    "photoSrc": null,
+    "photoSrc": "/people/lizette.webp",
     "externalUrl": null
   }
 ];

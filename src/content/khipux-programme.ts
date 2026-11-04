@@ -1,10 +1,11 @@
 import type { ProgrammeDay, ProgrammeSession } from "@/content/schema";
 import type { Locale } from "@/lib/i18n";
 
-// Transcribed from official agenda version (5), supplied on 2026-11-03 (pages 3–4). Missing rooms remain null.
+// Transcribed from official agenda version (6), supplied on 2026-11-04 (pages 3–4). Missing rooms remain null.
 // Names and affiliations are shared across locales; only editorial copy is translated.
 export const eventPeople = {
   paolo: ["Paolo Moncagatta", "USFQ"], arnaldo: ["Arnaldo Medina", "UNAJ"],
+  diego: ["Diego Quiroga Ferri", "USFQ"],
   diana: ["Diana Mosquera", "Diversa"], cheryl: ["Cheryl Martens", "USFQ"],
   horacio: ["Horacio Correa Lucero", "LASTLab / UNAJ"],
   belen: ["María Belén Albornoz", "CTS Lab–FLACSO Ecuador"],
@@ -27,14 +28,24 @@ export const eventPeople = {
 } satisfies Record<string, [string, string]>;
 
 type Person = keyof typeof eventPeople;
-export const personLine = (id: Person, locale: Locale = "es") =>
-  `${eventPeople[id][0]} — ${id === "gabriel" && locale === "en" ? "UADE and UNAJ" : eventPeople[id][1]}`;
+export const personLine = (id: Person, locale: Locale = "es") => {
+  const [name, affiliation] = eventPeople[id];
+  const institution = id === "gabriel" && locale === "en" ? "UADE and UNAJ" : affiliation;
+  const role = id === "diego" || id === "arnaldo" ? (locale === "es" ? "rector de " : "Rector of ") : "";
+  return `${name} — ${role}${institution}`;
+};
+// Academic sessions within the four Zoom brackets of the official v6 PDF (pages 3–4).
+// Both programme views use these same sessions; logistics are intentionally excluded.
+const zoomSessionIds = new Set([
+  "welcome", "keynotes-1", "launch", "surveillance", "governance-1",
+  "sociotechnical", "coloniality", "author", "closing-keynote"
+]);
 const theatre = "Teatro Calderón de la Barca";
 
 export function getProgramme(locale: Locale): ProgrammeDay[] {
   const t = (es: string, en: string) => locale === "es" ? es : en;
   function session(id: string, time: string, es: string, en: string, type: [string, string], people: Person[] = [], room: string | null = null, moderator?: Person, parallel = false, description?: string): ProgrammeSession {
-    return { id, time, title: t(es, en), type: t(...type), participants: people.map(id => personLine(id, locale)), room,
+    return { id, time, zoom: zoomSessionIds.has(id), title: t(es, en), type: t(...type), participants: people.map(id => personLine(id, locale)), room,
       moderator: moderator ? personLine(moderator, locale) : undefined, parallel, status: "confirmed", description };
   }
   const logistics: [string, string] = ["Logística", "Logistics"];
@@ -46,7 +57,8 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
     { date: "2026-11-09", label: t("Lunes 9 de noviembre", "Monday, November 9"),
       theme: t("Vigilancia, seguridad técnica y sostenibilidad de la IA", "Surveillance, technical security and AI sustainability"), sessions: [
         session("registration-1", "08:30–08:50", "Registro", "Registration", logistics),
-        session("welcome", "08:50–09:00", "Apertura institucional · Bienvenida", "Institutional opening · Welcome", ["Apertura", "Opening"], ["paolo", "arnaldo"], theatre),
+        session("welcome", "08:50–09:00", "Apertura institucional · Bienvenida", "Institutional opening · Welcome", ["Apertura", "Opening"], ["paolo", "arnaldo", "diego"], theatre, undefined, false,
+          t("Diego Quiroga Ferri, rector de USFQ: participación remota desde Valencia.", "Diego Quiroga Ferri, Rector of USFQ: remote participation from Valencia.")),
         session("keynotes-1", "09:00–10:15", "Conferencias magistrales", "Keynote lectures", keynote, ["guanche", "horacio"], theatre),
         session("launch", "10:15–11:00", "Acto institucional de presentación de LASTLab: IA abierta, responsable y crítica en América Latina", "Institutional launch session of LASTLab: Open, responsible and critical AI in Latin America", ["Acto institucional", "Institutional session"], ["diana", "cheryl", "horacio", "belen"], theatre),
         session("coffee-1", "11:00–11:30", "Pausa café", "Coffee break", logistics, [], t("Hall principal", "Main hall")),
@@ -74,8 +86,8 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false,
           t("Miguel Ángel Contreras: «Aletheia algorítmica: sesgo incorporado, discriminación y colonialidad, o los desafíos estratégicos de la región». Julián Posada: «Inteligencia artificial, trabajo e infraestructura».", "Miguel Ángel Contreras: ‘Algorithmic aletheia: embedded bias, discrimination and coloniality, or the region’s strategic challenges’. Julián Posada: ‘Artificial intelligence, labour and infrastructure’.")),
         session("author", "15:15–15:55", "Conversación con el autor: Platform Extractivism", "In conversation with the author: Platform Extractivism", ["Conversación", "Conversation"], ["julian"]),
-        session("closing-keynote", "16:00–17:00", "Conferencia magistral: Mor Naaman", "Keynote: Mor Naaman", keynote, ["mor"], theatre, undefined, false,
-          t("Título por confirmar. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.", "Title to be confirmed. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.")),
+        session("closing-keynote", "16:00–17:00", "The Democratic Costs of AI-Mediated Information", "The Democratic Costs of AI-Mediated Information", keynote, ["mor"], theatre, undefined, false,
+          t("Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.", "Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.")),
         session("closing", "17:00–18:00", "Cierre", "Closing", ["Cierre", "Closing"], [], null)
       ] }
   ];

@@ -132,7 +132,7 @@ export const enContent: LocaleContent = {
       "sections": [
         {
           "title": "Origins",
-          "body": "The initiative was conceived in Ecuador in late 2024 by Horacio Correa Lucero. Cheryl Martens, at the Institute for Advanced Studies in Inequalities, Universidad San Francisco de Quito, supported its early development and institutional articulation. Diversa participated during the foundational stage, connecting academic research, technical capabilities, and civil society. In 2026, LASTLab consolidated its internal organisational instruments and its multinodal structure across Ecuador and Argentina."
+          "body": "The initiative was conceived in Ecuador in late 2024 by Horacio Correa Lucero. Cheryl Martens, at the Institute for Advanced Studies in Inequalities, Universidad San Francisco de Quito, supported its early development and institutional articulation. After Horacio returned to Argentina, Mónica Casanovas, at the Instituto de Ciencias Sociales y Administración of Universidad Nacional Arturo Jauretche, supported the creation of the laboratory and its development as an initially binational initiative. Diversa participated during the foundational stage, connecting academic research, technical capabilities, and civil society. In 2026, LASTLab consolidated its internal organisational instruments and its multinodal structure across Ecuador and Argentina."
         },
         {
           "title": "Mission",

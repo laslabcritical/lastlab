@@ -481,11 +481,29 @@ function Launch({ page }: { page: KhipuxQuitoPageContent }) {
 
 function Programme({ page }: { page: KhipuxQuitoPageContent }) {
   const [activeDay, setActiveDay] = useState(0);
+  const [zoomOnly, setZoomOnly] = useState(false);
+  const t = (es: string, en: string) => page.locale === "es" ? es : en;
+  const visibleDays = page.programmeDays.map(day => ({
+    ...day,
+    sessions: zoomOnly ? day.sessions.filter(session => session.zoom) : day.sessions
+  }));
   return <section id="programme" className="scroll-mt-24 bg-khipu-gray py-14 text-khipu-white" data-published-sessions={page.programmeDays.reduce((n, day) => n + day.sessions.length, 0)}>
     <div className="khipux-content-container">
       <h2 className="text-4xl font-bold md:text-6xl">{page.program.title}</h2>
       <p className="mt-5 max-w-4xl leading-relaxed text-white/80">{page.program.body}</p>
       <p className="mt-3 max-w-4xl text-sm leading-relaxed text-white/70">{page.scheduleNote}</p>
+      <fieldset className="mt-6 flex flex-wrap gap-3">
+        <legend className="sr-only">{t("Vista del programa", "Programme view")}</legend>
+        {[false, true].map(zoom => <label key={String(zoom)} className="cursor-pointer">
+          <input type="radio" name="programme-view" value={zoom ? "zoom" : "full"} checked={zoomOnly === zoom}
+            onChange={() => setZoomOnly(zoom)} className="peer sr-only" />
+          <span className={cx("block rounded-full border border-khipu-orange px-4 py-2 text-sm font-bold peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-khipu-orange", zoomOnly === zoom ? "bg-khipu-orange" : "hover:bg-white/10")}>
+            {zoom ? t("Actividades por Zoom", "Zoom sessions") : t("Programa completo", "Full programme")}
+          </span>
+        </label>)}
+      </fieldset>
+      <p className="mt-4 text-sm text-white/80">{t("Horario de Quito (UTC-5)", "Quito time (UTC-5)")}</p>
+      <p role="status" className="sr-only">{visibleDays[activeDay].sessions.length} {t("actividades", "sessions")} · {visibleDays[activeDay].label}</p>
       <div role="tablist" aria-label={page.program.title} className="my-8 flex gap-3">
         {page.programmeDays.map((day, index) => <button key={day.date} type="button" role="tab" id={`day-tab-${index}`} aria-controls={`day-panel-${index}`} aria-selected={activeDay === index} tabIndex={activeDay === index ? 0 : -1}
           onClick={() => setActiveDay(index)} onKeyDown={event => {
@@ -497,9 +515,9 @@ function Programme({ page }: { page: KhipuxQuitoPageContent }) {
             event.preventDefault(); setActiveDay(next); document.getElementById(`day-tab-${next}`)?.focus();
           }} className={cx("flex-1 rounded-lg border-2 border-khipu-orange px-4 py-4 text-left font-bold", activeDay === index ? "bg-khipu-orange" : "hover:bg-white/10")}>{day.label}</button>)}
       </div>
-      {page.programmeDays.map((day, index) => <div key={day.date} role="tabpanel" id={`day-panel-${index}`} aria-labelledby={`day-tab-${index}`} hidden={activeDay !== index}>
+      {visibleDays.map((day, index) => <div key={day.date} role="tabpanel" id={`day-panel-${index}`} aria-labelledby={`day-tab-${index}`} hidden={activeDay !== index}>
         <h3 className="mb-6 text-xl font-bold text-khipu-orange md:text-2xl">{day.theme}</h3>
-        <div className="space-y-3">{day.sessions.map(session => <details key={session.id} className={cx("group rounded-lg border-l-4 bg-black/20", session.parallel ? "border-khipu-orange" : "border-white/30")}>
+        <div className="space-y-3">{day.sessions.map(session => <details key={session.id} data-session-id={session.id} className={cx("group rounded-lg border-l-4 bg-black/20", session.parallel ? "border-khipu-orange" : "border-white/30")}>
           <summary className="cursor-pointer p-5 marker:text-khipu-orange">
             <span className="ml-2 inline-block font-bold text-khipu-orange">{session.time}</span>
             <span className="ml-3 text-sm text-white/70">{session.type}{session.parallel ? ` · ${page.ui.parallel}` : ""}{session.status === "draft" ? ` · ${page.ui.draft}` : ""}</span>
