@@ -1,5 +1,17 @@
 # Pendientes KHIPUx Quito 2026
 
+## Auditoría de perfiles — 6 de noviembre de 2026
+
+- Paquete aplicado: `LASTLab_KHIPUx_v9_AUDITORIA_PERFILES_LUCIANA_2026-11-06.zip`. La solicitud directa de Gabriel autoriza actualizar y publicar.
+- Cotejados los 34 registros con los IDs existentes, sin altas ni bajas. Normalización de tildes y aliases: Edison Loza/Loza-Aguirre, Julián/Julian Posada, Julio César/Cesar Guanche, Daniel Vizuete/Vizuete Sandoval y Tracey con su sufijo Ph.D. Las 34 biografías ES/EN ya estaban implementadas y se conservan. Miguel mantiene el texto depurado, sin el correo omitido, ORCID ni código postal del archivo recibido.
+- Actualizados los perfiles con el JSON auditado. Ángel, Gabriel y Priscilla conservan `profileUrl: null` porque sus fuentes son contextuales. Cristina queda sin botón de perfil: se retiró la convocatoria. Tracey usa la página del equipo de Conexiones en el idioma correspondiente.
+- Luciana ya figuraba como Musello. Se añadió el LinkedIn indicado; su foto queda pendiente porque el perfil oficial EN, su equivalente ES y el directorio suministrado respondieron HTTP 404. Se mantienen LM y CC; Mónica continúa sin fotografía en Red/Network.
+- Las URLs de USFQ están identificadas en las fuentes del paquete y algunas en el índice de búsqueda, pero varias devolvieron 403/404 al comprobarlas. UNAJ no resolvió desde este entorno; CTS Lab devolvió 406; LinkedIn puede requerir acceso. No se afirma una verificación HTTP satisfactoria de todos los perfiles externos.
+- PDF v9 idéntico al ZIP (SHA-256 `68b098b093eebddbf8540b900b090cf69d61aac89e4442f487815203aba12abc`). Agenda, horarios, salas, retratos y biografías institucionales sin cambios en esta revisión. Correo Porkbun fuera del alcance.
+- `npm run lint` y `npm run build` correctos, con avisos preexistentes de imágenes y Browserslist. Revisión en Chromium a 390 y 1440 px: 34 fichas y biografías en ambos idiomas, expansión por teclado, múltiples biografías abiertas, CTA híbrido y recarga, retorno al programa completo y ausencia de desbordamiento horizontal o errores JavaScript.
+
+## Registro anterior — 4 de noviembre
+
 Actualización auditada del 4 de noviembre de 2026, sobre `230c230`, rama `update/khipux-audited-20261104`. Gabriel autorizó expresamente actualizar y publicar a producción; esa instrucción prevalece sobre la revisión previa solicitada en el paquete.
 
 ## Revisión de coordinación
