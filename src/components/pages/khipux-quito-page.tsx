@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  useEffect,
   useMemo,
   useState,
   type CSSProperties,
@@ -284,7 +285,17 @@ function KhipuxNavbar({ page }: { page: KhipuxQuitoPageContent }) {
   );
 }
 
-function Hero({ page }: { page: KhipuxQuitoPageContent }) {
+type ProgrammeViewHandler = (hybrid: boolean, navigate?: boolean) => void;
+
+function Hero({ page, onProgrammeView }: { page: KhipuxQuitoPageContent; onProgrammeView: ProgrammeViewHandler }) {
+  function openProgramme(event: MouseEvent<HTMLAnchorElement>, hybrid: boolean) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    onProgrammeView(hybrid, true);
+    document.getElementById("programme")?.focus({ preventScroll: true });
+    scrollToHash("#programme");
+  }
+
   return (
     <section className="relative flex min-h-[max(80vh,560px)] w-full items-center overflow-hidden bg-khipu-black">
       <div
@@ -330,11 +341,18 @@ function Hero({ page }: { page: KhipuxQuitoPageContent }) {
               {page.hero.primaryAction}
             </a>
             <a
-              href="#programme"
-              onClick={(event) => scrollToSection(event, "#programme")}
+              href="?programme=full#programme"
+              onClick={(event) => openProgramme(event, false)}
               className="rounded-full border-2 border-khipu-orange px-6 py-3 font-bold text-khipu-white transition hover:bg-khipu-orange/15 md:px-8 md:py-4"
             >
               {page.hero.secondaryAction}
+            </a>
+            <a
+              href="?programme=hybrid#programme"
+              onClick={(event) => openProgramme(event, true)}
+              className="rounded-full border-2 border-khipu-orange px-6 py-3 font-bold text-khipu-white transition hover:bg-khipu-orange/15 md:px-8 md:py-4"
+            >
+              {page.locale === "es" ? "Ver programa híbrido" : "View hybrid program"}
             </a>
             <a href={page.links.scholarshipUrl} className="rounded-full border-2 border-khipu-orange px-6 py-3 font-bold text-khipu-white hover:bg-khipu-orange/15 md:px-8 md:py-4">{page.ui.scholarship}</a>
           </div>
@@ -479,15 +497,14 @@ function Launch({ page }: { page: KhipuxQuitoPageContent }) {
   </section>;
 }
 
-function Programme({ page }: { page: KhipuxQuitoPageContent }) {
+function Programme({ page, zoomOnly, onProgrammeView }: { page: KhipuxQuitoPageContent; zoomOnly: boolean; onProgrammeView: ProgrammeViewHandler }) {
   const [activeDay, setActiveDay] = useState(0);
-  const [zoomOnly, setZoomOnly] = useState(false);
   const t = (es: string, en: string) => page.locale === "es" ? es : en;
   const visibleDays = page.programmeDays.map(day => ({
     ...day,
     sessions: zoomOnly ? day.sessions.filter(session => session.zoom) : day.sessions
   }));
-  return <section id="programme" className="scroll-mt-24 bg-khipu-gray py-14 text-khipu-white" data-published-sessions={page.programmeDays.reduce((n, day) => n + day.sessions.length, 0)}>
+  return <section id="programme" tabIndex={-1} aria-label={page.program.title} className="scroll-mt-24 bg-khipu-gray py-14 text-khipu-white" data-published-sessions={page.programmeDays.reduce((n, day) => n + day.sessions.length, 0)}>
     <div className="khipux-content-container">
       <h2 className="text-4xl font-bold md:text-6xl">{page.program.title}</h2>
       <p className="mt-5 max-w-4xl leading-relaxed text-white/80">{page.program.body}</p>
@@ -496,12 +513,13 @@ function Programme({ page }: { page: KhipuxQuitoPageContent }) {
         <legend className="sr-only">{t("Vista del programa", "Programme view")}</legend>
         {[false, true].map(zoom => <label key={String(zoom)} className="cursor-pointer">
           <input type="radio" name="programme-view" value={zoom ? "zoom" : "full"} checked={zoomOnly === zoom}
-            onChange={() => setZoomOnly(zoom)} className="peer sr-only" />
+            onChange={() => onProgrammeView(zoom)} className="peer sr-only" />
           <span className={cx("block rounded-full border border-khipu-orange px-4 py-2 text-sm font-bold peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-khipu-orange", zoomOnly === zoom ? "bg-khipu-orange" : "hover:bg-white/10")}>
-            {zoom ? t("Actividades por Zoom", "Zoom sessions") : t("Programa completo", "Full programme")}
+            {zoom ? t("Sesiones híbridas", "Hybrid sessions") : t("Programa completo", "Full programme")}
           </span>
         </label>)}
       </fieldset>
+      {zoomOnly && <p className="mt-4 text-sm text-white/80">{t("Sesiones disponibles en vivo por Zoom.", "Sessions available live on Zoom.")}</p>}
       <p className="mt-4 text-sm text-white/80">{t("Horario de Quito (UTC-5)", "Quito time (UTC-5)")}</p>
       <p role="status" className="sr-only">{visibleDays[activeDay].sessions.length} {t("actividades", "sessions")} · {visibleDays[activeDay].label}</p>
       <div role="tablist" aria-label={page.program.title} className="my-8 flex gap-3">
@@ -608,6 +626,20 @@ function PersonMark({
   );
 }
 
+function Biography({ text, locale }: { text: string; locale: Locale }) {
+  if (!text) return null;
+  return (
+    <details className="mt-3 min-w-0 text-left text-sm leading-relaxed text-white/75">
+      <summary className="cursor-pointer rounded-sm font-bold text-khipu-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-khipu-orange">
+        {locale === "es" ? "Ver biografía" : "View biography"}
+      </summary>
+      <div className="mt-3 space-y-3 [overflow-wrap:anywhere]">
+        {text.split(/\n\s*\n/).map((paragraph, index) => <p key={index} className="whitespace-pre-line">{paragraph}</p>)}
+      </div>
+    </details>
+  );
+}
+
 function Participants({ page }: { page: KhipuxQuitoPageContent }) {
   return (
     <section id="participants" className="scroll-mt-24 bg-khipu-black py-16 text-khipu-white">
@@ -648,7 +680,7 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
                       </span>
                     ) : null}
                   </div>
-                  {person.biography ? <p className="mt-3 text-white/75">{person.biography}</p> : null}
+                  {person.biography ? <Biography text={person.biography} locale={page.locale} /> : null}
                   {person.talkTitle ? (
                     <div className="mt-4 border-l-4 border-khipu-orange bg-white/10 p-4">
                       <p className="text-xs font-bold uppercase tracking-wider text-white/60">
@@ -736,6 +768,7 @@ function OrganizingTeam({ page }: { page: KhipuxQuitoPageContent }) {
                     <p key={line}>{line}</p>
                   ))}
                 </div>
+                <Biography text={page.participants.people.find(participant => participant.id === person.id)?.biography ?? ""} locale={page.locale} />
               </div>
             </article>
           ))}
@@ -958,6 +991,23 @@ function EventStructuredData({
 
 export function KhipuxQuitoPage({ locale, page }: KhipuxQuitoPageProps) {
   const pageTitle = useMemo(() => `${page.title}: ${page.subtitle}`, [page]);
+  const [zoomOnly, setZoomOnly] = useState(false);
+
+  useEffect(() => {
+    const readProgrammeView = () => setZoomOnly(new URLSearchParams(window.location.search).get("programme") === "hybrid");
+    readProgrammeView();
+    window.addEventListener("popstate", readProgrammeView);
+    return () => window.removeEventListener("popstate", readProgrammeView);
+  }, []);
+
+  const selectProgrammeView: ProgrammeViewHandler = (hybrid, navigate = false) => {
+    setZoomOnly(hybrid);
+    const url = new URL(window.location.href);
+    if (hybrid) url.searchParams.set("programme", "hybrid");
+    else url.searchParams.delete("programme");
+    if (navigate) url.hash = "programme";
+    if (url.href !== window.location.href) window.history.pushState(null, "", url);
+  };
 
   return (
     <article
@@ -967,11 +1017,11 @@ export function KhipuxQuitoPage({ locale, page }: KhipuxQuitoPageProps) {
     >
       <EventStructuredData locale={locale} page={page} />
       <KhipuxNavbar page={page} />
-      <Hero page={page} />
+      <Hero page={page} onProgrammeView={selectProgrammeView} />
       <Launch page={page} />
       <AboutEvent page={page} />
       <Themes page={page} />
-      <Programme page={page} />
+      <Programme page={page} zoomOnly={zoomOnly} onProgrammeView={selectProgrammeView} />
       <Participants page={page} />
       <OrganizingTeam page={page} />
       <Participation page={page} />
