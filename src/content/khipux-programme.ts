@@ -1,7 +1,7 @@
 import type { ProgrammeDay, ProgrammeSession } from "@/content/schema";
 import type { Locale } from "@/lib/i18n";
 
-// Transcribed from official agenda version (7), supplied on 2026-11-05 (pages 3–4). Missing rooms remain null.
+// Transcribed from official agenda version (9), supplied on 2026-11-06 (pages 3–4). Missing rooms remain null.
 // Names and affiliations are shared across locales; only editorial copy is translated.
 export const eventPeople = {
   paolo: ["Paolo Moncagatta", "USFQ"], arnaldo: ["Arnaldo Medina", "UNAJ"],
@@ -15,7 +15,7 @@ export const eventPeople = {
   farith: ["Farith Simon", "USFQ"], priscilla: ["Priscilla Purtschert", "Taller Comunicación Mujer"],
   ariel: ["Ariel Vercelli", "Universidad Nacional de Mar del Plata"],
   tracey: ["Tracey Tokuhama-Espinosa", "Conexiones"],
-  fernando: ["Fernando Astudillo", "USFQ"], luciana: ["Luciana Mussello", "USFQ"],
+  fernando: ["Fernando Astudillo", "USFQ"], luciana: ["Luciana Musello", "USFQ"],
   cristina: ["Cristina Cabezas", "USFQ"], felipe: ["Felipe Grijalva", "USFQ"],
   edison: ["Edison Loza", "USFQ"], pierre: ["Pierre Escalante", "USFQ / ZHIDAO GOVTECH"],
   gabriel: ["Gabriel Perdomo", "UADE y UNAJ"], lizette: ["Lizette Aguirre", "UNAJ"],
@@ -34,7 +34,7 @@ export const personLine = (id: Person, locale: Locale = "es") => {
   const role = id === "diego" || id === "arnaldo" ? (locale === "es" ? "rector de " : "Rector of ") : "";
   return `${name} — ${role}${institution}`;
 };
-// Academic sessions within the four Zoom brackets of the official v7 PDF (pages 3–4).
+// Academic sessions within the four Zoom brackets of the official v9 PDF (pages 3–4).
 // Both programme views use these same sessions; logistics are intentionally excluded.
 const zoomSessionIds = new Set([
   "welcome", "keynotes-1", "launch", "surveillance", "governance-1",
@@ -67,7 +67,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("workshop-a", "14:00–15:50", "Taller A · Seguridad, vulnerabilidades y evaluación de modelos de IA", "Workshop A · Security, vulnerabilities and AI model evaluation", workshop, ["roberto"], theatre, undefined, true),
         session("workshop-b", "14:00–15:50", "Taller B · Mapeo de la IA: trabajo, recursos y territorios", "Workshop B · Mapping AI: labour, resources and territories", workshop, ["diana"], "Auditorio Epicuro EP-24", undefined, true),
         session("workshop-c", "14:00–15:50", "Taller C · Enseñanza y proyectos de IA crítica", "Workshop C · Teaching and critical AI projects", workshop, ["farith"], "Patio interno Da Vinci", undefined, true),
-        session("workshop-d", "14:00–15:50", "Taller D · Impactos de la IA y las tecnologías digitales: centros de datos, explotación y violencia", "Workshop D · Impacts of AI and digital technologies: data centres, exploitation and violence", workshop, ["priscilla"], null, undefined, true),
+        session("workshop-d", "14:00–15:50", "Taller D · Impactos de la IA y las tecnologías digitales: centros de datos, explotación y violencia", "Workshop D · Impacts of AI and digital technologies: data centres, exploitation and violence", workshop, ["priscilla"], "Maxwell M-319", undefined, true),
         session("transition-1", "15:50–16:00", "Transición", "Transition", logistics),
         session("governance-1", "16:00–17:00", "Gobernanza técnica y sostenibilidad de la inteligencia artificial", "Technical governance and sustainability of artificial intelligence", plenary, ["ariel", "cheryl"], theatre, "farith")
       ] },
@@ -85,10 +85,10 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("lunch-2", "12:45–14:15", "Almuerzo libre", "Lunch break", logistics),
         session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false,
           t("Miguel Ángel Contreras: «Aletheia algorítmica: sesgo incorporado, discriminación y colonialidad, o los desafíos estratégicos de la región». Julián Posada: «Inteligencia artificial, trabajo e infraestructura».", "Miguel Ángel Contreras: ‘Algorithmic aletheia: embedded bias, discrimination and coloniality, or the region’s strategic challenges’. Julián Posada: ‘Artificial intelligence, labour and infrastructure’.")),
-        session("author", "15:15–15:55", "Conversación con el autor: Platform Extractivism", "In conversation with the author: Platform Extractivism", ["Conversación", "Conversation"], ["julian"]),
+        session("author", "15:15–15:55", "Conversación con el autor: Platform Extractivism", "In conversation with the author: Platform Extractivism", ["Conversación", "Conversation"], ["julian"], theatre),
         session("closing-keynote", "16:00–17:00", "The Democratic Costs of AI-Mediated Information", "The Democratic Costs of AI-Mediated Information", keynote, ["mor"], theatre, undefined, false,
           t("Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.", "Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.")),
-        session("closing", "17:00–18:00", "Cierre", "Closing", ["Cierre", "Closing"], [], null)
+        session("closing", "17:00–18:00", "Cierre", "Closing", ["Cierre", "Closing"], [], "Hall del Calderón de la Barca")
       ] }
   ];
 }

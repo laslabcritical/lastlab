@@ -19,7 +19,7 @@ export const esPeople: PersonProfile[] = [
       "Instituto de Estudios Avanzados en Desigualdades, Universidad San Francisco de Quito."
     ],
     "bio": "Doctora en Sociología por la Universidad de Manchester, profesora de Ciencias Sociales y directora del Instituto de Estudios Avanzados en Desigualdades de la Universidad San Francisco de Quito. Sus investigaciones se sitúan en la intersección entre comunicación, medios comunitarios, activismo digital, género, migración y desigualdades sociales. Trabaja desde perspectivas críticas e interdisciplinarias, con atención a la participación y a los contextos latinoamericanos. Acompañó el desarrollo temprano de LASTLab y contribuyó a su consolidación organizativa y articulación institucional. Participa en la construcción de una red regional que vincula investigación académica, instituciones y sociedad civil en diversos contextos territoriales.",
-    "photoSrc": null,
+    "photoSrc": "/people/cheryl.webp",
     "externalUrl": null
   },
   {
@@ -85,7 +85,7 @@ export const enPeople: PersonProfile[] = [
       "Instituto de Estudios Avanzados en Desigualdades, Universidad San Francisco de Quito."
     ],
     "bio": "Cheryl Martens holds a PhD in Sociology from the University of Manchester. She is a Professor of Social Sciences and Director of the Institute for Advanced Studies in Inequalities at Universidad San Francisco de Quito. Her research connects communication, community media, digital activism, gender, migration, and social inequalities. She works from critical and interdisciplinary perspectives, with an emphasis on participation and Latin American contexts. She supported LASTLab's early development and contributed to its organisational consolidation and institutional coordination. She also helps build a regional network that connects academic research, institutions, and civil society organisations across Latin America.",
-    "photoSrc": null,
+    "photoSrc": "/people/cheryl.webp",
     "externalUrl": null
   },
   {
