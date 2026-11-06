@@ -14,7 +14,7 @@ export const eventPeople = {
   roberto: ["Roberto Andrade", "USFQ"],
   farith: ["Farith Simon", "USFQ"], priscilla: ["Priscilla Purtschert", "Taller Comunicación Mujer"],
   ariel: ["Ariel Vercelli", "Universidad Nacional de Mar del Plata"],
-  tracey: ["Tracey Tokuhama-Espinosa", "Conexiones"],
+  tracey: ["Tracey Tokuhama-Espinosa, Ph.D.", "Conexiones and Harvard University Summer and Extension Schools, Faculty of Arts and Sciences"],
   fernando: ["Fernando Astudillo", "USFQ"], luciana: ["Luciana Musello", "USFQ"],
   cristina: ["Cristina Cabezas", "USFQ"], felipe: ["Felipe Grijalva", "USFQ"],
   edison: ["Edison Loza", "USFQ"], pierre: ["Pierre Escalante", "USFQ / ZHIDAO GOVTECH"],
