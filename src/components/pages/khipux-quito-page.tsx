@@ -698,7 +698,7 @@ function Participants({ page }: { page: KhipuxQuitoPageContent }) {
                       rel="noopener noreferrer"
                       className="mt-3 w-fit self-center rounded-full border border-khipu-orange px-4 py-2 text-sm font-bold text-khipu-white transition hover:bg-khipu-orange/15 md:self-start"
                     >
-                      {page.ui.profile}
+                      {person.externalUrlLabel ?? page.ui.profile}
                     </a>
                   ) : null}
                 </div>

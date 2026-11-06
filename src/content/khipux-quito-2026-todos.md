@@ -1,5 +1,14 @@
 # Pendientes KHIPUx Quito 2026
 
+## Alta de Alessio y Etsa — 6 de noviembre de 2026
+
+- Paquete `LASTLab_KHIPUx_Codex_36_participantes_Alessio_Etsa_2026-11-06.zip`, aplicado por solicitud directa de Gabriel de actualizar y publicar.
+- Se agregaron exactamente `alessio-bertolini` y `etsa-franklin-sharupi-tapuy`: 36 fichas y biografías ES/EN. Se preservaron las 34 anteriores.
+- Alessio se suma a La IA y el trabajo, martes 11:30–12:45; Etsa al panel de gobernanza técnica del lunes 16:00–17:00. Los datos de las 26 sesiones coinciden con la versión anterior salvo estas dos altas. Se mantienen moderadores, salas, horarios y las nueve sesiones del filtro híbrido.
+- Foto de Alessio aportada en el ZIP, perfil individual de Oxford verificado. Etsa conserva EF: Potsdam identifica la fotografía y su actividad, pero queda pendiente el cotejo editorial y la autorización del retrato. Su enlace se rotula Fuente institucional / Institutional source; no se presenta como perfil académico individual. No se atribuye afiliación de Etsa a Potsdam.
+- PDF oficial, URL y etiquetas sin cambios; comprobación binaria contra Git correcta. Las dos altas se marcan como participación confirmada por la organización, sin atribuirlas al PDF.
+- Build con TypeScript y lint correcto; avisos preexistentes de imágenes y Browserslist. Chromium ES/EN, 390 y 1440 px: 36 fichas únicas, expansión por teclado y múltiples biografías abiertas, foto de Alessio y fallback EF, enlaces y etiquetas, paneles correctos, nueve sesiones híbridas y persistencia tras recargar; sin errores JavaScript ni desbordamiento.
+
 ## Auditoría de perfiles — 6 de noviembre de 2026
 
 - Paquete aplicado: `LASTLab_KHIPUx_v9_AUDITORIA_PERFILES_LUCIANA_2026-11-06.zip`. La solicitud directa de Gabriel autoriza actualizar y publicar.

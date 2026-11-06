@@ -2,6 +2,7 @@ import type { ProgrammeDay, ProgrammeSession } from "@/content/schema";
 import type { Locale } from "@/lib/i18n";
 
 // Transcribed from official agenda version (9), supplied on 2026-11-06 (pages 3–4). Missing rooms remain null.
+// Two participant additions confirmed by the organization on 2026-11-06 apply to the web only.
 // Names and affiliations are shared across locales; only editorial copy is translated.
 export const eventPeople = {
   paolo: ["Paolo Moncagatta", "USFQ"], arnaldo: ["Arnaldo Medina", "UNAJ"],
@@ -24,13 +25,16 @@ export const eventPeople = {
   ernesto: ["Ernesto Vivares", "FLACSO Ecuador"], angel: ["Ángel Alonso Gutiérrez Pérez", "FLACSO Ecuador"],
   emilie: ["Emilie Dupuits", "USFQ"], pablo: ["Pablo Cabrera Barona", "FLACSO Ecuador"],
   miguel: ["Miguel Ángel Contreras Natera", "Universidad Central de Venezuela"],
-  julian: ["Julián Posada", "Yale University"], mor: ["Mor Naaman", "Cornell Tech"]
+  julian: ["Julián Posada", "Yale University"], mor: ["Mor Naaman", "Cornell Tech"],
+  "alessio-bertolini": ["Alessio Bertolini", "Oxford Internet Institute"],
+  "etsa-franklin-sharupi-tapuy": ["Etsa Franklin Sharupi Tapuy", "Naciones originarias Shuar–Quijos"]
 } satisfies Record<string, [string, string]>;
 
 type Person = keyof typeof eventPeople;
 export const personLine = (id: Person, locale: Locale = "es") => {
   const [name, affiliation] = eventPeople[id];
-  const institution = id === "gabriel" && locale === "en" ? "UADE and UNAJ" : affiliation;
+  const institution = id === "gabriel" && locale === "en" ? "UADE and UNAJ"
+    : id === "etsa-franklin-sharupi-tapuy" && locale === "en" ? "Shuar–Quijos Indigenous peoples" : affiliation;
   const role = id === "diego" || id === "arnaldo" ? (locale === "es" ? "rector de " : "Rector of ") : "";
   return `${name} — ${role}${institution}`;
 };
@@ -69,7 +73,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("workshop-c", "14:00–15:50", "Taller C · Enseñanza y proyectos de IA crítica", "Workshop C · Teaching and critical AI projects", workshop, ["farith"], "Patio interno Da Vinci", undefined, true),
         session("workshop-d", "14:00–15:50", "Taller D · Impactos de la IA y las tecnologías digitales: centros de datos, explotación y violencia", "Workshop D · Impacts of AI and digital technologies: data centres, exploitation and violence", workshop, ["priscilla"], "Maxwell M-319", undefined, true),
         session("transition-1", "15:50–16:00", "Transición", "Transition", logistics),
-        session("governance-1", "16:00–17:00", "Gobernanza técnica y sostenibilidad de la inteligencia artificial", "Technical governance and sustainability of artificial intelligence", plenary, ["ariel", "cheryl"], theatre, "farith")
+        session("governance-1", "16:00–17:00", "Gobernanza técnica y sostenibilidad de la inteligencia artificial", "Technical governance and sustainability of artificial intelligence", plenary, ["ariel", "cheryl", "etsa-franklin-sharupi-tapuy"], theatre, "farith")
       ] },
     { date: "2026-11-10", label: t("Martes 10 de noviembre", "Tuesday, November 10"),
       theme: t("Conferencias, sesiones paralelas, gobernanza, trabajo, colonialidad e infraestructura de IA", "Keynotes, parallel sessions, governance, labour, coloniality and AI infrastructure"), sessions: [
@@ -80,7 +84,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("sociotechnical", "10:00–11:00", "IA, tecnología y cambio sociotécnico", "AI, technology and sociotechnical change", keynote, ["andres", "juan"], theatre, "horacio", false,
           t("Andrés Domínguez Hernández: «Hacia una ecología sociotécnica de la inteligencia artificial». Juan Grigera: «IA y las leyes del movimiento del capital: comprender la difusión tecnológica desigual».", "Andrés Domínguez Hernández: ‘Towards a sociotechnical ecology of artificial intelligence’. Juan Grigera: ‘AI and the Laws of Motion of Capital: Understanding Uneven Technological Diffusion’.")),
         session("coffee-2", "11:00–11:30", "Pausa café", "Coffee break", logistics, [], t("Hall principal", "Main hall")),
-        session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette"], "Patio Interno Da Vinci", "belen", true),
+        session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette", "alessio-bertolini"], "Patio Interno Da Vinci", "belen", true),
         session("governance-2", "11:30–12:45", "Gobernanza de la IA y sostenibilidad", "AI governance and sustainability", parallel, ["ernesto", "angel", "emilie", "pablo"], theatre, "horacio", true),
         session("lunch-2", "12:45–14:15", "Almuerzo libre", "Lunch break", logistics),
         session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false,

@@ -216,6 +216,7 @@ export interface EventContactFields {
 }
 
 export interface EventParticipantPerson {
+  externalUrlLabel?: string;
   id: string;
   name: string;
   institution: string;
