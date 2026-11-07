@@ -1,5 +1,13 @@
 # Pendientes KHIPUx Quito 2026
 
+## Parche Daniel, Etsa, Horacio y agenda v11 — 7 de noviembre de 2026
+
+- Aplicado el ZIP incremental solicitado por Gabriel. Daniel Vizuete conserva su ficha e institución, con fotografía aportada frente a puertas de madera y texto autobiográfico ES exacto; traducción EN fiel. Se conserva el perfil profesional, que ya coincidía con el suministrado.
+- Etsa incorpora el retrato enviado por Cheryl, sin cambiar biografía ni panel. Queda resuelto su pendiente de fotografía; Luciana también tiene retrato y biografía actualizados por solicitud previa del 7/11.
+- Horacio incorpora Universidad de Salamanca en las biografías KHIPUx ES/EN, compartidas con organizadores. Las institucionales ya incluían la universidad y no se modificaron.
+- La descarga ahora apunta a `programa-khipux-quito-2026-v11-musello.pdf`, copia binaria del archivo recibido. SHA-256 `436be470fe6698ba984c296438a902b697d02bc4bf67bbdcda3060bfbf175954`. Comprobadas la grafía Musello y las altas de Alessio/Etsa; renderizada y revisada la página 4. No se editó el PDF suministrado. Esta entrega sustituye la restricción histórica de conservar la descarga v9.
+- Programa HTML sin cambios: 26 sesiones, nueve híbridas y 36 participantes. El resto de biografías se comprobó idéntico a Git. Build correcto con lint y TypeScript; solo avisos preexistentes. Chromium ES/EN a 390 y 1440 px: fotos, bios accesibles, Salamanca, enlaces de vista/descarga del PDF, filtro híbrido y ancho de página correctos.
+
 ## Alta de Alessio y Etsa — 6 de noviembre de 2026
 
 - Paquete `LASTLab_KHIPUx_Codex_36_participantes_Alessio_Etsa_2026-11-06.zip`, aplicado por solicitud directa de Gabriel de actualizar y publicar.
