@@ -17,7 +17,7 @@ function createEvent(locale: Locale): KhipuxQuitoPageContent {
   const activeParticipantKeys = participantKeys.filter(key => scheduledPeople.has(personLine(key)));
   // Portraits supplied by participants; public use confirmed by Gabriel (2026-11-03 and 2026-11-04).
   const portraits: Partial<Record<keyof typeof eventPeople, string>> = Object.fromEntries(
-    ["pierre", "pablo", "mor", "julian", "guanche", "miguel", "alexandra", "juan", "angel", "gabriel", "horacio", "ariel", "priscilla", "lizette", "diana", "emilie", "andres", "edison", "belen", "paolo", "arnaldo", "diego", "cheryl", "daniel", "roberto", "fernando", "tracey", "farith", "felipe", "ernesto", "jaime", "vizuete", "alessio-bertolini"].map(key => [key, `/people/${key}.webp`])
+    ["pierre", "pablo", "mor", "julian", "guanche", "miguel", "alexandra", "juan", "angel", "gabriel", "horacio", "ariel", "priscilla", "lizette", "diana", "emilie", "andres", "edison", "belen", "paolo", "arnaldo", "diego", "cheryl", "daniel", "roberto", "fernando", "tracey", "farith", "felipe", "ernesto", "jaime", "vizuete", "alessio-bertolini", "luciana"].map(key => [key, `/people/${key}.webp`])
   );
   const institution = (name: string, logo: string | null) => ({ name, logoSrc: logo, placeholder: name });
   return {
