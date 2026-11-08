@@ -250,6 +250,7 @@ export interface ProgrammeSession {
   type: string;
   participants: string[];
   moderator?: string;
+  discussant?: string;
   room: string | null;
   description?: string;
   parallel: boolean;
