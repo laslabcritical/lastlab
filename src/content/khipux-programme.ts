@@ -88,7 +88,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("workshop-a", "14:00–15:50", "Taller A · Seguridad, vulnerabilidades y evaluación de modelos de IA", "Workshop A · Security, vulnerabilities and AI model evaluation", workshop, ["roberto"], theatre, undefined, true),
         session("workshop-b", "14:00–15:50", "Taller B · Mapeo de la IA: trabajo, recursos y territorios", "Workshop B · Mapping AI: labour, resources and territories", workshop, ["diana"], "Auditorio Epicuro EP-24", undefined, true),
         session("workshop-c", "14:00–15:50", "Taller C · Enseñanza y proyectos de IA crítica", "Workshop C · Teaching and critical AI projects", workshop, ["farith"], "Patio interno Da Vinci", undefined, true),
-        session("workshop-d", "14:00–15:50", "Taller D · Impactos de la IA y las tecnologías digitales: centros de datos, explotación y violencia", "Workshop D · Impacts of AI and digital technologies: data centres, exploitation and violence", workshop, ["priscilla"], "Maxwell M-319", undefined, true),
+        session("workshop-d", "14:00–15:50", "Taller D · Impactos de la IA y las tecnologías digitales: centros de datos, explotación y violencia", "Workshop D · Impacts of AI and digital technologies: data centres, exploitation and violence", workshop, ["priscilla"], "Maxwell M-312", undefined, true),
         session("transition-1", "15:50–16:00", "Transición", "Transition", logistics),
         session("governance-1", "16:00–17:00", "Gobernanza técnica y sostenibilidad de la inteligencia artificial", "Technical governance and sustainability of artificial intelligence", plenary, ["ariel", "cheryl", "etsa-franklin-sharupi-tapuy"], theatre, "farith")
       ] },
