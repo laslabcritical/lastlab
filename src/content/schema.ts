@@ -249,6 +249,7 @@ export interface ProgrammeSession {
   title: string;
   type: string;
   participants: string[];
+  talkTitles?: Record<string, string>;
   moderator?: string;
   discussant?: string;
   room: string | null;

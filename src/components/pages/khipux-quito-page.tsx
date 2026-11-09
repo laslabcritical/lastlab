@@ -542,7 +542,10 @@ function Programme({ page, zoomOnly, onProgrammeView }: { page: KhipuxQuitoPageC
             <span className="mt-2 block text-lg font-bold">{session.title}</span>
           </summary>
           <div className="space-y-3 border-t border-white/10 p-5 text-white/85">
-            {session.participants.length > 0 && <div><p className="mb-2 font-bold text-khipu-orange">{page.ui.participants}</p><ul className="space-y-1">{session.participants.map(person => <li key={person}>{person}</li>)}</ul></div>}
+            {session.participants.length > 0 && <div><p className="mb-2 font-bold text-khipu-orange">{page.ui.participants}</p><ul className="space-y-1">{session.participants.map(person => <li key={person}>
+              <span>{person}</span>
+              {session.talkTitles?.[person] && <p lang="es" className="mt-1 text-sm italic leading-relaxed text-white/70">«{session.talkTitles[person]}»</p>}
+            </li>)}</ul></div>}
             {session.moderator && <p><strong>{page.ui.moderator}:</strong> {session.moderator}</p>}
             {session.discussant && <p><strong>{page.locale === "es" ? "Comenta" : "Commentary"}:</strong> {session.discussant}</p>}
             <p><strong>{page.ui.room}:</strong> {session.room ?? page.ui.pendingRoom}</p>

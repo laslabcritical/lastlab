@@ -11,14 +11,14 @@ export const eventPeople = {
   horacio: ["Horacio Correa Lucero", "LASTLab / UNAJ"],
   belen: ["María Belén Albornoz", "CTS Lab–FLACSO Ecuador"],
   guanche: ["Julio César Guanche", "FLACSO Ecuador"],
-  alexandra: ["Alexandra Belén Gualavisí", "FLACSO Ecuador"], daniel: ["Daniel Riofrío", "USFQ"],
+  alexandra: ["Alexandra Belén Gualavisí", "FLACSO Ecuador"], daniel: ["Daniel Riofrío", "Sigma AI Lab, USFQ"],
   roberto: ["Roberto Andrade", "USFQ"],
   farith: ["Farith Simon", "USFQ"], priscilla: ["Priscilla Purtschert", "Taller Comunicación Mujer"],
   ariel: ["Ariel Vercelli", "Universidad Nacional de Mar del Plata"],
   tracey: ["Tracey Tokuhama-Espinosa, Ph.D.", "Conexiones and Harvard University Summer and Extension Schools, Faculty of Arts and Sciences"],
   fernando: ["Fernando Astudillo", "USFQ"], luciana: ["Luciana Musello", "COCOA, USFQ"],
-  cristina: ["Cristina Cabezas", "USFQ"], felipe: ["Felipe Grijalva", "USFQ"],
-  edison: ["Edison Loza", "USFQ"], pierre: ["Pierre Escalante", "USFQ / ZHIDAO GOVTECH"],
+  cristina: ["Cristina Cabezas", "USFQ"], felipe: ["Felipe Grijalva", "Sigma AI Lab, USFQ"],
+  edison: ["Edison Loza", "CADE, USFQ"], pierre: ["Pierre Escalante", "USFQ / ZHIDAO GOVTECH"],
   gabriel: ["Gabriel Perdomo", "UADE y UNAJ"], lizette: ["Lizette Aguirre", "UNAJ"],
   jaime: ["Jaime Ramírez", "DINERS"], andres: ["Andrés Domínguez Hernández", "Queen Mary University of London"],
   juan: ["Juan Grigera", "King’s College London"], vizuete: ["Daniel Vizuete", "CTS Lab–FLACSO Ecuador"],
@@ -44,12 +44,29 @@ const zoomSessionIds = new Set([
   "welcome", "keynotes-1", "launch", "surveillance", "governance-1",
   "sociotechnical", "coloniality", "author", "closing-keynote"
 ]);
+// Original presentation titles supplied by the organizers, shared across locales.
+const individualTalkTitles: Record<string, Partial<Record<Person, string>>> = {
+  "keynotes-1": {
+    guanche: "Tres vías de herencia: el genoma, la red y la inteligencia artificial",
+    horacio: "¿Cómo se configura la inteligencia artificial? Redes sociobiotécnicas, poder y dependencia en América Latina",
+  },
+  "sociotechnical": {
+    andres: "Hacia una ecología sociotécnica de la inteligencia artificial",
+    juan: "IA y las leyes del movimiento del capital: comprender la difusión tecnológica desigual",
+  },
+  "coloniality": {
+    miguel: "Aletheia algorítmica: sesgo incorporado, discriminación y colonialidad, o los desafíos estratégicos de la región",
+    julian: "Inteligencia artificial, trabajo e infraestructura",
+  },
+};
+
 const theatre = "Teatro Calderón de la Barca";
 
 export function getProgramme(locale: Locale): ProgrammeDay[] {
   const t = (es: string, en: string) => locale === "es" ? es : en;
   function session(id: string, time: string, es: string, en: string, type: [string, string], people: Person[] = [], room: string | null = null, moderator?: Person, parallel = false, description?: string): ProgrammeSession {
     return { id, time, zoom: zoomSessionIds.has(id), title: t(es, en), type: t(...type), participants: people.map(id => personLine(id, locale)), room,
+      talkTitles: Object.fromEntries(Object.entries(individualTalkTitles[id] ?? {}).map(([person, title]) => [personLine(person as Person, locale), title])),
       moderator: moderator ? personLine(moderator, locale) : undefined, parallel, status: "confirmed", description };
   }
   const logistics: [string, string] = ["Logística", "Logistics"];
@@ -81,14 +98,12 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("pedagogy", "08:30–09:50", "Pedagogías críticas de IA", "Critical AI pedagogies", parallel, ["tracey", "fernando", "luciana"], theatre, "cristina", true),
         session("security", "08:30–09:50", "Seguridad, vulnerabilidades y evaluación de modelos de IA", "Security, vulnerabilities and AI model evaluation", parallel, ["felipe", "edison", "jaime", "gabriel"], "Auditorio Biblioteca", "daniel", true),
         session("transition-2", "09:50–10:00", "Transición", "Transition", logistics),
-        session("sociotechnical", "10:00–11:00", "IA, tecnología y cambio sociotécnico", "AI, technology and sociotechnical change", keynote, ["andres", "juan"], theatre, "horacio", false,
-          t("Andrés Domínguez Hernández: «Hacia una ecología sociotécnica de la inteligencia artificial». Juan Grigera: «IA y las leyes del movimiento del capital: comprender la difusión tecnológica desigual».", "Andrés Domínguez Hernández: ‘Towards a sociotechnical ecology of artificial intelligence’. Juan Grigera: ‘AI and the Laws of Motion of Capital: Understanding Uneven Technological Diffusion’.")),
+        session("sociotechnical", "10:00–11:00", "IA, tecnología y cambio sociotécnico", "AI, technology and sociotechnical change", keynote, ["andres", "juan"], theatre, "horacio", false),
         session("coffee-2", "11:00–11:30", "Pausa café", "Coffee break", logistics, [], t("Hall principal", "Main hall")),
         session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette", "alessio-bertolini"], "Patio Interno Da Vinci", "belen", true),
         session("governance-2", "11:30–12:45", "Gobernanza de la IA y sostenibilidad", "AI governance and sustainability", parallel, ["ernesto", "angel", "emilie", "pablo"], theatre, "luciana", true),
         session("lunch-2", "12:45–14:15", "Almuerzo libre", "Lunch break", logistics),
-        session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false,
-          t("Miguel Ángel Contreras: «Aletheia algorítmica: sesgo incorporado, discriminación y colonialidad, o los desafíos estratégicos de la región». Julián Posada: «Inteligencia artificial, trabajo e infraestructura».", "Miguel Ángel Contreras: ‘Algorithmic aletheia: embedded bias, discrimination and coloniality, or the region’s strategic challenges’. Julián Posada: ‘Artificial intelligence, labour and infrastructure’.")),
+        session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false),
         { ...session("author", "15:15–15:55", "Conversación con el autor: Platform Extractivism", "In conversation with the author: Platform Extractivism", ["Conversación", "Conversation"], ["julian"], theatre), discussant: personLine("horacio", locale) },
         session("closing-keynote", "16:00–17:00", "The Democratic Costs of AI-Mediated Information", "The Democratic Costs of AI-Mediated Information", keynote, ["mor"], theatre, "cheryl", false,
           t("Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.", "Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.")),
