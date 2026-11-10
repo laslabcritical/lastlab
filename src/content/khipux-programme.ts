@@ -26,6 +26,7 @@ export const eventPeople = {
   emilie: ["Emilie Dupuits", "USFQ"], pablo: ["Pablo Cabrera Barona", "FLACSO Ecuador"],
   miguel: ["Miguel Ángel Contreras Natera", "Universidad Central de Venezuela"],
   julian: ["Julián Posada", "Yale University"], mor: ["Mor Naaman", "Cornell Tech"],
+  "salvatore-foti": ["Salvatore Foti", ""],
   "etsa-franklin-sharupi-tapuy": ["Etsa Franklin Sharupi Tapuy", "Naciones originarias Shuar–Quijos"]
 } satisfies Record<string, [string, string]>;
 
@@ -35,7 +36,7 @@ export const personLine = (id: Person, locale: Locale = "es") => {
   const institution = id === "gabriel" && locale === "en" ? "UADE and UNAJ"
     : id === "etsa-franklin-sharupi-tapuy" && locale === "en" ? "Shuar–Quijos Indigenous peoples" : affiliation;
   const role = id === "diego" || id === "arnaldo" ? (locale === "es" ? "rector de " : "Rector of ") : "";
-  return `${name} — ${role}${institution}`;
+  return institution ? `${name} — ${role}${institution}` : name;
 };
 // Academic sessions within the four Zoom brackets of the official v9 PDF (pages 3–4).
 // Both programme views use these same sessions; logistics are intentionally excluded.
@@ -102,7 +103,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette"], "Patio Interno Da Vinci", "belen", true),
         session("governance-2", "11:30–12:45", "Gobernanza de la IA y sostenibilidad", "AI governance and sustainability", parallel, ["ernesto", "angel", "emilie", "pablo"], theatre, "luciana", true),
         session("lunch-2", "12:45–14:15", "Almuerzo libre", "Lunch break", logistics),
-        session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false),
+        session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, "salvatore-foti", false),
         { ...session("author", "15:15–15:55", "Conversación con el autor: Platform Extractivism", "In conversation with the author: Platform Extractivism", ["Conversación", "Conversation"], ["julian"], theatre), discussant: personLine("horacio", locale) },
         session("closing-keynote", "16:00–17:00", "The Democratic Costs of AI-Mediated Information", "The Democratic Costs of AI-Mediated Information", keynote, ["mor"], theatre, "cheryl", false,
           t("Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.", "Mor Naaman — Cornell Tech. Don and Mibs Follett Professor of Information Science and Associate Dean for Faculty Affairs, Cornell Tech.")),
