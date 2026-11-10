@@ -26,7 +26,6 @@ export const eventPeople = {
   emilie: ["Emilie Dupuits", "USFQ"], pablo: ["Pablo Cabrera Barona", "FLACSO Ecuador"],
   miguel: ["Miguel Ángel Contreras Natera", "Universidad Central de Venezuela"],
   julian: ["Julián Posada", "Yale University"], mor: ["Mor Naaman", "Cornell Tech"],
-  "alessio-bertolini": ["Alessio Bertolini", "Oxford Internet Institute"],
   "etsa-franklin-sharupi-tapuy": ["Etsa Franklin Sharupi Tapuy", "Naciones originarias Shuar–Quijos"]
 } satisfies Record<string, [string, string]>;
 
@@ -100,7 +99,7 @@ export function getProgramme(locale: Locale): ProgrammeDay[] {
         session("transition-2", "09:50–10:00", "Transición", "Transition", logistics),
         session("sociotechnical", "10:00–11:00", "IA, tecnología y cambio sociotécnico", "AI, technology and sociotechnical change", keynote, ["andres", "juan"], theatre, "horacio", false),
         session("coffee-2", "11:00–11:30", "Pausa café", "Coffee break", logistics, [], t("Hall principal", "Main hall")),
-        session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette", "alessio-bertolini"], "Patio Interno Da Vinci", "belen", true),
+        session("platforms", "11:30–12:45", "La IA y el trabajo", "AI and labour", parallel, ["vizuete", "pierre", "lizette"], "Patio Interno Da Vinci", "belen", true),
         session("governance-2", "11:30–12:45", "Gobernanza de la IA y sostenibilidad", "AI governance and sustainability", parallel, ["ernesto", "angel", "emilie", "pablo"], theatre, "luciana", true),
         session("lunch-2", "12:45–14:15", "Almuerzo libre", "Lunch break", logistics),
         session("coloniality", "14:15–15:15", "Colonialidad, trabajo e infraestructura de inteligencia artificial en América Latina", "Coloniality, labour and AI infrastructure in Latin America", keynote, ["miguel", "julian"], theatre, undefined, false),
