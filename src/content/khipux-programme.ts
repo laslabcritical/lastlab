@@ -65,7 +65,8 @@ const theatre = "Teatro Calderón de la Barca";
 export function getProgramme(locale: Locale): ProgrammeDay[] {
   const t = (es: string, en: string) => locale === "es" ? es : en;
   function session(id: string, time: string, es: string, en: string, type: [string, string], people: Person[] = [], room: string | null = null, moderator?: Person, parallel = false, description?: string): ProgrammeSession {
-    return { id, time, zoom: zoomSessionIds.has(id), title: t(es, en), type: t(...type), participants: people.map(id => personLine(id, locale)), room,
+    return { id, time, zoom: zoomSessionIds.has(id),
+      zoomUrl: ["coloniality", "author", "closing-keynote"].includes(id) ? "https://usfq.zoom.us/j/82882077359" : undefined, title: t(es, en), type: t(...type), participants: people.map(id => personLine(id, locale)), room,
       talkTitles: Object.fromEntries(Object.entries(individualTalkTitles[id] ?? {}).map(([person, title]) => [personLine(person as Person, locale), title])),
       moderator: moderator ? personLine(moderator, locale) : undefined, parallel, status: "confirmed", description };
   }

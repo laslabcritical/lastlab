@@ -497,6 +497,20 @@ function Launch({ page }: { page: KhipuxQuitoPageContent }) {
   </section>;
 }
 
+function ProgrammeZoomAccess({ page }: { page: KhipuxQuitoPageContent }) {
+  const day = page.programmeDays.find(day => day.sessions.some(session => session.zoomUrl));
+  const url = day?.sessions.find(session => session.zoomUrl)?.zoomUrl;
+  if (!day || !url) return null;
+  return <aside className="border-l-4 border-khipu-orange bg-khipu-black px-5 py-6 text-khipu-white">
+    <div className="khipux-content-container flex flex-wrap items-center justify-between gap-4">
+      <p className="text-lg font-bold">{day.label} · {page.locale === "es" ? "Sesiones de la tarde por Zoom" : "Afternoon sessions on Zoom"}</p>
+      <a href={url} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-khipu-orange px-6 py-3 text-center font-bold text-white hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+        {page.locale === "es" ? "Ingresar a Zoom" : "Join on Zoom"}
+      </a>
+    </div>
+  </aside>;
+}
+
 function Programme({ page, zoomOnly, onProgrammeView }: { page: KhipuxQuitoPageContent; zoomOnly: boolean; onProgrammeView: ProgrammeViewHandler }) {
   const [activeDay, setActiveDay] = useState(0);
   const t = (es: string, en: string) => page.locale === "es" ? es : en;
@@ -507,6 +521,7 @@ function Programme({ page, zoomOnly, onProgrammeView }: { page: KhipuxQuitoPageC
   return <section id="programme" tabIndex={-1} aria-label={page.program.title} className="scroll-mt-24 bg-khipu-gray py-14 text-khipu-white" data-published-sessions={page.programmeDays.reduce((n, day) => n + day.sessions.length, 0)}>
     <div className="khipux-content-container">
       <h2 className="text-4xl font-bold md:text-6xl">{page.program.title}</h2>
+      <div className="mt-6"><ProgrammeZoomAccess page={page} /></div>
       <p className="mt-5 max-w-4xl leading-relaxed text-white/80">{page.program.body}</p>
       <p className="mt-3 max-w-4xl text-sm leading-relaxed text-white/70">{page.scheduleNote}</p>
       <fieldset className="mt-6 flex flex-wrap gap-3">
@@ -550,6 +565,7 @@ function Programme({ page, zoomOnly, onProgrammeView }: { page: KhipuxQuitoPageC
             {session.discussant && <p><strong>{page.locale === "es" ? "Comenta" : "Commentary"}:</strong> {session.discussant}</p>}
             <p><strong>{page.ui.room}:</strong> {session.room ?? page.ui.pendingRoom}</p>
             {session.description && <p className="leading-relaxed">{session.description}</p>}
+            {session.zoomUrl && <a href={session.zoomUrl} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-khipu-orange px-6 py-3 font-bold text-white hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">{t("Ingresar a Zoom", "Join on Zoom")}</a>}
           </div>
         </details>)}</div>
       </div>)}
@@ -1022,6 +1038,7 @@ export function KhipuxQuitoPage({ locale, page }: KhipuxQuitoPageProps) {
       <EventStructuredData locale={locale} page={page} />
       <KhipuxNavbar page={page} />
       <Hero page={page} onProgrammeView={selectProgrammeView} />
+      <ProgrammeZoomAccess page={page} />
       <Launch page={page} />
       <AboutEvent page={page} />
       <Themes page={page} />

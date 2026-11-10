@@ -243,6 +243,7 @@ export interface EventInstitution {
 }
 
 export interface ProgrammeSession {
+  zoomUrl?: string;
   zoom: boolean;
   id: string;
   time: string;
